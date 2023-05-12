@@ -15,8 +15,6 @@ function App() {
       <Route path='/get-started' element={<SignUp/>}/>
         <Route path='/index' element={<IndexPage />} />
         <Route path='/businesses/:id' element={<Show/>}/>
-
-      
     </Routes>
   </Router>
   );
