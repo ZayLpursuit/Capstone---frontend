@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../Melanated-Diamonds.png";
+import Logo from "../assets/Melanated-Diamonds.png";
+import Login from "../assets/login.png";
 
 const Nav = () => {
   return (
@@ -20,6 +21,11 @@ const Nav = () => {
         <button className="nav-btn">
           <Link to="/" className="nav-link">
             Home
+          </Link>
+        </button>
+        <button className="">
+          <Link to="/get-started" className="">
+            <img src={Login} alt="Login" />
           </Link>
         </button>
         {/* <button className="nav-btn">
