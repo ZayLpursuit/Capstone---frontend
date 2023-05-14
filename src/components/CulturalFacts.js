@@ -1,8 +1,17 @@
 import React from 'react'
 
+const data = require("../data/data.json")
+
 const CulturalFacts = () => {
+  let fact = data.map(f => f.fact)
+
+  // console.log(fact)
+
   return (
-    <div>CulturalFacts</div>
+    <div className='cultural-facts'>
+      <h2>Did You Know?</h2>
+      {(<h3>{fact[Math.floor(Math.random() * fact.length)]}</h3>)}
+    </div>
   )
 }
 
