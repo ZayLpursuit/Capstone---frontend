@@ -89,7 +89,7 @@ form input{
 }
 .index-grid{
   display: grid;
-grid-template-columns: 30% 60% 10%;
+grid-template-columns: 25% 60% 10%;
 }
 .index-container{
   display:grid;
@@ -97,6 +97,7 @@ grid-template-columns: 30% 60% 10%;
   column-gap: 10px;
   overflow-y: scroll;
   margin: 0 auto;
+  padding:10px 10px
 }
 .test-b1{
 border: 1px solid black;
@@ -115,4 +116,8 @@ border: 1px solid black;
   }
   .m-left{
     margin-left: 25px;
+  }
+  .index-img{
+    width:300px;
+    height :250px;
   }

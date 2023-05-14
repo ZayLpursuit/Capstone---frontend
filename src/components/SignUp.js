@@ -4,7 +4,6 @@ import { useState } from "react"
 
 export default function SignUp(){
 
-    const [logIn,setLogIn]=useState(false)
     const [signIn,setSignIn]=useState(true)
     const [form,setForm]=useState({username:"",password:"", newUsername:"",newPassword:"",email:"",first:"",last:""})
     function handleToggle(e){

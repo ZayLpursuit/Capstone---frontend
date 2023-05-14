@@ -1,14 +1,22 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import Card from "./Card"
+
+
 
 
 export default function IndexPage(){
 const [category,setCategory]=useState("")
 const [display,setDisplay]=useState([{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10,}])
+// const [display,setDisplay]=useState([])
 
 function handleChange(e){
     setCategory(e.target.value)
 }
+// useEffect(()=>{
+//     axios.get("https://melanated-diamonds.onrender.com/businesses").then((res=>setDisplay(res.data)))
+
+// },[])
 
  return(   
     <div className="index-grid">
