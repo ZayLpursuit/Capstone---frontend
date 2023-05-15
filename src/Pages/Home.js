@@ -1,4 +1,5 @@
 import React from "react";
+import CulturalFacts from "../components/CulturalFacts";
 
 const Home = () => {
   return (
@@ -9,6 +10,8 @@ const Home = () => {
        is to support and promote black-owned businesses by creating a platform for consumers to connect with them, with the goal of increasing their visibility and helping them thrive. They aim to promote entrepreneurship and economic equity within the black community, ultimately building a better and more inclusive economy for all.
       </h2>
       <br />
+      <CulturalFacts />
+      <br/>
       <h1>Celebrate Us</h1>
     </div>
   );

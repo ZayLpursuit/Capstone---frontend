@@ -37,12 +37,12 @@ const Nav = () => {
           <Link to="/facts" className="nav-link">
             Facts
           </Link>
-        </button>
+        </button> */}
         <button className="nav-btn">
           <Link to="/resources" className="nav-link">
             Resources
           </Link>
-        </button> */}
+        </button> 
       </div>
     </div>
   );
