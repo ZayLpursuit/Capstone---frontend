@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Routes>
+      <Routes> 
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<SignUp />} />
         <Route path="/index" element={<IndexPage />} />
