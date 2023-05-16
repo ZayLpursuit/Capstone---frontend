@@ -116,3 +116,43 @@ border: 1px solid black;
   .m-left{
     margin-left: 25px;
   }
+
+  .profile-container{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+  }
+  .profile-options{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    align-content: center;
+    justify-items: center;
+  }
+  .profile-cards{
+    border:3px solid black;
+    background-color: white;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    align-content: center;
+    justify-content: center;
+
+  }
+  .white{
+    color:white;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+
+  .cultural-facts {
+    border: #282c34;
+    background-color: #9d9174;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(245, 245, 44, 0.547) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+ li {
+ list-style-type: none;
+ }
+

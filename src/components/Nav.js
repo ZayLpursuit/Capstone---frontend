@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Melanated-Diamonds.png";
 import Login from "../assets/login.png";
+import { signOut } from "firebase/auth";
+import auth from "../base";
+
+
 
 const Nav = () => {
   return (
@@ -28,21 +32,16 @@ const Nav = () => {
             <img src={Login} alt="Login" />
           </Link>
         </button>
-        {/* <button className="nav-btn">
-          <Link to="/survey" className="nav-link">
-            Survey
-          </Link>
-        </button>
-        <button className="nav-btn">
-          <Link to="/facts" className="nav-link">
-            Facts
-          </Link>
-        </button>
         <button className="nav-btn">
           <Link to="/resources" className="nav-link">
             Resources
           </Link>
-        </button> */}
+
+        </button> 
+        <button onClick={async ()=>await signOut(auth)}>Sign Out</button>
+
+     
+
       </div>
     </div>
   );
