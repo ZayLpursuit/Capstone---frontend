@@ -21,6 +21,7 @@ function App() {
           <Route path='/businesses/:id' element={<Show/>}/>
       </Routes>
     </Router>
+  )
 }
 
 export default App;
