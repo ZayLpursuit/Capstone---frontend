@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Melanated-Diamonds.png";
 import Login from "../assets/login.png";
+import { signOut } from "firebase/auth";
+import auth from "../base";
+
+
 
 const Nav = () => {
   return (
@@ -43,6 +47,7 @@ const Nav = () => {
             Resources
           </Link>
         </button> */}
+        <button onClick={async ()=>await signOut(auth)}>Sign Out</button>
       </div>
     </div>
   );
