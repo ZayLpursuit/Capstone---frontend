@@ -17,7 +17,7 @@ const Nav = () => {
             alt="Logo"
             className="Logo"
             width="180"
-            height="180"
+            height="180" 
           />
         </Link>
       </h1>
