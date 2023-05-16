@@ -9,7 +9,7 @@ const CulturalFacts = () => {
 
   return (
     <div className='cultural-facts'>
-      <h2>Did You Know?</h2>
+      <h2>Facts On Deck</h2>
       {(<h3>{fact[Math.floor(Math.random() * fact.length)]}</h3>)}
     </div>
   )

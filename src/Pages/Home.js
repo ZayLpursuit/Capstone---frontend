@@ -4,15 +4,24 @@ import CulturalFacts from "../components/CulturalFacts";
 const Home = () => {
   return (
     <div className="home">
-      <h1>Our Mission</h1>
-      <br />
-      <h2 className="statement">
-       is to support and promote black-owned businesses by creating a platform for consumers to connect with them, with the goal of increasing their visibility and helping them thrive. They aim to promote entrepreneurship and economic equity within the black community, ultimately building a better and more inclusive economy for all.
+      <div className="mission-statement">
+        <section className="statement">
+        <h2>
+       Our Mission is to support and promote black-owned businesses by creating a platform for consumers to connect with them, with the goal of increasing their visibility and helping them thrive. They aim to promote entrepreneurship and economic equity within the black community, ultimately building a better and more inclusive economy for all.
       </h2>
+        </section>
+        <section>
+          <img src="https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg"
+            width="400px"
+            height="400px"/>
+        </section>
+      </div>
+      
+     
       <br />
       <CulturalFacts />
       <br/>
-      <h1>Celebrate Us</h1>
+      <h2>Featured Businesses</h2>
     </div>
   );
 };
