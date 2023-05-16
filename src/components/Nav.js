@@ -28,7 +28,7 @@ const Nav = () => {
           </Link>
         </button>
         <button className="">
-          <Link to="/get-started" >
+          <Link to="/get-started">
           {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-to-arc" beatFade size="2xl" style={{color: "#e6ce33"}} /> */}
           {/* <FontAwesomeIcon icon={faArrowRight} beatFade size="2xl" style={{color: "#e6ce33"}} /> */}
           {/* <i className="fa-solid fa-arrow-right-to-arc fa-beat-fade fa-lg" style={{color: "#e6ce33"}}></i> */}
