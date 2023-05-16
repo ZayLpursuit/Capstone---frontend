@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Melanated-Diamonds.png";
-import Login from "../assets/login.png";
+// import Login from "../assets/login.png";
+// import { faArrowRight } from '@fortawesome/fontawesome-free-solid';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 const Nav = () => {
   return (
@@ -12,8 +16,8 @@ const Nav = () => {
             src={Logo}
             alt="Logo"
             className="Logo"
-            width="200"
-            height="200"
+            width="180"
+            height="180"
           />
         </Link>
       </h1>
@@ -24,8 +28,11 @@ const Nav = () => {
           </Link>
         </button>
         <button className="">
-          <Link to="/get-started" className="">
-            <img src={Login} alt="Login" />
+          <Link to="/get-started" >
+          {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-to-arc" beatFade size="2xl" style={{color: "#e6ce33"}} /> */}
+          {/* <FontAwesomeIcon icon={faArrowRight} beatFade size="2xl" style={{color: "#e6ce33"}} /> */}
+          {/* <i className="fa-solid fa-arrow-right-to-arc fa-beat-fade fa-lg" style={{color: "#e6ce33"}}></i> */}
+          {/* // <FontAwesomeIcon icon={faArrowRightToArc} beatFade size="sm" style={{color: "#e6ce33",}} /> */}
           </Link>
         </button>
         {/* <button className="nav-btn">

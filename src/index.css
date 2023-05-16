@@ -1,18 +1,22 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
+  font-family:sans-serif;
+  background-image: url("https://i.pinimg.com/564x/d1/81/3b/d1813bd1327bee22532e4dbd3e43237c.jpg");
   background-size:  cover;
-  background: repeat(none) ;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.Logo{
+  text-shadow: #e6ce33 40px 40px 40px;
 }
 
 .Nav{
   display: flex;
   justify-content: space-around;
+  /* background-image: linear-gradient(rgb(255, 255, 255),rgb(48, 50, 22)) */
   }
 
 .nav-btns{
@@ -21,23 +25,31 @@ body {
 }
 
 .nav-btn{
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: 13px;
-  border-color: white;
-  margin-right: 70px;
-  background-color: darkseagreen;
+  border-color: #e6ce33;
+  margin-right: 70px;  
+  
+
  }
 
 .nav-link{
   text-decoration: none;
-  font-size: x-large;
-  color: white
+  font-size: large;
+  color: #e6ce33
   
 }
 
+.home{
+  color: rgb(206, 200, 166);
+
+  /* text-shadow: rgba(231, 249, 32, 0.56) 500px 22px 70px 4px; */
+  margin: 50px;
+  align-items: center;
+}
+
 .statement{
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  text-shadow: rgb(239, 17, 17) 10px 10px 10px;
 }
 
 code {
