@@ -32,22 +32,16 @@ const Nav = () => {
             <img src={Login} alt="Login" />
           </Link>
         </button>
-        {/* <button className="nav-btn">
-          <Link to="/survey" className="nav-link">
-            Survey
-          </Link>
-        </button>
-        <button className="nav-btn">
-          <Link to="/facts" className="nav-link">
-            Facts
-          </Link>
-        </button>
         <button className="nav-btn">
           <Link to="/resources" className="nav-link">
             Resources
           </Link>
+
         </button> */}
         <button onClick={async ()=>await signOut(auth)}>Sign Out</button>
+
+        </button> 
+
       </div>
     </div>
   );
