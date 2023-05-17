@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function SignUp(){
     const navigate=useNavigate()
-    const [logIn,setLogIn]=useState(false)
+    // const [logIn,setLogIn]=useState(false)
     const [signIn,setSignIn]=useState(true)
     const [form,setForm]=useState({username:"",password:"", newUsername:"",newPassword:"",email:"",first_name:"",last_name:"",login_email:""})
     function handleToggle(e){
@@ -32,6 +32,7 @@ function handleChange(e){
             axios.post(`http://localhost:7777/users`,form)
             
             navigate("/profile")
+            console.log(newUser)
 
         } catch (error) {
             console.log(error)
@@ -43,6 +44,7 @@ function handleChange(e){
         try {
             const user= await signInWithEmailAndPassword(auth,form.login_email,form.password)
             navigate("/profile")
+            console.log(user)
         } catch (error) {
             console.log(error)
         }
