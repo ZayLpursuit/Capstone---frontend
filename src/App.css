@@ -187,7 +187,7 @@ li {
   height: 100px;
   /* background-color: rgba(103, 103, 12, 0.725); */
 
-  background-color: #F1CC24;
+  background-color: #f1cc24;
 
   /* background-color: #E2BF23; */
   /* background-color: #F4ff60; */
@@ -214,7 +214,11 @@ header img {
   position: relative;
   right: 300px;
   text-align: center;
-  font-size: smaller;
+  /* font-size: smaller; */
+}
+
+.slogan-2 {
+  text-decoration: overline;
 }
 
 .home-form {
@@ -271,4 +275,26 @@ li > a {
 
 .sidebar {
   justify-content: center;
+}
+
+/* .fa-magnifying-glass-location {
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+} */
+
+/* #magnifying-glass */
+
+.fa-magnifying-glass-location {
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  right: 35px;
+  top: 17px;
+}
+
+.j-ward {
+  font-size: xx-small;
+  margin-right: 55px;
 }

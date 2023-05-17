@@ -11,6 +11,7 @@ import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
   // console.log(currentUser)
@@ -61,11 +62,15 @@ const Nav = () => {
             <img className="hero" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
-        <h6 className="slogan">
-          Embrace the Power of Melanin
-          <hr />
-          Shop, Connect, Thrive!
-        </h6>
+        <div className="slogan">
+        <h5 >
+          Embrace the Power of Melanin</h5>
+          {/* <hr /> */}
+          {/* <h5>_____________</h5> */}
+        <h5 className="slogan-2"> Shop, Connect, Thrive!
+        </h5>
+        </div>
+        
         <form className="d-flex home-form" role="search">
           <input
             className="form-control me-2"
@@ -73,22 +78,27 @@ const Nav = () => {
             placeholder="Search Businesses"
             aria-label="Search"
           />
-          <Button variant="secondary" size="sm">
+          <i className="fa-solid fa-magnifying-glass-location"></i>
+
+          {/* <Button variant="secondary" size="sm">
             Search
-          </Button>
+          </Button> */}
         </form>
         <Button variant="light">
-          <Link to={`/index`}>View Businesses</Link>
+          <Link to="/index" className="nav-link">View Businesses</Link>
         </Button>
         <Button variant="light">
-          <Link to="/resources">View Resources</Link>
+          <Link to="/resources" className="nav-link">View Resources</Link>
+        </Button>
+        <Button variant="light">
+          <Link to="/profile" className="nav-link">View Profile</Link>
         </Button>
         {!auth.currentUser ? (
           <Button variant="light">
             <Link to="/get-started">Create An Account / Login</Link>
           </Button>
         ) : (
-          <button onClick={async () => await signOut(auth)}>Sign Out</button>
+          <Button variant="dark" onClick={async () => await signOut(auth)}>Sign Out</Button>
         )}
       </Navbar>
     </nav>
