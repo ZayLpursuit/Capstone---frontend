@@ -5,40 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
+  /* background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
   background-size:  cover;
-  background: repeat(none) ;
+  background: repeat(none) ; */
 }
 
-.Nav{
+/* .Nav{
   display: flex;
   justify-content: space-around;
-  }
+  } */
 
-.nav-btns{
+/* .nav-btns{
   align-self: center;
-  
-}
+} */
 
-.nav-btn{
+/* .nav-btn{
   border-radius: 10px;
   font-size: 13px;
-  border-color: white;
   margin-right: 70px;
   background-color: darkseagreen;
- }
+ } */
 
-.nav-link{
+/* .nav-link{
   text-decoration: none;
   font-size: x-large;
   color: white
-  
-}
+} */
 
-.statement{
+/* .statement{
   color: white;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
