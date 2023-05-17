@@ -6,19 +6,25 @@ import ExploreIcon from '@mui/icons-material/Explore';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNavigate } from "react-router-dom";
-import IconButton from '@mui/material/IconButton';
 
 
 
 
 export default function Profile({currentUser}){
 const [user,setUser]=useState({})
-const navigate=useNavigate()
+    const navigate = useNavigate()
+    
+    console.log("currentUser", currentUser)
 
 
 useEffect(()=>{
-   axios.get(`http://localhost:7777/users/emails/${currentUser.email}`).then((res)=>setUser(res.data[0])).then(()=>console.log(user))
-},[])
+    axios.get(`http://localhost:7777/users/emails/${currentUser.email}`)
+        .then((res) => {
+            console.log(res)
+            setUser(res.data[0])
+        })
+        // .then(() => console.log(user))
+},[currentUser])
 
     return (
         <div className="profile-container">
@@ -51,7 +57,7 @@ useEffect(()=>{
                     
                 </div>
             <div>
-                {auth.currentUser?
+                {auth.currentUser.email?
                <> Welcome Back {auth.currentUser.email} </>: <>Signed Out</>}
 
                {user?<>{user.first_name}

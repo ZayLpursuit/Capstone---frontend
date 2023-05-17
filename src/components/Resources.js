@@ -1,10 +1,21 @@
 import React from "react";
+import scholars from "../assets/fotor_2023-5-16_10_18_40.png";
 
 const Resources = () => {
   return (
-    <div>
-      <section>
-        <h2>Grants / Scholarships</h2>
+    <div className="resources">
+      <img className="center-text scholars" src={scholars} width="60%" height="140px" alt="n/a"/>
+      <div className="resource-section">
+      <section className="sidebar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOLf5vKJpaJPP2AW_BVIDYwEZovw-0YAmOYA&usqp=CAU" className="resource-img" alt="n/a"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOLf5vKJpaJPP2AW_BVIDYwEZovw-0YAmOYA&usqp=CAU" className="resource-img" alt="n/a"/>
+      </section>
+      <section className="center-text">
+        {/* <h2 style={{ textDecoration: "underline" }}>Grants / Scholarships</h2> */}
+        {/* <img src={scholars} width="8000px" height="100px" /> */}
+        {/* <br /> */}
+        <br />
+        <div className="scholarships">
         <ul>
           <li>
             <a href="https://uncf.org/scholarships">
@@ -26,7 +37,6 @@ const Resources = () => {
               Ron Brown Scholarship
             </a>
           </li>
-
           <li>
             <a href="https://www.blmsquaredscholarship.org/applicants">
               Black Lives Matter Squared Scholarship Foundation (BLM²)
@@ -64,8 +74,14 @@ const Resources = () => {
           </li>
           {/* <li></li>
           <li></li> */}
-        </ul>
+          </ul>
+          </div>
       </section>
+      <section className="sidebar">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOLf5vKJpaJPP2AW_BVIDYwEZovw-0YAmOYA&usqp=CAU" className="resource-img" alt="n/a"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOLf5vKJpaJPP2AW_BVIDYwEZovw-0YAmOYA&usqp=CAU" className="resource-img" alt="n/a"/>
+        </section>
+        </div>
     </div>
   );
 };

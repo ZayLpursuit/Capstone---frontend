@@ -6,19 +6,17 @@ import IndexPage from "./components/IndexPage";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import auth from "./base";
-import { onAuthStateChanged } from "firebase/auth";
+// import { onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
 import EditProfile from "./components/EditProfile";
 import Show from "./components/Show";
 import Resources from "./components/Resources";
 
-
 function App() {
-
-  const [currentUser,setcurrentUser]=useState({})
-  onAuthStateChanged(auth,(currentUser)=>{
-    setcurrentUser(currentUser)
-  })
+  const [currentUser, setcurrentUser] = useState({});
+  auth.onAuthStateChanged((user) => {
+    setcurrentUser(user);
+  });
 
   return (
     <Router>
@@ -31,6 +29,7 @@ function App() {
           <Route path="/profile" element={< Profile currentUser={currentUser}/>} />
           <Route path="/profile/edit/:user" element={< EditProfile/>} />
             <Route path="/resources" element={<Resources/>} />
+
       </Routes>
     </Router>
   );
