@@ -37,13 +37,13 @@ const Nav = () => {
             Resources
           </Link>
 
-        </button> */}
+        </button> 
         <button onClick={async ()=>await signOut(auth)}>Sign Out</button>
 
-        </button> 
+        </div> 
 
       </div>
-    </div>
+    
   );
 };
 
