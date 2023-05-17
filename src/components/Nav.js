@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/Melanated-Diamonds.png";
-import Login from "../assets/login.png";
+// import Logo from "../assets/Melanated-Diamonds.png";
+// import Login from "../assets/login.png";
 import { signOut } from "firebase/auth";
 import auth from "../base";
 
@@ -10,9 +10,11 @@ import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
-import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
+// import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 
 const Nav = () => {
+  // console.log(currentUser)
+  // console.log(auth)
   return (
     // <div className="Nav">
     //   <h1>
@@ -49,22 +51,14 @@ const Nav = () => {
     <nav>
       <div>
         <header>
-          <img
-            // src={diamonds}
-            src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg"
-          />
+          <img src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg" alt="n/a"/>
         </header>
       </div>
 
       <Navbar className="navbar">
         <Navbar.Brand>
           <Link to="/">
-            <img
-              className="hero"
-              // onClick={returnHome}
-              src={hero}
-              alt="hero"
-            />
+            <img className="hero" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
         <h6 className="slogan">
@@ -84,14 +78,18 @@ const Nav = () => {
           </Button>
         </form>
         <Button variant="light">
-          <Link to={`/business`}>View Businesses</Link>
+          <Link to={`/index`}>View Businesses</Link>
         </Button>
         <Button variant="light">
           <Link to="/resources">View Resources</Link>
         </Button>
-        <Button variant="light">
-          <Link to="/get-started">Create An Account / Login</Link>
-        </Button>
+        {!auth.currentUser ? (
+          <Button variant="light">
+            <Link to="/get-started">Create An Account / Login</Link>
+          </Button>
+        ) : (
+          <button onClick={async () => await signOut(auth)}>Sign Out</button>
+        )}
       </Navbar>
     </nav>
   );

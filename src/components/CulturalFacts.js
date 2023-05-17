@@ -8,9 +8,9 @@ const CulturalFacts = () => {
   // console.log(fact)
 
   return (
-    <div className='cultural-facts' style={{ padding: "5px"}}>
-      <h5 style={{textDecoration: "underline"}}>Facts On Deck</h5>
-      {(<h4>{fact[Math.floor(Math.random() * fact.length)]}</h4>)}
+    <div className='cultural-facts'>
+      <h6 style={{textDecoration: "underline"}}>Facts On Deck</h6>
+      {(<h5>{fact[Math.floor(Math.random() * fact.length)]}</h5>)}
     </div>
   )
 }

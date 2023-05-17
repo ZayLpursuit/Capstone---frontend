@@ -4,8 +4,8 @@ import Home from "./Pages/Home";
 import SignUp from "./components/SignUp";
 import IndexPage from "./components/IndexPage";
 import Nav from "./components/Nav";
-// import Profile from "./components/Profile";
-// import auth from "./base";
+import Profile from "./components/Profile";
+import auth from "./base";
 // import { onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
 import EditProfile from "./components/EditProfile";
@@ -14,23 +14,23 @@ import Resources from "./components/Resources";
 
 function App() {
   const [currentUser, setcurrentUser] = useState({});
-  // onAuthStateChanged(auth, (currentUser) => {
-  //   setcurrentUser(currentUser);
-  // });
+  auth.onAuthStateChanged((user) => {
+    setcurrentUser(user);
+  });
 
   return (
     <Router>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/get-started" element={<SignUp />} /> */}
+        <Route path="/get-started" element={<SignUp />} />
         <Route path="/index" element={<IndexPage />} />
         <Route path="/businesses/:id" element={<Show />} />
-        {/* <Route
+        <Route
           path="/profile"
           element={<Profile currentUser={currentUser} />}
-        /> */}
-        {/* <Route path="/profile/edit/:user" element={<EditProfile />} /> */}
+        />
+        <Route path="/profile/edit/:user" element={<EditProfile />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
     </Router>

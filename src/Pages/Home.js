@@ -6,14 +6,14 @@ const Home = () => {
     <div className="home">
       <div className="mission-statement">
         <section className="statement">
-          <h2>
+          <h4>
             Our Mission is to support and promote black-owned businesses by
             creating a platform for consumers to connect with them, with the
             goal of increasing their visibility and helping them thrive. They
             aim to promote entrepreneurship and economic equity within the black
             community, ultimately building a better and more inclusive economy
             for all.
-          </h2>
+          </h4>
         </section>
         <section>
           <img
@@ -42,13 +42,13 @@ const Home = () => {
             <h4 style={{marginLeft: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
             <img src="https://gitlab.com/uploads/-/system/project/avatar/3880238/Temp.png"
             width="400px"
-            height="400px"/>
+            height="400px" alt="n/a"/>
         </div>
           <div>
           <h4 style={{marginLeft: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
             <img src="https://gitlab.com/uploads/-/system/project/avatar/3880238/Temp.png"
             width="400px"
-            height="400px"/>
+            height="400px" alt="n/a"/>
         </div>
         </div>
         </div>

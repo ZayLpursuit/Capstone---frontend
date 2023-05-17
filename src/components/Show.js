@@ -1,13 +1,14 @@
 import React from 'react'
 import axios from "axios"
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {useParams } from 'react-router-dom'
 
 const API = process.env.REACT_APP_API_URL;
 
 const Show = () => {
     const [business, setBusiness] = useState([])
-    const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
+    // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
+    const { name, address, contact_num, year_opened, img, website, description } = business;
 
     let { id } = useParams();
 
@@ -19,7 +20,7 @@ const Show = () => {
                 setBusiness(res.data)
             })
         .catch((c) => console.error("catch", c))
-    }, [])
+    }, [id])
 
 
   return (

@@ -40,7 +40,7 @@
   border: 3px solid red;
 }
 
-.d-grid {
+.d-grid, .sidebar {
   display: grid;
 }
 .default-grid {
@@ -62,7 +62,7 @@
 .center-text {
   text-align: center;
 }
-.align-center {
+.align-center, .sidebar {
   align-items: center;
 }
 form input {
@@ -145,8 +145,11 @@ input[type="search"] {
 
 .cultural-facts {
   border: #282c34 solid;
-  border-radius: 8px;
-  background-color: rgba(103, 103, 12, 0.725);
+  padding: 20px;
+  /* border-radius: 8px; */
+  /* background-color: rgba(103, 103, 12, 0.725); */
+  background-color: #000000;
+  color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(254, 254, 243, 0.547) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -162,8 +165,10 @@ li {
   gap: 100px;
 }
 
-.home {
-  background-color: beige;
+.home, .resources {
+  background-color: rgb(253, 253, 238);
+  padding-bottom: 120px;
+  padding-top: 40px;
 }
 
 .statement {
@@ -180,7 +185,12 @@ li {
   align-items: center;
   gap: 20px;
   height: 100px;
-  background-color: rgba(103, 103, 12, 0.725);
+  /* background-color: rgba(103, 103, 12, 0.725); */
+
+  background-color: #F1CC24;
+
+  /* background-color: #E2BF23; */
+  /* background-color: #F4ff60; */
   padding-right: 70px;
 }
 
@@ -229,6 +239,36 @@ section img {
 }
 
 .featured img {
-  /* border: 1px solid gold; */
   border-radius: 10px;
+}
+
+.scholarships {
+  background-color: #000000;
+  padding: 60px;
+  border-radius: 7px;
+  box-shadow: rgb(255, 255, 255) 30px 40px 16px, rgba(17, 17, 26, 0.05) 30px 8px 32px;
+}
+
+li > a {
+  color: white;
+}
+
+.scholars {
+  margin: 0 300px;
+}
+
+.resource-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* background-color: #0000006f;
+  padding-bottom: 120px; */
+}
+
+.resource-img {
+  height: 200px;
+  width: 200px;
+}
+
+.sidebar {
+  justify-content: center;
 }
