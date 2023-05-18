@@ -14,7 +14,7 @@ const Show = () => {
 
     useEffect(() => {
         axios
-            .get(`${API}/businesses/${id}`)
+            .get(`http://localhost:7777/businesses/${id}`)
             .then((res) => {
                 console.log(res.data)
                 setBusiness(res.data)

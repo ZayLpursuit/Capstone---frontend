@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import Logo from "../assets/Melanated-Diamonds.png";
 // import Login from "../assets/login.png";
 import { signOut } from "firebase/auth";
@@ -10,11 +10,15 @@ import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 
-const Nav = () => {
-  // console.log(currentUser)
+const Nav = ({currentUser}) => {
+  console.log(currentUser,"hi")
   // console.log(auth)
+
+  const navigate=useNavigate()
   return (
     // <div className="Nav">
     //   <h1>
@@ -87,8 +91,13 @@ const Nav = () => {
           <Button variant="light">
             <Link to="/get-started">Create An Account / Login</Link>
           </Button>
-        ) : (
+        ) : (<div className="flexxed">
           <button onClick={async () => await signOut(auth)}>Sign Out</button>
+          <div onClick={()=>navigate("/profile")}>
+          <p>{currentUser.email}</p>
+          <AccountCircleIcon/>
+          </div>
+          </div>
         )}
       </Navbar>
     </nav>
