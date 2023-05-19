@@ -18,6 +18,8 @@ function App() {
     setcurrentUser(user);
   });
 
+  // console.log("current user app.js", currentUser.email)
+
   return (
     <Router>
       <Nav />
