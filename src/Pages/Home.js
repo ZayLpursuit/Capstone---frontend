@@ -6,8 +6,9 @@ const Home = () => {
     <div className="home">
       <div className="mission-statement">
         <section className="statement">
+          <h3>Our Mission </h3>
           <h4>
-            Our Mission is to support and promote black-owned businesses by
+            To support and promote black-owned businesses by
             creating a platform for consumers to connect with them, with the
             goal of increasing their visibility and helping them thrive. They
             aim to promote entrepreneurship and economic equity within the black
@@ -20,7 +21,7 @@ const Home = () => {
             src="https://finurah.com/wp-content/uploads/2022/03/company-ward-eldon-ward-0322_1-895x500.jpg"
             alt="John T. Ward"
           />
-          <p className="j-ward">Pictured above is John T. Ward. He founded E.E. Ward Moving & Storage Co. in 1881. With 2 horses and a wagon, Ward's business began as a way to transport slaves. After slavery was abolished, it was transformed into a moving company. Operating consecutively for 142 years, this company has survived the Jim Crow South, the Reconstruction era, the civil rights movement, and a pandemic, making them the longest operating black owned business.</p>
+          {/* <p className="j-ward">Pictured above is John T. Ward. He founded E.E. Ward Moving & Storage Co. in 1881. With 2 horses and a wagon, Ward's business began as a way to transport slaves. After slavery was abolished, it was transformed into a moving company. Operating consecutively for 142 years, this company has survived the Jim Crow South, the Reconstruction era, the civil rights movement, and a pandemic, making them the longest operating black owned business.</p> */}
         </section>
       </div>
       <br />
