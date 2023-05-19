@@ -41,7 +41,7 @@ const Show = () => {
           className="show-img"
         />
       </div>
-      <div>
+      <div className="top-section">
         <h1 className="show-header">
           {name}{" "}
           <Button variant="warning" onClick={() => setFavorite(!favorite)}>
@@ -67,7 +67,11 @@ const Show = () => {
               <h4>Location:</h4>
             </td>
             <td>
-              <h5>{address ? address : "Online Only"}</h5>
+              <h5>
+              <a href={address ? `http://maps.google.com/?q=${name}` : "N/A"} target="*">
+                  {address}
+                </a>
+              </h5>
             </td>
           </tr>
           <tr>
