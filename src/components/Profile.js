@@ -1,30 +1,46 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import auth from "../base"
-import HomeIcon from '@mui/icons-material/Home';
-import ExploreIcon from '@mui/icons-material/Explore';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { useNavigate } from "react-router-dom";
+import AddHomeIcon from '@mui/icons-material/AddHome';
+import { AutofpsSelectRounded } from "@mui/icons-material";
 
 
 
+const styles={
+    width:"100px",
+    height:"60px"
+}
 
 export default function Profile({currentUser}){
 const [user,setUser]=useState({})
+const [form,setForm]=useState({})
     const navigate = useNavigate()
     
-    console.log("currentUser", currentUser)
+    console.log("currentUser", currentUser,user)
 
-
-useEffect(()=>{
-    axios.get(`http://localhost:7777/users/emails/${currentUser.email}`)
+    
+    
+    useEffect(()=>{
+        axios.get(`http://localhost:7777/users/emails/${currentUser.email}`)
         .then((res) => {
             console.log(res)
             setUser(res.data[0])
+            setForm(res.data[0])
+
         })
-        // .then(() => console.log(user))
-},[currentUser])
+       
+    },[currentUser])
+
+   
+    
+    
+    function handleChange(e){
+                setForm({...form,[e.target.id]:e.target.value})
+                }
+
+
 
     return (
         <div className="profile-container">
@@ -32,39 +48,44 @@ useEffect(()=>{
             </aside>
                 {auth.currentUser?
                <div className="center-text white"> Welcome Back {auth.currentUser.email} </div>: <>Signed Out</>}
-                <div className="profile-options col2">
+                <div className=" col2">
+                
+                    <h1>Your Account Info</h1>
+                 <form className=" grid  profile-form" >
+                <label htmlFor="first">First</label>
+                 <input type="text" id="first_name" value={form?.first_name} onChange={(e)=>handleChange(e)}/>
+                 <label htmlFor="last">Last</label>
+                 <input type="text" id="last_name" value={form?.last_name} onChange={(e)=>handleChange(e)}/>
 
-                    <div className="profile-cards  grid" onClick={()=>navigate("/")}> 
-                    <div>< HomeIcon/></div>
-                    
-                    
-                    Home</div>
+               <label htmlFor="email">Email</label>
+                <input type="email" id="email" value={form?.email} onChange={(e)=>handleChange(e)}/>
 
-                    <div className="profile-cards grid" onClick={()=>navigate("/index")}>
-                        <div>< ExploreIcon/></div>
-                         
-                     Explore </div>
+                <label htmlFor="newUsername">Username</label>
+               <input type="text" id="username" value={form?.username} onChange={(e)=>handleChange(e)}/>
 
-                    <div className="profile-cards grid " onClick={()=>navigate("/")}>
-                        <div className="profile-icons" >
-                        < FavoriteIcon/></div>
-                        Favorites</div>
+                <label htmlFor="newPassword">Password</label>
+                <input type="password" id="password" value={form?.password} onChange={(e)=>handleChange(e)}/>                 <div>
+                <button type="submit" className="form-btns" >Submit</button>
+               
+                
+                </div>
+                 </form>
 
-                    <div className="profile-cards grid" onClick={()=>navigate(`/profile/edit/${user.username}`)}>
-                        <div>
-                        < ManageAccountsIcon className="profile-icons"/>
-                        </div> Manage your Account</div>
+                 <div>
+                    <h1>Your favorites</h1>
+                    <p>You haven't added any businesses to your favorites yet</p>
+                 </div>
+
+                 <div>
+                    <h3>Add a Business</h3>
+                    <AddHomeIcon style={styles}/>
+                 </div>
+        
+                   
+                   
                     
                 </div>
-            <div>
-                {auth.currentUser?
-               <> Welcome Back {auth.currentUser.email} </>: <>Signed Out</>}
-
-               {user?<>{user.first_name}
-               
-               {user.last_name}
-               {user.username}</>:<>not working</>}
-            </div>
+           
 
         </div>
     )

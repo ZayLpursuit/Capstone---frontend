@@ -18,6 +18,16 @@ const Show = () => {
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
 
+    useEffect(() => {
+        axios
+            .get(`http://localhost:7777/businesses/${id}`)
+            .then((res) => {
+                console.log(res.data)
+                setBusiness(res.data)
+            })
+        .catch((c) => console.error("catch", c))
+    }, [id])
+  
   let { id } = useParams();
 
   useEffect(() => {

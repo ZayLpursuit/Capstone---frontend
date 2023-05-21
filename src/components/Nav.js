@@ -10,13 +10,19 @@ import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const Nav = ({currentUser}) => {
+  console.log(currentUser,"hi")
 const Nav = () => {
   let navigate = useNavigate()
   // console.log(currentUser)
   // console.log(auth)
+
+  const navigate=useNavigate()
   return (
     // <div className="Nav">
     //   <h1>
@@ -77,6 +83,13 @@ const Nav = () => {
               Create An Account / Login
             </Link>
           </Button>
+        ) : (<div className="flexxed">
+          <button onClick={async () => await signOut(auth)}>Sign Out</button>
+          <div onClick={()=>navigate("/profile")}>
+          <p>{currentUser.email}</p>
+          <AccountCircleIcon/>
+          </div>
+          </div>
         ) : (
             <>
               {/* <h1>Welcome Back {auth.currentUser.email}</h1> */}

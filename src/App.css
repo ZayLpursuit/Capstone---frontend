@@ -88,14 +88,16 @@ input[type="search"] {
 }
 .index-grid {
   display: grid;
-  grid-template-columns: 30% 60% 10%;
+  grid-template-columns: 25% 75%;
+  margin-bottom: 25px;
 }
 .index-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 10px;
+  /* column-gap: 20px; */
   overflow-y: scroll;
   margin: 0 auto;
+  padding:15px 15px;
 }
 .test-b1 {
   border: 1px solid black;
@@ -119,6 +121,11 @@ input[type="search"] {
 .profile-container {
   display: grid;
   grid-template-columns: 25% 50% 25%;
+   background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
+  /* background-size:  cover; */
+  background: repeat(none) ;
+  color:white;
+  margin-bottom: 25px;
 }
 .profile-options {
   display: grid;
@@ -127,6 +134,7 @@ input[type="search"] {
   row-gap: 10px;
   align-content: center;
   justify-items: center;
+  margin-bottom: 40px;
 }
 .profile-cards {
   border: 3px solid black;
@@ -278,6 +286,34 @@ li > a {
   justify-content: center;
 }
 
+.card-img{
+  width:100%;
+  height:200px;
+}
+.card-details{
+  background-color: white;
+  /* border:1px solid black; */
+  padding:7px 3px;
+ 
+}
+.index-card{
+width:70%;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.category-options li:hover {
+/* border-bottom: 3px solid  black; */
+text-decoration: underline;
+}
+.select-cat{
+  margin-top: 50px;
+}
+.profile-form input{
+  width:80%;
+  opacity: 60%;
+}
+.flexxed{
+  display: flex;
+}
 /* .fa-magnifying-glass-location {
   font-size: 1.05rem;
   border: none;
