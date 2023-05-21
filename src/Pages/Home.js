@@ -49,8 +49,8 @@ const Home = () => {
             height="400px" alt="n/a"/>
         </div>
           <div>
-          <h4 style={{marginLeft: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-            <img src="https://gitlab.com/uploads/-/system/project/avatar/3880238/Temp.png"
+          <h4 style={{marginLeft: "20px"}}>Bobby's Restaurant, Located In Jamaica, Queens Has Been Open For More Than 30 Years!</h4>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPxOuirfJ6-ThGsBmPt6x9x7GStuiyTKS0ZnrE=s1360-w1360-h1020"
             width="400px"
             height="400px" alt="n/a"/>
         </div>
