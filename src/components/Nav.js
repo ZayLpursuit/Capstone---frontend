@@ -13,9 +13,13 @@ import hero from "../assets/image.png";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = ({currentUser}) => {
   console.log(currentUser,"hi")
+const Nav = () => {
+  let navigate = useNavigate()
+  // console.log(currentUser)
   // console.log(auth)
 
   const navigate=useNavigate()
@@ -55,7 +59,10 @@ const Nav = ({currentUser}) => {
     <nav>
       <div>
         <header>
-          <img src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg" alt="n/a"/>
+          <img
+            src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg"
+            alt="n/a"
+          />
         </header>
       </div>
 
@@ -65,31 +72,16 @@ const Nav = ({currentUser}) => {
             <img className="hero" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
-        <h6 className="slogan">
-          Embrace the Power of Melanin
-          <hr />
-          Shop, Connect, Thrive!
-        </h6>
-        <form className="d-flex home-form" role="search">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search Businesses"
-            aria-label="Search"
-          />
-          <Button variant="secondary" size="sm">
-            Search
-          </Button>
-        </form>
-        <Button variant="light">
-          <Link to={`/index`}>View Businesses</Link>
-        </Button>
-        <Button variant="light">
-          <Link to="/resources">View Resources</Link>
-        </Button>
+        <div className="slogan">
+          <h5>Embrace the Power of Melanin</h5>
+          <h5 className="slogan-2"> Shop, Connect, Thrive!</h5>
+        </div>
+
         {!auth.currentUser ? (
-          <Button variant="light">
-            <Link to="/get-started">Create An Account / Login</Link>
+          <Button variant="light" className="account">
+            <Link to="/get-started" className="nav-link">
+              Create An Account / Login
+            </Link>
           </Button>
         ) : (<div className="flexxed">
           <button onClick={async () => await signOut(auth)}>Sign Out</button>
@@ -98,6 +90,41 @@ const Nav = ({currentUser}) => {
           <AccountCircleIcon/>
           </div>
           </div>
+        ) : (
+            <>
+              {/* <h1>Welcome Back {auth.currentUser.email}</h1> */}
+            {/* <form className="d-flex home-form" role="search">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search Businesses"
+                aria-label="Search"
+              />
+              <i className="fa-solid fa-magnifying-glass-location"></i>
+            </form> */}
+            <Button variant="light">
+              <Link to="/index" className="nav-link">
+                Browse Businesses
+              </Link>
+            </Button>
+            <Button variant="light">
+              <Link to="/resources" className="nav-link">
+                Browse Resources
+              </Link>
+            </Button>
+            <Button variant="light">
+              <Link to="/profile" className="nav-link">
+                User Profile
+              </Link>
+            </Button>
+              <Button variant="dark" onClick={async () => {
+                navigate("/")
+                await signOut(auth)
+              }
+              }>
+              Sign Out
+            </Button>
+          </>
         )}
       </Navbar>
     </nav>

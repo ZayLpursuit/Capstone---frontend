@@ -5,37 +5,56 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
-  background-size:  cover;
-  background: repeat(none) ; */
 }
 
-/* .Nav{
-  display: flex;
-  justify-content: space-around;
-  } */
+#scroll-container {
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
-/* .nav-btns{
-  align-self: center;
-} */
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  /* -moz-animation: my-animation 30s linear infinite;
+  -webkit-animation: my-animation 30s linear infinite;
+  animation: my-animation 30s linear infinite; */
 
-/* .nav-btn{
-  border-radius: 10px;
-  font-size: 13px;
-  margin-right: 70px;
-  background-color: darkseagreen;
- } */
 
-/* .nav-link{
-  text-decoration: none;
-  font-size: x-large;
-  color: white
-} */
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 5s linear infinite;
+  animation: my-animation 30s linear infinite;
+}
 
-/* .statement{
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-} */
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
