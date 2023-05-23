@@ -1,14 +1,22 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import Card from "./Card"
 
 
+
 export default function IndexPage(){
-// const [category,setCategory]=useState("")
-const [display]=useState([{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10,}])
-// [display,setDisplay]
+const [category,setCategory]=useState("boutique")
+// const [display,setDisplay]=useState([{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10,}])
+const [display,setDisplay]=useState([])
 function handleChange(e){
-    // setCategory(e.target.value)
+    setCategory(e.target.id)
+    // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
 }
+
+useEffect(()=>{
+    axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>setDisplay(res.data))
+},[category])
+
 
  return(   
     <div className="index-grid">
@@ -16,17 +24,21 @@ function handleChange(e){
             <div className="m-left">
         <aside className=" ">
 
-           <h1>Select a Category</h1>
-        <select onChange={(e)=>handleChange(e)} className="w-40">
-        <option value="def"></option>
-        <option value="All">All</option>
-            <option value="Restaurants">Restaurants</option>
-            <option value="Barbershops">Barbershops</option>
-            <option value="Banks">Banks</option>
-            <option value="Clothing">Clothing</option>
-        </select>
+           <h1 className="select-cat">Select a Category</h1>
+        
+     <ul className="category-options">
+
+        <li id="restaurant"  onClick={(e)=>handleChange(e)}>Restaraunts</li>
+     <li id="boutique"  onClick={(e)=>handleChange(e)}>Boutique</li>
+        <li id="Barbershop" onClick={(e)=>handleChange(e)}>Barber Shops</li>
+        <li id="Banks" onClick={(e)=>handleChange(e)}>Banks</li>
+        <li id="Fashion" onClick={(e)=>handleChange(e)}>Fashion</li>
+        <li id="Beauty" onClick={(e)=>handleChange(e)}>Beauty</li>
+        <li id="Health and Wellness" onClick={(e)=>handleChange(e)}>Health and Wellness</li>
+
+     </ul>
         </aside>
-        <div className="grid">
+        <div className="grid m-left">
         <label htmlFor="online">Online Only
         <input type="checkbox" id="online" className="margin-top"/>
          </label>
@@ -35,13 +47,14 @@ function handleChange(e){
         <input type="checkbox" id="in-store" className="margin-top"/>
     
         </label>
+        
         </div>
         </div>
         </div>
        
         <div className="index-container test-b2">
-        {display.map((card,idx)=>{
-           return <Card business={card}/>
+        { display.map((business,idx)=>{
+           return <Card business={business} key={idx} />
         })}
         </div>
         
