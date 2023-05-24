@@ -17,7 +17,6 @@ const Show = () => {
 
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
-
   let { id } = useParams();
 
   useEffect(() => {

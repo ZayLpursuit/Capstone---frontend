@@ -1,13 +1,15 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Card from "./Card";
+import axios from "axios"
+import { useEffect, useState } from "react"
+import Card from "./Card"
+import MapContainer from "./MapContainer"
 
-export default function IndexPage() {
-  const [category, setCategory] = useState("boutique");
-  // const [display,setDisplay]=useState([{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10,}])
-  const [display, setDisplay] = useState([]);
-  function handleChange(e) {
-    setCategory(e.target.id);
+
+
+export default function IndexPage(){
+const [category,setCategory]=useState("boutique")
+const [display,setDisplay]=useState([])
+function handleChange(e){
+    setCategory(e.target.id)
     // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
   }
 
@@ -66,7 +68,8 @@ export default function IndexPage() {
         {display.map((business, idx) => {
           return <Card business={business} key={idx} />;
         })}
-      </div>
+        </div>
+        <><MapContainer businesses={display}/></>
     </div>
   );
 }
