@@ -356,6 +356,7 @@ tr {
   grid-template-rows: 3fr 1fr;
   gap: 20px;
   padding-top: 80px;
+  overflow-x: hidden;
 }
 
 .show-header {
@@ -369,6 +370,8 @@ tr {
 
 .top-section {
   margin-right: 60px;
+  overflow-x: scroll;
+  display:grid;
 }
 
 .bottom-section {
@@ -378,5 +381,12 @@ tr {
 }
 .map-container{
   height:200px;
+  width:100%;
+  z-index: 0;
+  max-width: 100%;
+  overflow: auto; 
+}
+.show-page-map{
+  max-width:100%;
   width:20%;
 }
