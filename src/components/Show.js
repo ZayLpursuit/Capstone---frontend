@@ -17,6 +17,7 @@ const Show = () => {
 
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
+  let { id } = useParams();
 
     useEffect(() => {
         axios
@@ -28,7 +29,6 @@ const Show = () => {
         .catch((c) => console.error("catch", c))
     }, [id])
   
-  let { id } = useParams();
 
   useEffect(() => {
     axios
