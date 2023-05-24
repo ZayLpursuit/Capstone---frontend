@@ -376,3 +376,7 @@ tr {
   margin-top: 40px;
   grid-column: span 2;
 }
+.map-container{
+  height:200px;
+  width:20%
+}
