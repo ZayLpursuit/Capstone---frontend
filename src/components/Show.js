@@ -6,6 +6,8 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import ShowMap from "./ShowMap";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -51,7 +53,15 @@ const Show = () => {
           className="show-img"
         />
       </div>
+
+      {/* <div className="show-page-map">
+    <ShowMap business={business}/>
+      </div> */}
       <div className="top-section">
+
+      <div className="show-page-map">
+    <ShowMap business={business}/>
+      </div>
         <h1 className="show-header">
           {name}{" "}
           <Button variant="warning" onClick={() => setFavorite(!favorite)}>
