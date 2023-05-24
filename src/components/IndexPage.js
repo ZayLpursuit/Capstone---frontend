@@ -1,64 +1,72 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import Card from "./Card"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Card from "./Card";
 
-
-
-export default function IndexPage(){
-const [category,setCategory]=useState("boutique")
-// const [display,setDisplay]=useState([{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10,}])
-const [display,setDisplay]=useState([])
-function handleChange(e){
-    setCategory(e.target.id)
+export default function IndexPage() {
+  const [category, setCategory] = useState("boutique");
+  // const [display,setDisplay]=useState([{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10},{name:"Mo's Bar",years_opened:10,}])
+  const [display, setDisplay] = useState([]);
+  function handleChange(e) {
+    setCategory(e.target.id);
     // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
-}
+  }
 
-useEffect(()=>{
-    axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>setDisplay(res.data))
-},[category])
+  useEffect(() => {
+    axios
+      .get(`http://localhost:7777/businesses/categories/${category}`)
+      .then((res) => setDisplay(res.data));
+  }, [category]);
 
-
- return(   
+  return (
     <div className="index-grid">
-        <div className="grid test-b1">
-            <div className="m-left">
-        <aside className=" ">
+      <div className="grid test-b1">
+        <div className="m-left">
+          <aside className=" ">
+            <h1 className="select-cat">Select a Category</h1>
 
-           <h1 className="select-cat">Select a Category</h1>
-        
-     <ul className="category-options">
+            <ul className="category-options">
+              <li id="restaurant" onClick={(e) => handleChange(e)}>
+                Restaraunts
+              </li>
+              <li id="social" onClick={(e) => handleChange(e)}>
+                Social
+              </li>
+              <li id="barber shop" onClick={(e) => handleChange(e)}>
+                Barber Shops
+              </li>
+              <li id="bank" onClick={(e) => handleChange(e)}>
+                Banks
+              </li>
+              <li id="fashion" onClick={(e) => handleChange(e)}>
+                Fashion
+              </li>
+              <li id="beauty" onClick={(e) => handleChange(e)}>
+                Beauty
+              </li>
+              <li id="health and wellness" onClick={(e) => handleChange(e)}>
+                Health and Wellness
+              </li>
+            </ul>
+          </aside>
+          <div className="grid m-left">
+            <label htmlFor="online">
+              Online Only
+              <input type="checkbox" id="online" className="margin-top" />
+            </label>
 
-        <li id="restaurant"  onClick={(e)=>handleChange(e)}>Restaraunts</li>
-     <li id="boutique"  onClick={(e)=>handleChange(e)}>Boutique</li>
-        <li id="Barbershop" onClick={(e)=>handleChange(e)}>Barber Shops</li>
-        <li id="Banks" onClick={(e)=>handleChange(e)}>Banks</li>
-        <li id="Fashion" onClick={(e)=>handleChange(e)}>Fashion</li>
-        <li id="Beauty" onClick={(e)=>handleChange(e)}>Beauty</li>
-        <li id="Health and Wellness" onClick={(e)=>handleChange(e)}>Health and Wellness</li>
-
-     </ul>
-        </aside>
-        <div className="grid m-left">
-        <label htmlFor="online">Online Only
-        <input type="checkbox" id="online" className="margin-top"/>
-         </label>
-
-        <label htmlFor="in-store">Has Store
-        <input type="checkbox" id="in-store" className="margin-top"/>
-    
-        </label>
-        
+            <label htmlFor="in-store">
+              Has Store
+              <input type="checkbox" id="in-store" className="margin-top" />
+            </label>
+          </div>
         </div>
-        </div>
-        </div>
-       
-        <div className="index-container test-b2">
-        { display.map((business,idx)=>{
-           return <Card business={business} key={idx} />
+      </div>
+
+      <div className="index-container test-b2">
+        {display.map((business, idx) => {
+          return <Card business={business} key={idx} />;
         })}
-        </div>
-        
+      </div>
     </div>
- 
- )
+  );
 }

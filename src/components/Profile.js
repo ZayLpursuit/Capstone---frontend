@@ -2,9 +2,9 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import auth from "../base"
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import AddHomeIcon from '@mui/icons-material/AddHome';
-import { AutofpsSelectRounded } from "@mui/icons-material";
+// import { AutofpsSelectRounded } from "@mui/icons-material";
 
 
 
@@ -16,7 +16,7 @@ const styles={
 export default function Profile({currentUser}){
 const [user,setUser]=useState({})
 const [form,setForm]=useState({})
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     
     console.log("currentUser", currentUser,user)
 
