@@ -21,17 +21,6 @@ const Show = () => {
   const [favorite, setFavorite] = useState(false);
   let { id } = useParams();
 
-    useEffect(() => {
-        axios
-            .get(`http://localhost:7777/businesses/${id}`)
-            .then((res) => {
-                console.log(res.data)
-                setBusiness(res.data)
-            })
-        .catch((c) => console.error("catch", c))
-    }, [id])
-  
-
   useEffect(() => {
     axios
       .get(`${API}/businesses/${id}`)
@@ -89,7 +78,7 @@ const Show = () => {
             <td>
               <h5>
               <a href={address ? `http://maps.google.com/?q=${name}` : "N/A"} target="*" className="tb-link">
-                  {address}
+                  {address || "N/A"}
                 </a>
               </h5>
             </td>

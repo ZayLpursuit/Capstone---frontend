@@ -53,7 +53,7 @@ const Nav = ({currentUser}) => {
         ) : (
             <>
             <Button variant="light">
-              <Link to="/index" className="nav-link">
+              <Link to="/businesses" className="nav-link">
                 Browse Businesses
               </Link>
             </Button>
