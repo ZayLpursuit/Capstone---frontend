@@ -12,6 +12,7 @@ import { useState } from "react";
 import Show from "./components/Show";
 import Resources from "./components/Resources";
 import AddBusiness from "./components/AddBusiness";
+import Footer from "./components/Footer";
 
 
 
@@ -35,8 +36,8 @@ function App() {
           {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
             <Route path="/resources" element={<Resources/>} />
             <Route path="/add-business" element={<AddBusiness/>} />
-
       </Routes>
+      <Footer/>
     </Router>
   );
 }
