@@ -403,7 +403,8 @@ tr {
 .bottom-section {
   margin-left: 30px;
   margin-top: 40px;
-  grid-column: span 2;
+  /* grid-column: 2/3;
+  grid-row: 2/3; */
 }
 
 .newBusiness{
@@ -603,4 +604,20 @@ footer {
 
 .github:hover {
   transform: rotate(5deg) scale(1.2);
+}
+
+.show-page-map{
+  max-width:100%;
+  width:20%;
+}
+
+.comment-section {
+  border: 2px solid;
+  padding: 20px;
+  background-color: rgb(200, 199, 198);
+  border-radius: 10px;
+}
+
+section > li > button {
+  margin-left: 160px;
 }
