@@ -8,13 +8,16 @@ body {
 }
 
 #scroll-container {
+  display: flex;
   border: 3px solid black;
   border-radius: 5px;
   overflow: hidden;
+  word-wrap: normal;
 }
 
 #scroll-text {
   /* animation properties */
+  flex-shrink: 0;
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);

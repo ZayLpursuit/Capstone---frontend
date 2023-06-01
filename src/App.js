@@ -12,6 +12,7 @@ import { useState } from "react";
 import Show from "./components/Show";
 import Resources from "./components/Resources";
 import AddBusiness from "./components/AddBusiness";
+import Footer from "./components/Footer";
 
 function App() {
   const [currentUser, setcurrentUser] = useState({});
@@ -38,6 +39,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/add-business" element={<AddBusiness />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }

@@ -10,26 +10,26 @@ import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Nav = ({currentUser}) => {
-  console.log(currentUser,"hi")
+
+const Nav = ({ currentUser }) => {
+  console.log(currentUser, "hi");
+
   // console.log(currentUser)
   // console.log(auth)
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
-
     <nav>
       <div>
         <header>
           <img
             src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg"
-            alt="n/a"
-          />
+            alt="n/a"/>
         </header>
       </div>
 
@@ -51,7 +51,7 @@ const Nav = ({currentUser}) => {
             </Link>
           </Button>
         ) : (
-            <>
+          <>
             <Button variant="light">
               <Link to="/businesses" className="nav-link">
                 Browse Businesses
@@ -67,16 +67,18 @@ const Nav = ({currentUser}) => {
                 User Profile
               </Link>
             </Button>
-              <Button variant="dark" onClick={async () => {
-                navigate("/")
-                await signOut(auth)
-              }
-              }>
+            <Button
+              variant="dark"
+              onClick={async () => {
+                navigate("/");
+                await signOut(auth);
+              }}
+            >
               Sign Out
               </Button>
           </>
         )}
-        <AccountCircleIcon/>
+        <AccountCircleIcon />
       </Navbar>
     </nav>
   );
