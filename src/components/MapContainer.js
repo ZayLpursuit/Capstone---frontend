@@ -7,8 +7,8 @@ const MapContainer = ({businesses}) => {
   const styles={
     map:{
       height:"100%",
-      "width":"50%",
-      "grid-column":"2"
+      "width":"100%",
+      // "grid-column":"2"
     }
   }
 
@@ -39,7 +39,7 @@ const MapContainer = ({businesses}) => {
     <div className="map-container">
     <Map
       google={window.google}
-      zoom={12}
+      zoom={11}
       initialCenter={{ lat: 40.7128, lng: -74.0060 }} // Set the initial map center
       style={styles.map}
       >
@@ -51,7 +51,7 @@ const MapContainer = ({businesses}) => {
         <Marker
         key={idx}
         position={marker.position}
-        label={marker.address}
+        // label={marker.address}
         />)
       })}
       </Map>

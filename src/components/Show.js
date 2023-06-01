@@ -7,11 +7,13 @@ import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import ShowMap from "./ShowMap";
+import { FavoriteSharp } from "@mui/icons-material";
+
 
 
 const API = process.env.REACT_APP_API_URL;
 
-const Show = () => {
+const Show = ({setFavs,favs}) => {
   const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
   const { name, address, contact_num, year_opened, img, website, description } =
@@ -22,6 +24,7 @@ const Show = () => {
   let { id } = useParams();
 
   useEffect(() => {
+    console.log(API)
     axios
       .get(`${API}/businesses/${id}`)
       .then((res) => {
@@ -30,6 +33,13 @@ const Show = () => {
       })
       .catch((c) => console.error("catch", c));
   }, [id]);
+
+  useEffect(() => {
+    if(favorite){
+        setFavs([...favs,business])
+    }
+  
+  }, [favorite])
 
   return (
     <div className="show-page">
@@ -43,17 +53,15 @@ const Show = () => {
         />
       </div>
 
+      
+      <div className="top-section">
+
       {/* <div className="show-page-map">
     <ShowMap business={business}/>
       </div> */}
-      <div className="top-section">
-
-      <div className="show-page-map">
-    <ShowMap business={business}/>
-      </div>
         <h1 className="show-header">
           {name}{" "}
-          <Button variant="warning" onClick={() => setFavorite(!favorite)}>
+          <Button variant="warning" onClick={() =>{ setFavorite(!favorite);}}>
             {!favorite ? (
               <i className="fa-regular fa-star" id="unfavorite"></i>
             ) : (
@@ -105,6 +113,10 @@ const Show = () => {
                       </tr>
                       </tbody>
         </Table>
+
+        <div className="show-page-map">
+    <ShowMap business={business}/>
+      </div>
       </div>
       <div className="bottom-section">
         <Tabs

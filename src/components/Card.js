@@ -5,7 +5,7 @@ export default function Card({business,key}){
 
     const navigate = useNavigate()
 return (
-    <div key={key} className="index-card" onClick={()=>navigate(`/businesses/${business.id}`)}>
+    <div key={key} className="test-d" onClick={()=>navigate(`/businesses/${business.id}`)}>
      <img src={business.img} alt='some-pic' className="card-img"/>
 
      <div className="card-details">
