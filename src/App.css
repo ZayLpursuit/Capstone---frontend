@@ -40,7 +40,8 @@
   border: 3px solid red;
 }
 
-.d-grid, .sidebar {
+.d-grid,
+.sidebar {
   display: grid;
 }
 
@@ -78,7 +79,8 @@
 .center-text {
   text-align: center;
 }
-.align-center, .sidebar {
+.align-center,
+.sidebar {
   align-items: center;
 }
 form input {
@@ -115,7 +117,7 @@ input[type="search"] {
   /* column-gap: 20px; */
   overflow-y: scroll;
   margin: 0 auto;
-  padding:15px 15px;
+  padding: 15px 15px;
 }
 .test-b1 {
   border: 1px solid black;
@@ -139,10 +141,10 @@ input[type="search"] {
 .profile-container {
   display: grid;
   grid-template-columns: 25% 50% 25%;
-   background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
+  background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
   /* background-size:  cover; */
-  background: repeat(none) ;
-  color:white;
+  background: repeat(none);
+  color: white;
   margin-bottom: 25px;
 }
 .profile-options {
@@ -191,7 +193,9 @@ li {
   gap: 100px;
 }
 
-.home, .resources, .show-page {
+.home,
+.resources,
+.show-page {
   background-color: rgb(253, 253, 238);
   padding-bottom: 120px;
   padding-top: 40px;
@@ -259,7 +263,9 @@ section img {
   width: 400px;
   height: 400px;
   margin-left: 100px;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .featured {
@@ -277,7 +283,8 @@ section img {
   background-color: #000000;
   padding: 60px;
   border-radius: 7px;
-  box-shadow: rgb(255, 255, 255) 30px 40px 16px, rgba(17, 17, 26, 0.05) 30px 8px 32px;
+  box-shadow: rgb(255, 255, 255) 30px 40px 16px,
+    rgba(17, 17, 26, 0.05) 30px 8px 32px;
 }
 
 li > a {
@@ -304,32 +311,31 @@ li > a {
   justify-content: center;
 }
 
-.card-img{
-  width:100%;
-  height:200px;
+.card-img {
+  width: 100%;
+  height: 200px;
 }
-.card-details{
+.card-details {
   background-color: white;
   /* border:1px solid black; */
-  padding:7px 3px;
- 
+  padding: 7px 3px;
 }
-.index-card{
-width:70%;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.index-card {
+  width: 70%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .category-options li:hover {
-/* border-bottom: 3px solid  black; */
-text-decoration: underline;
+  /* border-bottom: 3px solid  black; */
+  text-decoration: underline;
 }
-.select-cat{
+.select-cat {
   margin-top: 50px;
 }
-.profile-form input{
-  width:80%;
+.profile-form input {
+  width: 80%;
   opacity: 60%;
 }
-.flexxed{
+.flexxed {
   display: flex;
 }
 /* .fa-magnifying-glass-location {
@@ -348,7 +354,7 @@ text-decoration: underline;
 } */
 
 .account {
-  margin-left: 460px
+  margin-left: 460px;
 }
 
 table {
@@ -360,10 +366,12 @@ table {
 tr {
   background-color: #f1cc24;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgb(51, 51, 51) 0px 0px 0px 5px; */
-  box-shadow: rgb(255, 253, 253) 0px 0px 0px 3px, rgb(251, 252, 251) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, #f1cc24 0px 0px 0px 12px, rgb(251, 251, 251) 0px 0px 0px 15px;
+  box-shadow: rgb(255, 253, 253) 0px 0px 0px 3px,
+    rgb(251, 252, 251) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
+    #f1cc24 0px 0px 0px 12px, rgb(251, 251, 251) 0px 0px 0px 15px;
 }
 
-.tb-link{
+.tb-link {
   text-decoration: none;
   color: #000;
 }
@@ -374,10 +382,11 @@ tr {
   grid-template-rows: 3fr 1fr;
   gap: 20px;
   padding-top: 80px;
+  overflow-x: hidden;
 }
 
 .show-header {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   text-decoration: double underline;
 }
 
@@ -387,6 +396,8 @@ tr {
 
 .top-section {
   margin-right: 60px;
+  overflow-x: scroll;
+  display: grid;
 }
 
 .bottom-section {
@@ -553,3 +564,43 @@ opacity:0;
 #cf img:nth-of-type(4) {
   animation-delay: 0;
 } */
+
+.map-container {
+  height: 200px;
+  width: 100%;
+  z-index: 0;
+  max-width: 100%;
+  overflow: auto;
+}
+.show-page-map {
+  max-width: 100%;
+  width: 20%;
+}
+
+footer {
+  background-color: #f1cc24;
+  border: 1px solid black;
+  height: 160px;
+}
+
+#footer ul {
+  display: flex;
+  gap: 200px;
+  list-style-type: none;
+  color: rgb(0, 0, 0);
+}
+
+#footer ul a:hover {
+  color: rgba(115, 115, 96, 0.883);
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  gap: 10px;
+}
+
+.github:hover {
+  transform: rotate(5deg) scale(1.2);
+}

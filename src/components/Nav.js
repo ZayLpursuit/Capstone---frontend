@@ -15,8 +15,10 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
 const Nav = ({ currentUser }) => {
   console.log(currentUser, "hi");
+
   // console.log(currentUser)
   // console.log(auth)
 
@@ -27,8 +29,7 @@ const Nav = ({ currentUser }) => {
         <header>
           <img
             src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg"
-            alt="n/a"
-          />
+            alt="n/a"/>
         </header>
       </div>
 
@@ -52,7 +53,7 @@ const Nav = ({ currentUser }) => {
         ) : (
           <>
             <Button variant="light">
-              <Link to="/index" className="nav-link">
+              <Link to="/businesses" className="nav-link">
                 Browse Businesses
               </Link>
             </Button>
@@ -74,7 +75,7 @@ const Nav = ({ currentUser }) => {
               }}
             >
               Sign Out
-            </Button>
+              </Button>
           </>
         )}
         <AccountCircleIcon />

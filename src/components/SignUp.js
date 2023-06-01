@@ -1,54 +1,68 @@
+import { useState } from "react";
+import axios from "axios";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import auth from "../base";
+import { useNavigate } from "react-router-dom";
 
-import { useState } from "react"
-import axios from "axios"
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth"
-import auth from "../base"
-import { useNavigate } from "react-router-dom"
-
-
-export default function SignUp(){
-    const navigate=useNavigate()
-    // const [logIn,setLogIn]=useState(false)
-    const [signIn,setSignIn]=useState(true)
-    const [form,setForm]=useState({username:"",password:"", newUsername:"",newPassword:"",email:"",first_name:"",last_name:"",login_email:""})
-    function handleToggle(e){
-    if(e.target.id==="Log-In"){
-     setSignIn(false)
+export default function SignUp() {
+  const navigate = useNavigate();
+  // const [logIn,setLogIn]=useState(false)
+  const [signIn, setSignIn] = useState(true);
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+    newUsername: "",
+    newPassword: "",
+    email: "",
+    first_name: "",
+    last_name: "",
+    login_email: "",
+  });
+  function handleToggle(e) {
+    if (e.target.id === "Log-In") {
+      setSignIn(false);
     }
-    if (e.target.id==="Sign-up"){
-        setSignIn(true)
+    if (e.target.id === "Sign-up") {
+      setSignIn(true);
     }
+  }
+  function handleChange(e) {
+    setForm({ ...form, [e.target.id]: e.target.value });
+  }
 
-}
-function handleChange(e){
-    setForm({...form,[e.target.id]:e.target.value})
+  const register = async (e) => {
+    e.preventDefault();
+    try {
+      const newUser = await createUserWithEmailAndPassword(
+        auth,
+        form.email,
+        form.password
+      );
+
+      axios.post(`https://melanated-diamonds.onrender.com/users`, form);
+
+      navigate("/profile");
+      console.log(newUser);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const register= async(e)=>{
-        e.preventDefault()
-        try {
-            const newUser=await createUserWithEmailAndPassword(auth,form.email,form.password)
-
-            axios.post(`http://localhost:7777/users`,form)
-            
-            navigate("/profile")
-            console.log(newUser)
-
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const login =async (e)=>{
-        e.preventDefault()
-        try {
-            const user= await signInWithEmailAndPassword(auth,form.login_email,form.password)
-            navigate("/profile")
-            console.log(user)
-        } catch (error) {
-            console.log(error)
-        }
-
+  const login = async (e) => {
+    e.preventDefault();
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        form.login_email,
+        form.password
+      );
+      navigate("/businesses");
+      console.log(user);
+    } catch (error) {
+      console.log(error);
     }
     return (
         <div className="default-grid">
@@ -84,7 +98,7 @@ function handleChange(e){
                 
                 </div>)
                 
-                :<div className="border  ">
+                :(<div className="border  ">
                     <form className="d-grid pad " onSubmit={(e)=>login(e)}>
                         <h1 className="center-text">Log Into Your Account</h1>
                         <label htmlFor="login-email" className="acct-label">Email</label>
@@ -96,7 +110,7 @@ function handleChange(e){
                 <button type="submit" className="form-btns">Log In</button>
                 </div>
                     </form>
-                    </div>}
+                    </div>)}
                 </div>
         </div>
     )

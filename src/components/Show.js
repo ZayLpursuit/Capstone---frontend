@@ -6,6 +6,8 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import ShowMap from "./ShowMap";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -17,17 +19,6 @@ const Show = () => {
 
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
-
-    useEffect(() => {
-        axios
-            .get(`http://localhost:7777/businesses/${id}`)
-            .then((res) => {
-                console.log(res.data)
-                setBusiness(res.data)
-            })
-        .catch((c) => console.error("catch", c))
-    }, [id])
-  
   let { id } = useParams();
 
   useEffect(() => {
@@ -51,7 +42,15 @@ const Show = () => {
           className="show-img"
         />
       </div>
+
+      {/* <div className="show-page-map">
+    <ShowMap business={business}/>
+      </div> */}
       <div className="top-section">
+
+      <div className="show-page-map">
+    <ShowMap business={business}/>
+      </div>
         <h1 className="show-header">
           {name}{" "}
           <Button variant="warning" onClick={() => setFavorite(!favorite)}>
@@ -79,7 +78,7 @@ const Show = () => {
             <td>
               <h5>
               <a href={address ? `http://maps.google.com/?q=${name}` : "N/A"} target="*" className="tb-link">
-                  {address}
+                  {address || "N/A"}
                 </a>
               </h5>
             </td>
