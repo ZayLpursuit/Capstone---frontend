@@ -13,7 +13,7 @@ import CommentForm from "./CommentForm";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Show = ({ currentUser }) => {
+const Show = () => {
   const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
   const { name, address, contact_num, year_opened, img, website, description } =
@@ -25,7 +25,7 @@ const Show = ({ currentUser }) => {
 
   const [comments, setComments] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [showComments, setShowComments] = useState(false);
+  // const [showComments, setShowComments] = useState(false);
 
   // console.log("comment", <Comments/>)
 
@@ -104,10 +104,6 @@ const Show = ({ currentUser }) => {
           className="show-img"
         />
       </div>
-
-      {/* <div className="show-page-map">
-    <ShowMap business={business}/>
-      </div> */}
       <div className="top-section">
         <div className="show-page-map">
           <ShowMap business={business} />
@@ -194,7 +190,7 @@ const Show = ({ currentUser }) => {
                 handleSubmit={handleEdit}
               />
             ))}
-            {/* <>
+            <>
               <Button onClick={() => setShowForm(!showForm)} variant="dark">
                 {!showForm ? "Add A New Comment" : "Hide Form"}
               </Button>
@@ -202,10 +198,9 @@ const Show = ({ currentUser }) => {
               {showForm && (
                 <CommentForm
                   handleSubmit={handleAdd}
-                  currentUser={currentUser}
                 ></CommentForm>
               )}
-            </> */}
+            </>
           </Tab>
         </Tabs>
       </div>

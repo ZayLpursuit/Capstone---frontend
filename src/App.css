@@ -396,5 +396,9 @@ tr {
   border: 2px solid;
   padding: 20px;
   background-color: rgb(200, 199, 198);
-  border-radius: 30px;
+  border-radius: 10px;
+}
+
+section > li > button {
+  margin-left: 160px;
 }

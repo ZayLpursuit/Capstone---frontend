@@ -24,18 +24,19 @@ const CommentForm = (props) => {
       }
     }, [id, commentDetails, props]);
   
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      props.handleSubmit(comment, id);
-      if (commentDetails) {
-        props.toggleView();
-      }
-      setComment({
-        commenter: "",
-        content: "",
-        business_id: id,
-      });
-    };
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   props.handleSubmit(comment, id);
+    //   if (commentDetails) {
+    //     props.toggleView();
+    //   }
+    //   setComment({
+    //     commenter: "",
+    //     content: "",
+    //     business_id: id,
+    //   });
+    // };
+  
     return (
       // <div className="Edit">
       //   {props.children}
