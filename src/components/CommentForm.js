@@ -39,7 +39,8 @@ const CommentForm = (props) => {
     return (
       // <div className="Edit">
       //   {props.children}
-        <form onSubmit={handleSubmit}>
+        // <form onSubmit={handleSubmit}>
+      <>
           <label htmlFor="commenter">Name:</label>
           <input
             id="commenter"
@@ -59,8 +60,10 @@ const CommentForm = (props) => {
             onChange={handleTextChange}
           />
           <br />
-          <input type="submit" className="btn btn-warning" />
-        </form>
+        <input type="submit" className="btn btn-warning" />
+        
+        </>
+        // </form>
       // </div>
     );
 }
