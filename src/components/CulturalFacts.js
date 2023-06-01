@@ -10,7 +10,8 @@ const CulturalFacts = () => {
   return (
     <div id="scroll-container">
       <div className="cultural-facts">
-        <h6 style={{ textDecoration: "underline" }}>Facts On Deck</h6>
+        <h2 style={{ textDecoration: "underline" }}>Facts On Deck</h2>
+        {/* <h5>It's often used to indicate that someone is ready to provide a series of interesting or informative facts. Look below for some a interesting fact.</h5> */}
         <div id="scroll-text">
           {<h5>{fact[Math.floor(Math.random() * fact.length)]}</h5>}
         </div>

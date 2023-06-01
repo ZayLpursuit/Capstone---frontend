@@ -11,7 +11,7 @@ export default function AddBusiness(){
 
 
     return (
-        <div>
+        <div className="newBusiness">
            <div className="border  centered">
                 <form className="d-grid pad">
                 <h1 className="center-text">Add a New Business</h1>

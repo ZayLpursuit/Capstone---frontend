@@ -10,52 +10,18 @@ import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Nav = ({currentUser}) => {
-  console.log(currentUser,"hi")
-const Nav = () => {
-  let navigate = useNavigate()
+const Nav = ({ currentUser }) => {
+  console.log(currentUser, "hi");
   // console.log(currentUser)
   // console.log(auth)
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
-    // <div className="Nav">
-    //   <h1>
-    //     <Link to="/">
-    //       <img
-    //         src={Logo}
-    //         alt="Logo"
-    //         className="Logo"
-    //         width="200"
-    //         height="200"
-    //       />
-    //     </Link>
-    //   </h1>
-    //   <div className="nav-btns">
-    //     <button className="nav-btn">
-    //       <Link to="/" className="nav-link">
-    //         Home
-    //       </Link>
-    //     </button>
-    //     <button className="">
-    //       <Link to="/get-started" className="">
-    //         <img src={Login} alt="Login" />
-    //       </Link>
-    //     </button>
-    //     <button className="nav-btn">
-    //       <Link to="/resources" className="nav-link">
-    //         Resources
-    //       </Link>
-    //     </button>
-    //     <button onClick={async () => await signOut(auth)}>Sign Out</button>
-    //   </div>
-    // </div>
-
     <nav>
       <div>
         <header>
@@ -83,25 +49,8 @@ const Nav = () => {
               Create An Account / Login
             </Link>
           </Button>
-        ) : (<div className="flexxed">
-          <button onClick={async () => await signOut(auth)}>Sign Out</button>
-          <div onClick={()=>navigate("/profile")}>
-          <p>{currentUser.email}</p>
-          <AccountCircleIcon/>
-          </div>
-          </div>
         ) : (
-            <>
-              {/* <h1>Welcome Back {auth.currentUser.email}</h1> */}
-            {/* <form className="d-flex home-form" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search Businesses"
-                aria-label="Search"
-              />
-              <i className="fa-solid fa-magnifying-glass-location"></i>
-            </form> */}
+          <>
             <Button variant="light">
               <Link to="/index" className="nav-link">
                 Browse Businesses
@@ -117,15 +66,18 @@ const Nav = () => {
                 User Profile
               </Link>
             </Button>
-              <Button variant="dark" onClick={async () => {
-                navigate("/")
-                await signOut(auth)
-              }
-              }>
+            <Button
+              variant="dark"
+              onClick={async () => {
+                navigate("/");
+                await signOut(auth);
+              }}
+            >
               Sign Out
             </Button>
           </>
         )}
+        <AccountCircleIcon />
       </Navbar>
     </nav>
   );
