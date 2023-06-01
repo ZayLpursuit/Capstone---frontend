@@ -12,12 +12,11 @@ import { useState } from "react";
 import Show from "./components/Show";
 import Resources from "./components/Resources";
 import AddBusiness from "./components/AddBusiness";
-
-
+import Footer from "./components/Footer";
 
 function App() {
   const [currentUser, setcurrentUser] = useState({});
-  const [favs,setFavs]=useState([])
+
   auth.onAuthStateChanged((user) => {
     setcurrentUser(user);
   });
@@ -31,13 +30,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<SignUp />} />
         <Route path="/businesses" element={<IndexPage />} />
-          <Route path='/businesses/:id' element={<Show setFavs={setFavs} favs={favs}/>}/>
-          <Route path="/profile" element={< Profile currentUser={currentUser} favs={favs}/>} />
-          {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
-            <Route path="/resources" element={<Resources/>} />
-            <Route path="/add-business" element={<AddBusiness/>} />
+
+        <Route path="/businesses/:id" element={<Show />} />
+        <Route
+          path="/profile"
+          element={<Profile currentUser={currentUser} />}
+        />
+        {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/add-business" element={<AddBusiness />} />
 
       </Routes>
+      <Footer/>
     </Router>
   );
 }

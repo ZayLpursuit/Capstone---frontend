@@ -29,6 +29,7 @@ export default function AddBusiness(){
     }
 
     return (
+
         <div className="add-biz-sect">
             <div className="add-biz-info">
                 <h1>Show Your Support and Add a Blackowned Business Today!</h1>
@@ -36,6 +37,7 @@ export default function AddBusiness(){
            <div className=" ">
                 <form className="d-grid pad w-80 centered" onSubmit={(e)=>handleSubmit(e)}>
                 <h1 className="center-text">Add a Business</h1>
+
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" value={form.name} onChange={(e)=>handleChange(e)}/>
 
