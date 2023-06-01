@@ -30,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<SignUp />} />
         <Route path="/businesses" element={<IndexPage />} />
+
         <Route path="/businesses/:id" element={<Show />} />
         <Route
           path="/profile"
@@ -38,6 +39,7 @@ function App() {
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />
         <Route path="/add-business" element={<AddBusiness />} />
+
       </Routes>
       <Footer/>
     </Router>

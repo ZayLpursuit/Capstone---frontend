@@ -12,12 +12,18 @@ function handleChange(e){
     setCategory(e.target.id)
     // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
   }
-
   useEffect(() => {
     axios
       .get(`http://localhost:7777/businesses/categories/${category}`)
       .then((res) => setDisplay(res.data));
   }, [category]);
+
+  useEffect(() => {
+   axios
+     .get(`http://localhost:7777/businesses`)
+     .then((res) => setDisplay(res.data));
+ }, []);
+
 
   return (
     <div className="index-grid">
@@ -68,8 +74,8 @@ function handleChange(e){
         {display.map((business, idx) => {
           return <Card business={business} key={idx} />;
         })}
-        </div>
-        <><MapContainer businesses={display}/></>
+        </div >
+        <div className="col-3 index-map"><MapContainer businesses={display}/></div>
     </div>
   );
 }

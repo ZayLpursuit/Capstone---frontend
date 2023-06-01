@@ -7,13 +7,14 @@ import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import ShowMap from "./ShowMap";
+
 import Comments from "./Comments";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Show = () => {
+const Show = ({setFavs,favs}) => {
   const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
   const { name, address, contact_num, year_opened, img, website, description } =
@@ -30,6 +31,7 @@ const Show = () => {
   // console.log("comment", <Comments/>)
 
   useEffect(() => {
+    console.log(API)
     axios
       .get(`${API}/businesses/${id}`)
       .then((res) => {
@@ -40,6 +42,7 @@ const Show = () => {
   }, [id]);
 
   useEffect(() => {
+
     axios.get(`${API}/businesses/${id}/comments`).then((response) => {
       // console.log(response.data)
       setComments(response.data);
@@ -93,6 +96,7 @@ const Show = () => {
       .catch((c) => console.warn("catch", c));
   };
 
+
   return (
     <div className="show-page">
       <div className="center-text">
@@ -104,13 +108,15 @@ const Show = () => {
           className="show-img"
         />
       </div>
+
       <div className="top-section">
         <div className="show-page-map">
           <ShowMap business={business} />
         </div>
+
         <h1 className="show-header">
           {name}{" "}
-          <Button variant="warning" onClick={() => setFavorite(!favorite)}>
+          <Button variant="warning" onClick={() =>{ setFavorite(!favorite);}}>
             {!favorite ? (
               <i className="fa-regular fa-star" id="unfavorite"></i>
             ) : (
@@ -170,6 +176,10 @@ const Show = () => {
             </tr>
           </tbody>
         </Table>
+
+        <div className="show-page-map">
+    <ShowMap business={business}/>
+      </div>
       </div>
       <div className="bottom-section">
         <Tabs

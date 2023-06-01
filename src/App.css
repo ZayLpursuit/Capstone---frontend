@@ -108,7 +108,7 @@ input[type="search"] {
 }
 .index-grid {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 15% 60% 25%;
   margin-bottom: 25px;
 }
 .index-container {
@@ -117,7 +117,11 @@ input[type="search"] {
   /* column-gap: 20px; */
   overflow-y: scroll;
   margin: 0 auto;
-  padding: 15px 15px;
+
+  padding:15px 15px;
+  column-gap: 10px;
+  row-gap: 10px;
+
 }
 .test-b1 {
   border: 1px solid black;
@@ -141,11 +145,14 @@ input[type="search"] {
 .profile-container {
   display: grid;
   grid-template-columns: 25% 50% 25%;
-  background-image: url("https://iamblackbusiness.com/images/partners/niche-site-black-cents.jpg");
-  /* background-size:  cover; */
-  background: repeat(none);
-  color: white;
-  margin-bottom: 25px;
+
+   background-image: url("https://i.pinimg.com/originals/e3/a6/ea/e3a6ea97f338150c3a0ec599c5b371b8.jpg");
+  background-size:  cover;
+  background: repeat(none) ;
+  color:white;
+  padding: 25px 25px;
+
+
 }
 .profile-options {
   display: grid;
@@ -320,9 +327,11 @@ li > a {
   /* border:1px solid black; */
   padding: 7px 3px;
 }
-.index-card {
-  width: 70%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+.index-card{
+width:90%;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
 }
 .category-options li:hover {
   /* border-bottom: 3px solid  black; */
@@ -500,34 +509,41 @@ tr {
   }
 }
 
-/* #cf img {
+ #cf img {
   position:absolute;
   left:0;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
-} */
+} 
 
 
 
-/* @keyframes cf3FadeInOut {
+ @keyframes cf3FadeInOut {
   0% {
   opacity:1;
 }
 45% {
 opacity:1;
 }
+
+.map-container{
+  height:500px;
+  width:100%;
+  grid-column: 3;
+position: relative; 
+
 55% {
 opacity:0;
 }
 100% {
 opacity:0;
 }
-} */
+} 
 
 
-/* @keyframes cf3FadeInOut {
+ @keyframes cf3FadeInOut {
   0% {
     opacity:1;
   }
@@ -566,13 +582,7 @@ opacity:0;
   animation-delay: 0;
 } */
 
-.map-container {
-  height: 200px;
-  width: 100%;
-  z-index: 0;
-  max-width: 100%;
-  overflow: auto;
-}
+
 .show-page-map {
   max-width: 100%;
   width: 20%;
@@ -593,6 +603,7 @@ footer {
 
 #footer ul a:hover {
   color: rgba(115, 115, 96, 0.883);
+
 }
 
 .github {
@@ -607,6 +618,74 @@ footer {
 }
 
 .show-page-map{
+
+  margin-top: 20px;
+position: relative;
+  width:100%;
+  height:250px;
+}
+.col-3{
+  grid-column: 3;
+}
+.index-map{
+  width: 100%;
+  padding: 0px 10px;
+}
+.user-prof-card{
+
+}
+.user-favs-section{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.add-biz-sect{
+  display:grid;
+  grid-template-columns: 45% 55%;
+  margin:100px 100px;
+  border-radius: 10px;
+  border: 1px solid rgb(253, 253, 238);;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.add-biz-info{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdZAxTRhMhx36uOFdMwngGIrXvrigB1t7EITkQ-F-t2bU5yqtpmxBghFXGuL4GbWIXoMA&usqp=CAU");
+background-repeat: no-repeat;
+background-size: cover;
+image-rendering:-moz-crisp-edges;
+background-position:50% 50%;
+
+}
+.w-80{
+  width: 80%;
+}
+.biz-btn{
+  margin-top: 10px;
+  border-radius: 7px;
+
+}
+
+
+.test-d {
+  border-style: solid;
+  border-color: transparent transparent red transparent;
+  border-width: 0 25px 25px 25px;
+  height: 0;
+  width: 100%;
+  box-sizing: content-box;
+  position: relative;
+  margin: 20px 0 50px 0;
+}
+.test-d:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: -25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: red transparent transparent transparent;
+  border-width: 70px 50px 0 50px;
+
   max-width:100%;
   width:20%;
 }
@@ -620,4 +699,5 @@ footer {
 
 section > li > button {
   margin-left: 160px;
+
 }
