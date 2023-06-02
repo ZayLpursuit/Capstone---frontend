@@ -110,9 +110,7 @@ const Show = ({setFavs,favs}) => {
       </div>
 
       <div className="top-section">
-        <div className="show-page-map">
-          <ShowMap business={business} />
-        </div>
+        
 
         <h1 className="show-header">
           {name}{" "}

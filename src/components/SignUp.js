@@ -64,6 +64,7 @@ export default function SignUp() {
     } catch (error) {
       console.log(error);
     }
+}
     return (
         <div className="default-grid">
             <div className="col2 width-70  centered ">
@@ -115,3 +116,4 @@ export default function SignUp() {
         </div>
     )
 }
+
