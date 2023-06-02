@@ -64,39 +64,19 @@ export default function SignUp() {
     } catch (error) {
       console.log(error);
     }
-  };
-  return (
-    <div className="default-grid">
-      <div className="col2 width-70  centered ">
-        <div className="btn-toggle">
-          <button
-            className="centered btn-size"
-            id="Log-In"
-            onClick={(e) => handleToggle(e)}
-          >
-            Log In{" "}
-          </button>
-          <button
-            className="centered btn-size"
-            id="Sign-up"
-            onClick={(e) => handleToggle(e)}
-          >
-            Sign Up
-          </button>
-        </div>
-        {signIn ? (
-          <div className="  centered">
-            <form className="d-grid pad" onSubmit={(e) => register(e)}>
-              <h1 className="center-text">Create a New Account</h1>
-              <label htmlFor="first" className="acct-label">
-                First
-              </label>
-              <input
-                type="text"
-                id="first_name"
-                value={form.first_name}
-                onChange={(e) => handleChange(e)}
-              />
+    return (
+        <div className="default-grid">
+            <div className="col2 width-70  centered ">
+            <div className="btn-toggle">
+            <button  className="centered btn-size" id="Log-In" onClick={(e)=>handleToggle(e)}>Log In </button>
+            <button  className="centered btn-size" id="Sign-up" onClick={(e)=>handleToggle(e)}>Sign Up</button>
+              </div>
+            {signIn?(
+                <div className="  centered">
+                <form className="d-grid pad" onSubmit={(e)=>register(e)}>
+                <h1 className="center-text">Create a New Account</h1>
+                <label htmlFor="first" className="acct-label">First</label>
+                <input type="text" id="first_name" value={form.first_name} onChange={(e)=>handleChange(e)}/>
 
               <label htmlFor="last" className="acct-label">
                 Last
@@ -178,4 +158,5 @@ export default function SignUp() {
       </div>
     </div>
   );
+}
 }

@@ -2,8 +2,10 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import auth from "../base"
 
-// import { useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import AddHomeIcon from '@mui/icons-material/AddHome';
+import Card from "./Card";
 // import { AutofpsSelectRounded } from "@mui/icons-material";
 
 
@@ -13,10 +15,10 @@ const styles={
     height:"60px"
 }
 
-export default function Profile({currentUser}){
+export default function Profile({currentUser,favs}){
 const [user,setUser]=useState({})
 const [form,setForm]=useState({})
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     
     console.log("currentUser", currentUser,user)
 
@@ -71,14 +73,20 @@ const [form,setForm]=useState({})
                 </div>
                  </form>
 
-                 <div>
                     <h1>Your favorites</h1>
-                    <p>You haven't added any businesses to your favorites yet</p>
+                 <div className="user-favs-section">
+                    {favs? (
+                        favs.map(business=>{
+                            return <div className="user-prof-card"><Card business={business}/></div>
+                        })
+                    ):
+                    <p>You haven't added any businesses to your favorites yet</p>}
+
                  </div>
 
-                 <div>
+                 <div onClick={()=>navigate("/add-business")}>
                     <h3>Add a Business</h3>
-                    <AddHomeIcon style={styles}/>
+                    <AddHomeIcon style={styles} />
                  </div>
         
                    
