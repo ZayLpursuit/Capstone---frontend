@@ -479,7 +479,8 @@ tr {
   height:500px;
   width:100%;
   grid-column: 3;
-position: relative; }
+position: relative; 
+}
 @-webkit-keyframes fade {
   0% {
     opacity: 1;
@@ -534,11 +535,7 @@ position: relative; }
 opacity:1;
 }
 
-/* .map-container{
-  height:500px;
-  width:100%;
-  grid-column: 3;
-position: relative;  */
+
 
 55% {
 opacity:0;
