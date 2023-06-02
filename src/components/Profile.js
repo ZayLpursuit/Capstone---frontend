@@ -33,7 +33,7 @@ const [form,setForm]=useState({})
 
         })
        
-    },[])
+    },[currentUser])
 
    
     
