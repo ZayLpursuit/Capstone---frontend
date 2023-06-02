@@ -13,7 +13,9 @@ const CulturalFacts = () => {
         <h2 style={{ textDecoration: "underline" }}>Facts On Deck</h2>
         {/* <h5>It's often used to indicate that someone is ready to provide a series of interesting or informative facts. Look below for some a interesting fact.</h5> */}
         <div id="scroll-text">
-          {<h5>{fact[Math.floor(Math.random() * fact.length)]}</h5>}
+          <marquee behavior="scroll" direction="left">
+            {<h5>{fact[Math.floor(Math.random() * fact.length)]}</h5>}
+          </marquee>
         </div>
       </div>
     </div>

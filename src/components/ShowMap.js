@@ -25,7 +25,7 @@ const ShowMap = ({business}) => {
 
   useEffect(()=>{
       geocoder.geocode({"address":address},(results,status)=>{
-        if(status=='OK'){
+        if(status==='OK'){
             console.log(business)
           const {lat,lng}=results[0].geometry.location 
          
