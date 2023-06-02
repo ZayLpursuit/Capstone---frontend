@@ -166,7 +166,7 @@ input[type="search"] {
   justify-content: center;
 }
 .white {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 22px;
   margin-bottom: 25px;
 }
@@ -433,18 +433,22 @@ tr {
   animation: fade 20s infinite;
 }
 #pic1 {
+  background-size: contain;
   animation-delay: 0s;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV1W-c9hjmU806hnPukB77dS1_TBt7wpMkbw&usqp=CAU');
 }
 #pic2 {
+  background-size: contain;
   background-image: url('https://www.gannett-cdn.com/presto/2022/02/22/USAT/b3428ae6-f300-48af-bad3-9f91c6282094-Brewer_008.jpg');
   animation-delay: 5s;
 }
 #pic3 {
+  background-size: contain;
   background-image: url('https://leadingladiesafrica.org/wp-content/uploads/2019/12/BE9975F1-80FB-43F8-BE12-303915D26528.jpeg');
   animation-delay: 10s;
 }
 #pic4 {
+  background-size: cover;
   background-image: url('https://static01.nyt.com/images/2019/03/02/business/02west-01/merlin_148158210_809d173a-e520-4d33-9a4c-0ca36a8e42ff-superJumbo.jpg');
   animation-delay: 15s;
 }
