@@ -234,10 +234,13 @@ li {
 .hero {
   padding-left: 50px;
   position: relative;
-  bottom: 280px;
+  bottom: 160px;
   right: 100px;
   height: 270px;
   width: 340px;
+}
+header{
+  background-color: #000;
 }
 
 header img {
