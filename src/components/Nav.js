@@ -25,14 +25,14 @@ const Nav = ({ currentUser }) => {
   const navigate = useNavigate();
   return (
     <nav>
-      <div>
+      {/* <div>
         <header>
           <img
           src={banner}
             // src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg"
             alt="n/a"/>
         </header>
-      </div>
+      </div> */}
 
       <Navbar className="navbar">
         <Navbar.Brand>
@@ -40,31 +40,31 @@ const Nav = ({ currentUser }) => {
             <img className="hero" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
-        <div className="slogan">
+        {/* <div className="slogan">
           <h5>Embrace the Power of Melanin</h5>
           <h5 className="slogan-2"> Shop, Connect, Thrive!</h5>
-        </div>
+        </div> */}
 
         {!auth.currentUser ? (
           <Button variant="light" className="account">
-            <Link to="/get-started" className="nav-link">
+            <Link to="/get-started" className="nav-link-acct">
               Create An Account / Login
             </Link>
           </Button>
         ) : (
           <>
-            <Button variant="light">
-              <Link to="/businesses" className="nav-link">
+            <Button variant="light" className="nav-link-biz">
+              <Link to="/businesses" className="nav-link-acct">
                 Browse Businesses
               </Link>
             </Button>
-            <Button variant="light">
-              <Link to="/resources" className="nav-link">
+            <Button variant="light" className="nav-link-res">
+              <Link to="/resources"className="nav-link-acct" >
                 Browse Resources
               </Link>
             </Button>
-            <Button variant="light">
-              <Link to="/profile" className="nav-link">
+            <Button variant="light" className="nav-link-pro">
+              <Link to="/profile" className="nav-link-acct">
                 User Profile
               </Link>
             </Button>
@@ -79,7 +79,7 @@ const Nav = ({ currentUser }) => {
               </Button>
           </>
         )}
-        <AccountCircleIcon />
+        <AccountCircleIcon className="acct-icon"/>
       </Navbar>
     </nav>
   );
