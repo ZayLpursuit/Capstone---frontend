@@ -17,7 +17,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 
 const Nav = ({ currentUser }) => {
-  console.log(currentUser, "hi");
+  // console.log(currentUser, "hi");
 
   // console.log(currentUser)
   // console.log(auth)
