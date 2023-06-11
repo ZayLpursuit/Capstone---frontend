@@ -39,7 +39,7 @@ const ShowMap = ({business}) => {
       }
       })
     
-  },[business])
+  })
 
   return (
     <div className="map-container">

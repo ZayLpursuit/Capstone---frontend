@@ -12,7 +12,7 @@ const Footer = () => {
             height="150px"
             width="150px"
           ></img>
-          Meet The Team
+          By Onyx For Obsidian
         </h5>
 
         <li className="github">

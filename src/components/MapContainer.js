@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Map, GoogleApiWrapper,Marker } from 'google-maps-react';
 
 
@@ -15,7 +15,9 @@ const MapContainer = ({businesses}) => {
 
   const [markers,setMarkers]=useState([])
 
-  const geocoder= new window.google.maps.Geocoder()
+  // const geocoder= new window.google.maps.Geocoder()
+
+  const geocoder= useMemo(() =>  new window.google.maps.Geocoder(), [])
   
   useEffect(()=>{
     setMarkers([])
@@ -36,7 +38,7 @@ const MapContainer = ({businesses}) => {
         }
       })
     })
-  },[businesses])
+  },[businesses, geocoder])
 
   return (
     <div className="map-container">
