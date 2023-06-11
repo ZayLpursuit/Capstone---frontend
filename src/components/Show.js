@@ -11,10 +11,11 @@ import ShowMap from "./ShowMap";
 import Comments from "./Comments";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import StarRating from "./StarRating";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Show = ({setFavs,favs}) => {
+const Show = ({setFavs,favs,currentUser}) => {
   const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
   const { name, address, contact_num, year_opened, img, website, description } =
@@ -61,6 +62,11 @@ const Show = ({setFavs,favs}) => {
       )
       .catch((c) => console.warn("catch", c));
   };
+
+  function addToFavorites(){
+    console.log(currentUser.uid)
+    axios.post(`http://localhost:7777/users/user/${currentUser.uid}/favorites`,business)
+  }
 
   const handleDelete = (id) => {
     axios
@@ -114,7 +120,8 @@ const Show = ({setFavs,favs}) => {
 
         <h1 className="show-header">
           {name}{" "}
-          <Button variant="warning" onClick={() =>{ setFavorite(!favorite);}}>
+          <StarRating/>
+          <Button variant="warning" onClick={() =>{ setFavorite(!favorite); addToFavorites()}}>
             {!favorite ? (
               <i className="fa-regular fa-star" id="unfavorite"></i>
             ) : (

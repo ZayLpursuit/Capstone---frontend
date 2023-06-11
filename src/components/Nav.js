@@ -17,7 +17,7 @@ import banner from "../assets/Diamonds-Banner(2).png";
 
 
 const Nav = ({ currentUser }) => {
-  console.log(currentUser, "hi");
+  // console.log(currentUser, "hi");
 
   // console.log(currentUser)
   // console.log(auth)
