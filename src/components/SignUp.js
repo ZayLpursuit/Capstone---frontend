@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import {
   createUserWithEmailAndPassword,
-  getAuth,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import auth from "../base";

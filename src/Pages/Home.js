@@ -1,9 +1,6 @@
 import React from "react";
 import CulturalFacts from "../components/CulturalFacts";
-import rj from "../assets/robert_johnson.jpeg"
-import jw from "../assets/john_ward.jpeg"
-import fc from "../assets/Fumbi_Chima.jpeg"
-import bbo from "../assets/BeFunky-collage.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -19,24 +16,6 @@ const Home = () => {
             ultimately building a better and more inclusive economy for all.
           </h4>
         </section>
-        <section>
-          <div id="cf">
-            <img className="pic" id="pic1"  />
-            <img className="pic" id="pic2"  />
-            <img className="pic" id="pic3"  />
-            <img className="pic" id="pic4"  />
-            <img className="pic" id="pic5"  />
-            <img className="pic" id="pic6"  />
-            <img className="pic" id="pic7"  />
-            <img className="pic" id="pic8"  />
-            {/* <img
-              src={bbo}
-              alt="black business owners"
-              // height="400px"
-              // width="200px"
-            /> */}
-          </div>
-        </section>
       </div>
       <br />
       <CulturalFacts />
@@ -51,12 +30,14 @@ const Home = () => {
             <h4 style={{ marginLeft: "20px" }}>
               Sylvia's, Located In Harlem Has Been Open For 61 Years!
             </h4>
+            <Link to="/businesses/9">
             <img
               src="https://www.nycgo.com/images/videos/84544/sylvias-restaurant-thumbnail__large.jpg"
               alt="sylvia's restuarant"
               width="400px"
               height="400px"
-            />
+              />
+              </Link>
           </div>
           <div>
             <h4 style={{ marginLeft: "20px" }}>

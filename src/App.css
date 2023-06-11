@@ -592,6 +592,13 @@ opacity:0;
   animation-delay: 0;
 } */
 
+.map-container{
+  height:500px;
+  width:100%;
+  grid-column: 3;
+position: relative; 
+}
+
 
 .show-page-map {
   max-width: 100%;
