@@ -10,7 +10,7 @@ const CulturalFacts = () => {
   return (
     <div id="scroll-container">
       <div className="cultural-facts">
-        <h2 style={{ textDecoration: "underline" }}>Facts On Deck</h2>
+        <h2 style={{ textDecoration: "underline" }}>Cultural Facts</h2>
         {/* <h5>It's often used to indicate that someone is ready to provide a series of interesting or informative facts. Look below for some a interesting fact.</h5> */}
         <div id="scroll-text">
           <marquee behavior="scroll" direction="left">

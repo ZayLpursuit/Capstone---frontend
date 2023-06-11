@@ -179,6 +179,8 @@ input[type="search"] {
 }
 
 .cultural-facts {
+  position: relative;
+  bottom: 450px;
   border: #282c34 solid;
   padding: 20px;
   /* border-radius: 8px; */
@@ -464,7 +466,7 @@ tr {
   color: #fcfcfa;
 }
 
-#cf {
+/* #cf {
   position: relative;
   display: block;
   width: 100%;
@@ -504,7 +506,7 @@ tr {
   background-size: cover;
   background-image: url('https://static01.nyt.com/images/2019/03/02/business/02west-01/merlin_148158210_809d173a-e520-4d33-9a4c-0ca36a8e42ff-superJumbo.jpg');
   animation-delay: 15s;
-}
+} */
 
 .show-page-map {
   max-width: 100%;
@@ -755,4 +757,8 @@ overflow: hidden; */
 .landing
 {
   background-color: white;
+}
+
+.mission{
+  text-shadow: 2px 2px 2px #f1cc24;
 }
