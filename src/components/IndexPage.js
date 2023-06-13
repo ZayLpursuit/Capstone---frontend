@@ -1,15 +1,16 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import Card from "./Card"
-import MapContainer from "./MapContainer"
+// import { IconButton } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Card from "./Card";
+import MapContainer from "./MapContainer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import resIcon from "../assets/knife_fork.png"
 
-
-
-export default function IndexPage(){
-const [category,setCategory]=useState("boutique")
-const [display,setDisplay]=useState([])
-function handleChange(e){
-    setCategory(e.target.id)
+export default function IndexPage() {
+  const [category, setCategory] = useState("boutique");
+  const [display, setDisplay] = useState([]);
+  function handleChange(e) {
+    setCategory(e.target.id);
     // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
   }
   useEffect(() => {
@@ -19,11 +20,10 @@ function handleChange(e){
   }, [category]);
 
   useEffect(() => {
-   axios
-     .get(`http://localhost:7777/businesses`)
-     .then((res) => setDisplay(res.data));
- }, []);
-
+    axios
+      .get(`http://localhost:7777/businesses`)
+      .then((res) => setDisplay(res.data));
+  }, []);
 
   return (
     <div className="index-grid">
@@ -34,6 +34,9 @@ function handleChange(e){
 
             <ul className="category-options">
               <li id="restaurant" onClick={(e) => handleChange(e)}>
+                {/* <FontAwesomeIcon icon="fa-solid fa-fork-knife" /> */}
+                <img src={resIcon}
+                />
                 Restaraunts
               </li>
               <li id="social" onClick={(e) => handleChange(e)}>
@@ -74,8 +77,10 @@ function handleChange(e){
         {display.map((business, idx) => {
           return <Card business={business} key={idx} />;
         })}
-        </div >
-        <div className="col-3 index-map"><MapContainer businesses={display}/></div>
+      </div>
+      <div className="col-3 index-map">
+        <MapContainer businesses={display} />
+      </div>
     </div>
   );
 }
