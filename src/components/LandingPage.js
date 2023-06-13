@@ -1,15 +1,17 @@
 import React from "react";
 import CulturalFacts from "../components/CulturalFacts";
-import Carousel from "./Carousel";
+import rj from "../assets/robert_johnson.jpeg"
+import jw from "../assets/john_ward.jpeg"
+import fc from "../assets/Fumbi_Chima.jpeg"
+import bbo from "../assets/BeFunky-collage.png";
+
 
 const LandingPage = () => {
   return (
     <div className="landing">
       <div className="mission-statement">
         <section className="statement">
-          <h1 className="mission" style={{ textDecoration: "underline" }}>
-            Our Mission
-          </h1>
+          <h3>Our Mission </h3>
           <h4>
             To support and promote black-owned businesses by creating a platform
             for consumers to connect with them, with the goal of increasing
@@ -18,8 +20,24 @@ const LandingPage = () => {
             ultimately building a better and more inclusive economy for all.
           </h4>
         </section>
-
-        <Carousel />
+        {/* <section>
+          <div id="cf">
+            <img className="pic" id="pic1"  />
+            <img className="pic" id="pic2"  />
+            <img className="pic" id="pic3"  />
+            <img className="pic" id="pic4"  />
+            <img className="pic" id="pic5"  />
+            <img className="pic" id="pic6"  />
+            <img className="pic" id="pic7"  />
+            <img className="pic" id="pic8"  />
+             <img
+              src={bbo}
+              alt="black business owners"
+              // height="400px"
+              // width="200px"
+            />
+          </div>
+        </section> */}
       </div>
       <br />
       <CulturalFacts />
@@ -65,9 +83,9 @@ const LandingPage = () => {
             />
           </div>
         </div>
-      </div>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage
