@@ -6,6 +6,7 @@ import auth from "../base"
 import { useNavigate } from "react-router-dom";
 import AddHomeIcon from '@mui/icons-material/AddHome';
 import Card from "./Card";
+// import { getAuth } from "firebase/auth";
 // import { AutofpsSelectRounded } from "@mui/icons-material";
 
 
@@ -15,24 +16,40 @@ const styles={
     height:"60px"
 }
 
-export default function Profile({currentUser,favs}){
-const [user,setUser]=useState({})
+export default function Profile({currentUser}){
+const [user,setUser]=useState([])
 const [form,setForm]=useState({})
+const [favs,setFavs]=useState([])
     const navigate = useNavigate()
-    
-    console.log("currentUser", currentUser,user)
 
+  
+    
+   
     
     
     useEffect(()=>{
-        axios.get(`http://localhost:7777/users/emails/${currentUser.email}`)
+
+  
+        if(currentUser){
+
+        axios.get(`http://localhost:7777/users/firebase/${currentUser?.uid}`)
         .then((res) => {
-            console.log(res)
+          
             setUser(res.data[0])
             setForm(res.data[0])
 
         })
-       
+    }
+    },[currentUser])
+
+
+    useEffect(()=>{
+
+        if(currentUser){
+            axios.get(`http://localhost:7777/users/user/${currentUser?.uid}/favorites`).then((res)=>setFavs(res.data))
+
+        }
+
     },[currentUser])
 
    
@@ -49,7 +66,7 @@ const [form,setForm]=useState({})
             <aside>
             </aside>
                 {auth.currentUser?
-               <div className="center-text white"> Welcome Back {auth.currentUser.email} </div>: <>Signed Out</>}
+               <div className="center-text white"> Welcome Back {user?.first_name} </div>: <>Signed Out</>}
                 <div className=" col2">
                 
                     <h1>Your Account Info</h1>
@@ -76,8 +93,9 @@ const [form,setForm]=useState({})
                     <h1>Your favorites</h1>
                  <div className="user-favs-section">
                     {favs? (
-                        favs.map(business=>{
-                            return <div className="user-prof-card"><Card business={business}/></div>
+                        favs.map((business,idx)=>{
+                            console.log(business)
+                            return <div className="user-prof-card"><Card business={business} key={idx}/></div>
                         })
                     ):
                     <p>You haven't added any businesses to your favorites yet</p>}

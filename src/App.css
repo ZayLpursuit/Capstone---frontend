@@ -515,6 +515,17 @@ tr {
   animation-delay: 15s;
 } */
 
+
+
+.map-container{
+  height:500px;
+  width:100%;
+  grid-column: 3;
+position: relative; 
+}
+
+
+
 .show-page-map {
   max-width: 100%;
   width: 20%;

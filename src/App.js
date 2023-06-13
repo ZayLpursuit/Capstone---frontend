@@ -7,19 +7,27 @@ import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import auth from "./base";
 // import { onAuthStateChanged } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import EditProfile from "./components/EditProfile";
 import Show from "./components/Show";
 import Resources from "./components/Resources";
 import AddBusiness from "./components/AddBusiness";
 import Footer from "./components/Footer";
+import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
+
 
 function App() {
-  const [currentUser, setcurrentUser] = useState({});
+  const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
 
-  auth.onAuthStateChanged((user) => {
-    setcurrentUser(user);
-  });
+  useEffect(()=>{
+
+    auth.onAuthStateChanged((user) => {
+      setcurrentUser(user);
+    });
+
+    setPersistence(getAuth(),browserLocalPersistence)
+
+  },[])
 
   // console.log("current user app.js", currentUser.email)
 
@@ -28,10 +36,10 @@ function App() {
       <Nav currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/get-started" element={<SignUp />} />
+        <Route path="/get-started" element={<SignUp  currentUser={currentUser}/>} />
         <Route path="/businesses" element={<IndexPage />} />
 
-        <Route path="/businesses/:id" element={<Show />} />
+        <Route path="/businesses/:id" element={<Show  currentUser={currentUser}/>} />
         <Route
           path="/profile"
           element={<Profile currentUser={currentUser} />}

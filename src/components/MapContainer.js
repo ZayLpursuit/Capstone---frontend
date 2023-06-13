@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Map, GoogleApiWrapper,Marker } from 'google-maps-react';
 
 
@@ -15,25 +15,30 @@ const MapContainer = ({businesses}) => {
 
   const [markers,setMarkers]=useState([])
 
-  const geocoder= new window.google.maps.Geocoder()
+  // const geocoder= new window.google.maps.Geocoder()
 
+  const geocoder= useMemo(() =>  new window.google.maps.Geocoder(), [])
+  
   useEffect(()=>{
+    setMarkers([])
+    
+    
     businesses.forEach(({address})=>{
       geocoder.geocode({"address":address},(results,status)=>{
         if(status==='OK'){
           const {lat,lng}=results[0].geometry.location 
-         
-
+          
+          
           // setMarkers([...markers,{"address":address,"position":{"lat":lat,"lng":lng}}])  
           setMarkers((prev)=>[...prev,{address,position:{lat:lat(),lng:lng()}}])
           
-      }
-      else{
-        console.error(`Geocoding error:${status}`)
-      }
+        }
+        else{
+          console.error(`Geocoding error:${status}`)
+        }
       })
     })
-  },)
+  },[businesses, geocoder])
 
   return (
     <div className="map-container">
@@ -45,7 +50,7 @@ const MapContainer = ({businesses}) => {
       >
 
        {markers.map((marker,idx)=>{
-       console.log(marker)
+      
         
       return  (
         <Marker

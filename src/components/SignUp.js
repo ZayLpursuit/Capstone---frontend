@@ -7,7 +7,8 @@ import {
 import auth from "../base";
 import { useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+
+export default function SignUp({currentUser}) {
   const navigate = useNavigate();
   // const [logIn,setLogIn]=useState(false)
   const [signIn, setSignIn] = useState(true);
@@ -20,6 +21,7 @@ export default function SignUp() {
     first_name: "",
     last_name: "",
     login_email: "",
+    favorites:null
   });
   function handleToggle(e) {
     if (e.target.id === "Log-In") {
@@ -41,8 +43,8 @@ export default function SignUp() {
         form.email,
         form.password
       );
-
-      axios.post(`https://melanated-diamonds.onrender.com/users`, form);
+        console.log(newUser)
+      axios.post(`http://localhost:7777/users`, {...form,uid:newUser?.user?.uid});
 
       navigate("/profile");
       console.log(newUser);
