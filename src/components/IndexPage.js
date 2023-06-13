@@ -3,11 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import MapContainer from "./MapContainer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import resIcon from "../assets/knife_fork.png"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+
+// import resIcon from "../assets/knife_fork.png"
+import { Button, ButtonGroup } from "@mui/material";
+
+const API = process.env.REACT_APP_API_URL;
 
 export default function IndexPage() {
-  const [category, setCategory] = useState("boutique");
+  const [category, setCategory] = useState("");
   const [display, setDisplay] = useState([]);
   function handleChange(e) {
     setCategory(e.target.id);
@@ -15,29 +19,45 @@ export default function IndexPage() {
   }
   useEffect(() => {
     axios
-      .get(`http://localhost:7777/businesses/categories/${category}`)
+      .get(`${API}/businesses/categories/${category}`)
       .then((res) => setDisplay(res.data));
   }, [category]);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:7777/businesses`)
-      .then((res) => setDisplay(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:7777/businesses`)
+  //     .then((res) => setDisplay(res.data));
+  // }, []);
 
   return (
     <div className="index-grid">
       <div className="grid test-b1">
         <div className="m-left">
           <aside className=" ">
-            <h1 className="select-cat">Select a Category</h1>
+            <h1 className="select-cat">Categories:</h1>
 
-            <ul className="category-options">
-              <li id="restaurant" onClick={(e) => handleChange(e)}>
+            <ButtonGroup>
+              <Button id="restaurant" onClick={(e) => handleChange(e)}>Restaurants
+                {" "}{" "}
+                <br/>
+                <i class="fa-solid fa-utensils"></i></Button>
+</ButtonGroup>
+
+
+
+
+            {/* <ul className="category-options"> */}
+              {/* <ButtonGroup variant="outlined" aria-label="outlined button group"> */}
+                {/* <Button> */}
+                {/* <FontAwesomeIcon icon="fa-sharp fa-solid fa-fork-knife" style={{color: "#000000"}} /> */}
+                {/* </Button> */}
+              {/* </ButtonGroup> */}
+              {/* <li id="restaurant" onClick={(e) => handleChange(e)}> */}
                 {/* <FontAwesomeIcon icon="fa-solid fa-fork-knife" /> */}
-                <img src={resIcon}
-                />
-                Restaraunts
+                {/* <FontAwesomeIcon icon="fa-solid fa-fork-knife" style={{color: "#000000",}} /> */}
+                {/* <img src={resIcon}
+                /> */}
+                {/* Restaraunts <i class="fa-solid fa-utensils"></i>
               </li>
               <li id="social" onClick={(e) => handleChange(e)}>
                 Social
@@ -57,9 +77,9 @@ export default function IndexPage() {
               <li id="health and wellness" onClick={(e) => handleChange(e)}>
                 Health and Wellness
               </li>
-            </ul>
+            </ul> */}
           </aside>
-          <div className="grid m-left">
+          {/* <div className="grid m-left">
             <label htmlFor="online">
               Online Only
               <input type="checkbox" id="online" className="margin-top" />
@@ -69,15 +89,15 @@ export default function IndexPage() {
               Has Store
               <input type="checkbox" id="in-store" className="margin-top" />
             </label>
-          </div>
+          </div> */}
         </div>
       </div>
 
-      <div className="index-container test-b2">
-        {display.map((business, idx) => {
+      {/* <div className="index-container test-b2">
+        {display?.map((business, idx) => {
           return <Card business={business} key={idx} />;
         })}
-      </div>
+      </div> */}
       <div className="col-3 index-map">
         <MapContainer businesses={display} />
       </div>

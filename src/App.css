@@ -774,3 +774,11 @@ overflow: hidden; */
 {
   background-color: white;
 }
+
+.category-options > li {
+  border: 3px solid black;
+  border-radius: 20px;
+  text-align: center;
+  display: grid;
+  row-gap: 50px;
+}
