@@ -121,6 +121,9 @@ input[type="search"] {
   padding:15px 15px;
   column-gap: 10px;
   row-gap: 10px;
+  background-color: #ffffff;
+  /* background: url("https://uploads.concordia.net/2020/08/28151123/black-businesses-black-consumers-featured-web-1024x534-1.jpg"); */
+  /* background-size: cover; */
 
 }
 .test-b1 {
@@ -179,6 +182,8 @@ input[type="search"] {
 }
 
 .cultural-facts {
+  position: relative;
+  bottom: 450px;
   border: #282c34 solid;
   padding: 20px;
   /* border-radius: 8px; */
@@ -200,7 +205,7 @@ li {
   gap: 100px;
 }
 
-.home,
+.landing,
 .resources,
 .show-page {
   background-color: rgb(253, 253, 238);
@@ -218,27 +223,59 @@ li {
 }
 
 .navbar {
-  display: flex;
+  /* display: flex;
   align-items: center;
   gap: 20px;
-  height: 100px;
+  height: 100px; */
   /* background-color: rgba(103, 103, 12, 0.725); */
-
+  height: 100px;
   background-color: #f1cc24;
 
   /* background-color: #E2BF23; */
   /* background-color: #F4ff60; */
-  padding-right: 70px;
+  /* padding-right: 70px; */
 }
 
 .hero {
-  padding-left: 50px;
-  position: relative;
-  bottom: 160px;
-  right: 100px;
-  height: 270px;
-  width: 340px;
+  /* padding-left: 50px; */
+  /* position: relative; */
+  /* bottom: 200px; */
+  /* right: 100px; */
+  height: 125px;
+  width: 135px;
 }
+
+.acct-icon{
+  position: absolute;
+  left: 1730px;
+  /* bottom: 890px; */
+}
+
+.account{
+  position: relative;
+  left: 890px;
+}
+
+.nav-link-acct{
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-link-pro{
+  position: relative;
+  left: 1000px;
+}
+
+.nav-link-res{
+  position: relative;
+  left: 970px;
+}
+
+.nav-link-biz{
+  position: relative;
+  left: 940px;
+}
+
 header{
   background-color: #000;
 }
@@ -252,9 +289,14 @@ header img {
 
 .slogan {
   position: relative;
-  right: 300px;
+  /* right: 0px; */
+  bottom: 750px;
   text-align: center;
-  /* font-size: smaller; */
+  background-color: #000;
+  color: #f1cc24;
+  opacity: 80%;
+  width: 25%;
+  margin: auto;
 }
 
 .slogan-2 {
@@ -324,9 +366,13 @@ li > a {
 .card-img {
   width: 100%;
   height: 200px;
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  
 }
 .card-details {
-  background-color: white;
+  text-align: center;
+  /* background-color: white; */
   /* border:1px solid black; */
   padding: 7px 3px;
 }
@@ -378,9 +424,9 @@ table {
 tr {
   background-color: #f1cc24;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgb(51, 51, 51) 0px 0px 0px 5px; */
-  box-shadow: rgb(255, 253, 253) 0px 0px 0px 3px,
-    rgb(251, 252, 251) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
-    #f1cc24 0px 0px 0px 12px, rgb(251, 251, 251) 0px 0px 0px 15px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px,
+    rgb(0, 0, 0) 0px 0px 0px 6px, rgb(0, 0, 0) 0px 0px 0px 9px,
+    #000000 0px 0px 0px 12px, rgb(0, 0, 0) 0px 0px 0px 15px;
 }
 
 .tb-link {
@@ -390,6 +436,7 @@ tr {
 
 .show-page {
   display: grid;
+  background-color: #000;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 3fr 1fr;
   gap: 20px;
@@ -399,7 +446,9 @@ tr {
 
 .show-header {
   font-family: "Bebas Neue", sans-serif;
-  text-decoration: double underline;
+  text-decoration: #f1cc24 double underline;
+  /* color: #a57109; */
+  color: white;
 }
 
 .show-img {
@@ -424,7 +473,7 @@ tr {
   color: #fcfcfa;
 }
 
-#cf {
+/* #cf {
   position: relative;
   display: block;
   width: 100%;
@@ -464,23 +513,9 @@ tr {
   background-size: cover;
   background-image: url('https://static01.nyt.com/images/2019/03/02/business/02west-01/merlin_148158210_809d173a-e520-4d33-9a4c-0ca36a8e42ff-superJumbo.jpg');
   animation-delay: 15s;
-}
-/* #pic5 {
-  background-image: url('data:image/jpeg;base64,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');
-  animation-delay: 2s;
 } */
-/* #pic6 {
-  background-image: url('https://www.blackentrepreneurprofile.com/fileadmin/user_upload/Marvin-Ellison-twitter.jpg');
-  animation-delay: 2s;
-} */
-/* #pic7 {
-  background-image: url('https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iqB_PZwuaAmk/v0/1200x-1.jpg');
-  animation-delay: 2s;
-} */
-/* #pic8 {
-  background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/190301084659-01-ee-ward.jpg?q=x_345,y_0,h_2356,w_2356,c_crop');
-  animation-delay: 2s;
-}
+
+
 
 .map-container{
   height:500px;
@@ -488,116 +523,7 @@ tr {
   grid-column: 3;
 position: relative; 
 }
-@-webkit-keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  15% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  15% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
- #cf img {
-  position:absolute;
-  left:0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-} 
-
-
-
- @keyframes cf3FadeInOut {
-  0% {
-  opacity:1;
-}
-45% {
-opacity:1;
-}
-
-
-
-55% {
-opacity:0;
-}
-100% {
-opacity:0;
-}
-} 
-
-
- @keyframes cf3FadeInOut {
-  0% {
-    opacity:1;
-  }
-  17% {
-    opacity:1;
-  }
-  25% {
-    opacity:0;
-  }
-  92% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-#cf img.top {
-  opacity:0;
-  animation-name: cf3FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 10s;
-  animation-direction: alternate;
-}
-
-#cf img:nth-of-type(1) {
-  animation-delay: 6s;
-}
-#cf img:nth-of-type(2) {
-  animation-delay: 4s;
-}
-#cf img:nth-of-type(3) {
-  animation-delay: 2s;
-}
-#cf img:nth-of-type(4) {
-  animation-delay: 0;
-} */
-
-.map-container{
-  height:500px;
-  width:100%;
-  grid-column: 3;
-position: relative; 
-}
 
 
 .show-page-map {
@@ -717,4 +643,140 @@ background-position:50% 50%;
 section > li > button {
   margin-left: 160px;
 
+}
+
+Tabs
+{
+  color: white;
+}
+
+.tab-content
+{
+  color: white;
+}
+
+.btn-dark{
+  position: relative;
+  left: 1050px;
+}
+
+/* .btn-light
+{
+  /* background: black ; */
+  /* color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+background: #8f6001;
+} */
+
+/* .btn-light::after
+{
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em); */
+/* content: '';  
+position: relative;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90%, transparent, #ffff, transparent);
+transition: 0.5s;
+overflow: hidden; */
+/* } */ 
+
+@keyframes TransitioningBackground {
+  0% {
+    background-position: 1% 0%;
+  }
+  50% {
+    background-position: 99% 100%;
+  }
+  100% {
+    background-position: 1% 0%;
+  }
+}
+
+/* .btn.light {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+  /* // for shine & gradient effects to work */
+  /* position: relative;
+  overflow: hidden; */
+   /* for background color shift */
+  /* background-image: (linear-gradient(270deg, #8e9ac2, #42579a));
+  background-size: 400% 400%;
+  animation: TransitioningBackground 10s ease infinite; */
+  /* // to ease the button growth on hover */
+  /* transition: 0.6s; */
+/* } */ 
+  /* // psuedo-element shine animation left side */
+  /* .btn-light::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    top: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+  } */
+
+  /* // psuedo-element shine animation right side */
+  /* .btn.light::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  } */
+
+  /* // grow button and change background gradient on hover */
+  /* .btn-light:hover {
+    background-image: (linear-gradient(to left, #2d8fe5, #d155b8));
+    transform: scale(1.2);
+    cursor: pointer;
+  } */
+    /* // psuedo-elements for right- and left-side shine animations */
+    /* .btn-light::before,
+    .btn-light::after {
+      transform: translateX(300px) skewX(-15deg);
+      transition: 0.7s;
+    } */
+  
+.homepic{
+  /* background: url("https://www.lendio.com/wp-content/uploads/2020/11/male-female-black-businessowners-coffee.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: fit-content;
+}
+
+.home
+.landing
+{
+  background-color: white;
+}
+
+.mission{
+  text-shadow: 2px 2px 2px #f1cc24;
 }

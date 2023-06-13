@@ -1,27 +1,15 @@
 import React from "react";
-
-import LandingPage from "../components/LandingPage";
-
 import CulturalFacts from "../components/CulturalFacts";
-import { Link } from "react-router-dom";
+import Carousel from "./Carousel";
 
-
-const Home = () => {
+const LandingPage = () => {
   return (
-    <div className="home">
-
-      <img
-        className="homepic"
-        alt="smiles"
-        src="https://www.lendio.com/wp-content/uploads/2020/11/male-female-black-businessowners-coffee.jpg"
-      />
-      <div className="slogan">
-        <h2>Embrace the Power of Melanin</h2>
-        <h2 className="slogan-2"> Shop, Connect, Thrive!</h2>
-
+    <div className="landing">
       <div className="mission-statement">
         <section className="statement">
-          <h3>Our Mission </h3>
+          <h1 className="mission" style={{ textDecoration: "underline" }}>
+            Our Mission
+          </h1>
           <h4>
             To support and promote black-owned businesses by creating a platform
             for consumers to connect with them, with the goal of increasing
@@ -30,6 +18,8 @@ const Home = () => {
             ultimately building a better and more inclusive economy for all.
           </h4>
         </section>
+
+        <Carousel />
       </div>
       <br />
       <CulturalFacts />
@@ -44,14 +34,12 @@ const Home = () => {
             <h4 style={{ marginLeft: "20px" }}>
               Sylvia's, Located In Harlem Has Been Open For 61 Years!
             </h4>
-            <Link to="/businesses/9">
             <img
               src="https://www.nycgo.com/images/videos/84544/sylvias-restaurant-thumbnail__large.jpg"
               alt="sylvia's restuarant"
               width="400px"
               height="400px"
-              />
-              </Link>
+            />
           </div>
           <div>
             <h4 style={{ marginLeft: "20px" }}>
@@ -77,11 +65,9 @@ const Home = () => {
             />
           </div>
         </div>
-
       </div>
-      <LandingPage />
     </div>
   );
 };
 
-export default Home;
+export default LandingPage;

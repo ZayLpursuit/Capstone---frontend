@@ -173,7 +173,7 @@ const Show = ({setFavs,favs,currentUser}) => {
             </tr>
             <tr>
               <td>
-                <h4>Phone Number: </h4>
+                <h4 >Phone Number: </h4>
               </td>
               <td>
                 <h5>{contact_num ? contact_num : "N/A"}</h5>
@@ -193,10 +193,10 @@ const Show = ({setFavs,favs,currentUser}) => {
           onSelect={(k) => setKey(k)}
           className="mb-3"
         >
-          <Tab eventKey="description" title="Description">
+          <Tab eventKey="description" title="Description" id="tab">
             {description}
           </Tab>
-          <Tab eventKey="comments" title={<Comments />}>
+          {/* <Tab eventKey="comments" title={<Comments />}>
             {comments?.map((comment) => (
               <Comment
                 key={comment.id}
@@ -216,7 +216,7 @@ const Show = ({setFavs,favs,currentUser}) => {
                 ></CommentForm>
               )}
             </>
-          </Tab>
+          </Tab> */}
         </Tabs>
       </div>
     </div>
