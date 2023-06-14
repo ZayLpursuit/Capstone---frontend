@@ -1,29 +1,31 @@
-// import { IconButton } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import MapContainer from "./MapContainer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import resIcon from "../assets/knife_fork.png"
 
+
+const API=process.env.REACT_APP_API_URL
 export default function IndexPage() {
   const [category, setCategory] = useState("boutique");
   const [display, setDisplay] = useState([]);
   function handleChange(e) {
     setCategory(e.target.id);
-    // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
+    axios.get(`${API}/businesses/categories/${category}`).then((res)=>setDisplay(res.data))
   }
   useEffect(() => {
     axios
-      .get(`http://localhost:7777/businesses/categories/${category}`)
-      .then((res) => setDisplay(res.data));
-  }, [category]);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:7777/businesses`)
+      .get(`${API}/businesses`)
       .then((res) => setDisplay(res.data));
   }, []);
+
+
+//   useEffect(() => {
+//     axios
+//       .get(`${API}/businesses/categories/${category}`)
+//       .then((res) => setDisplay(res.data));
+//   }, [category]);
+
 
   return (
     <div className="index-grid">
@@ -34,7 +36,6 @@ export default function IndexPage() {
 
             <ul className="category-options">
               <li id="restaurant" onClick={(e) => handleChange(e)}>
-                {/* <FontAwesomeIcon icon="fa-solid fa-fork-knife" /> */}
                 <img src={resIcon}
                 />
                 Restaraunts
@@ -59,17 +60,7 @@ export default function IndexPage() {
               </li>
             </ul>
           </aside>
-          <div className="grid m-left">
-            <label htmlFor="online">
-              Online Only
-              <input type="checkbox" id="online" className="margin-top" />
-            </label>
-
-            <label htmlFor="in-store">
-              Has Store
-              <input type="checkbox" id="in-store" className="margin-top" />
-            </label>
-          </div>
+          
         </div>
       </div>
 
