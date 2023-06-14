@@ -37,7 +37,7 @@ export default function IndexPage() {
             <ul className="category-options">
               <li id="restaurant" onClick={(e) => handleChange(e)}>
                 <img src={resIcon}
-                />
+                 alt ="some-pic"/>
                 Restaraunts
               </li>
               <li id="social" onClick={(e) => handleChange(e)}>

@@ -11,7 +11,7 @@ import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
 import hero from "../assets/image.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import banner from "../assets/Diamonds-Banner(2).png";
+// import banner from "../assets/Diamonds-Banner(2).png";
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
