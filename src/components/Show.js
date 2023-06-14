@@ -65,7 +65,7 @@ const Show = ({setFavs,favs,currentUser}) => {
 
   function addToFavorites(){
     console.log(currentUser.uid)
-    axios.post(`http://localhost:7777/users/user/${currentUser.uid}/favorites`,business)
+    axios.post(`${API}/users/user/${currentUser.uid}/favorites`,business)
   }
 
   const handleDelete = (id) => {
