@@ -19,26 +19,26 @@ const MapContainer = ({businesses}) => {
 
   const geocoder= useMemo(() =>  new window.google.maps.Geocoder(), [])
   
-  // useEffect(()=>{
-  //   setMarkers([])
+  useEffect(()=>{
+    setMarkers([])
     
     
-  //   businesses?.forEach(({address})=>{
-  //     geocoder.geocode({"address":address},(results,status)=>{
-  //       if(status==='OK'){
-  //         const {lat,lng}=results[0].geometry.location 
+    businesses?.forEach(({address})=>{
+      geocoder.geocode({"address":address},(results,status)=>{
+        if(status==='OK'){
+          const {lat,lng}=results[0].geometry.location 
           
           
-  //         // setMarkers([...markers,{"address":address,"position":{"lat":lat,"lng":lng}}])  
-  //         setMarkers((prev)=>[...prev,{address,position:{lat:lat(),lng:lng()}}])
+          // setMarkers([...markers,{"address":address,"position":{"lat":lat,"lng":lng}}])  
+          setMarkers((prev)=>[...prev,{address,position:{lat:lat(),lng:lng()}}])
           
-  //       }
-  //       else{
-  //         console.error(`Geocoding error:${status}`)
-  //       }
-  //     })
-  //   })
-  // },[businesses, geocoder])
+        }
+        else{
+          console.error(`Geocoding error:${status}`)
+        }
+      })
+    })
+  },[businesses, geocoder])
 
   return (
     <div className="map-container">

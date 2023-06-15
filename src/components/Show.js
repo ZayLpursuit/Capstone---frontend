@@ -8,9 +8,9 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import ShowMap from "./ShowMap";
 
-import Comments from "./Comments";
-import Comment from "./Comment";
-import CommentForm from "./CommentForm";
+// import Comments from "./Comments";
+// import Comment from "./Comment";
+// import CommentForm from "./CommentForm";
 import StarRating from "./StarRating";
 
 const API = process.env.REACT_APP_API_URL;
@@ -25,7 +25,8 @@ const Show = ({setFavs,favs,currentUser}) => {
   const [favorite, setFavorite] = useState(false);
   let { id } = useParams();
 
-  const [comments, setComments] = useState([]);
+  const [, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
   // const [showForm, setShowForm] = useState(false);
   // const [showComments, setShowComments] = useState(false);
 

@@ -4,12 +4,16 @@ import Card from "./Card";
 import MapContainer from "./MapContainer";
 import { Button, ButtonGroup } from "@mui/material";
 
-const API = process.env.REACT_APP_API_URL;
+// const API = process.env.REACT_APP_API_URL;
 
 export default function IndexPage() {
   const [category, setCategory] = useState(null);
   const [display, setDisplay] = useState([]);
   function handleChange(e) {
+    console.log("id", e.target.id)
+    let target = e.target.id.includes("-") ? e.target.id.split("-").join("") : e.target.id;
+    console.log("target", target)
+
     setCategory(e.target.id);
     // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
   }
@@ -25,7 +29,7 @@ export default function IndexPage() {
       <div className="grid test-b1">
         <div className="m-left">
           <aside className="category-section">
-            <h1 className="select-cat">Categories:</h1>
+            <h1 className="select-cat">Categories</h1>
             <br />
             <ButtonGroup orientation="vertical" className="buttons-group">
               <Button
@@ -33,7 +37,7 @@ export default function IndexPage() {
                 id="restaurant"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Restaurants</h4>
+                <h5>Restaurants</h5>
                 <p>&#x1F374;</p>
               </Button>
               <Button
@@ -41,7 +45,7 @@ export default function IndexPage() {
                 id="social"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Social</h4>
+                <h5>Social</h5>
                 <p>&#x1F3B6;</p>
               </Button>
               <Button
@@ -49,7 +53,7 @@ export default function IndexPage() {
                 id="barbershop"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Barber Shops</h4>
+                <h5>Barber Shops</h5>
                 <p>&#x1F488;</p>
               </Button>
               <Button
@@ -57,7 +61,7 @@ export default function IndexPage() {
                 id="bank"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Banks</h4>
+                <h5>Banks</h5>
                 <p>&#x1F4B0;</p>
               </Button>
               <Button
@@ -65,7 +69,7 @@ export default function IndexPage() {
                 id="fashion"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Fashion</h4>
+                <h5>Fashion</h5>
                 <p>&#x1F460;</p>
               </Button>
               <Button
@@ -73,7 +77,7 @@ export default function IndexPage() {
                 id="beauty"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Beauty</h4>
+                <h5>Beauty</h5>
                 <p>&#x1F484;</p>
               </Button>
               <Button
@@ -81,7 +85,7 @@ export default function IndexPage() {
                 id="health-and-wellness"
                 onClick={(e) => handleChange(e)}
               >
-                <h4>Health and Wellness</h4>
+                <h5>Health and Wellness</h5>
                 <p>&#x1F486;</p>
               </Button>
             </ButtonGroup>

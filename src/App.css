@@ -108,7 +108,8 @@ input[type="search"] {
 }
 .index-grid {
   display: grid;
-  grid-template-columns: 31% 60% 25%;
+  /* grid-template-columns: 31% 44% 25%; */
+  grid-template-columns: 1.3fr 2.2fr 1fr;
   margin-bottom: 25px;
 }
 .index-container {
@@ -245,13 +246,13 @@ li {
 
 .acct-icon{
   position: absolute;
-  left: 1730px;
+  left: 1400px;
   /* bottom: 890px; */
 }
 
 .account{
   position: relative;
-  left: 890px;
+  /* left: 890px; */
 }
 
 .nav-link-acct{
@@ -261,17 +262,17 @@ li {
 
 .nav-link-pro{
   position: relative;
-  left: 1000px;
+  /* left: 1000px; */
 }
 
 .nav-link-res{
   position: relative;
-  left: 970px;
+  /* left: 970px; */
 }
 
 .nav-link-biz{
   position: relative;
-  left: 940px;
+  /* left: 940px; */
 }
 
 header{
@@ -386,7 +387,6 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .select-cat {
   text-align: center;
-  text-decoration: underline;
 }
 .profile-form input {
   width: 80%;
@@ -530,10 +530,15 @@ position: relative;
   width: 20%;
 }
 
-footer {
+#footer {
   background-color: #f1cc24;
-  border: 1px solid black;
-  height: 160px;
+  /* border: 1px solid black; */
+  height: 170px;
+  width: 100%;
+  position: absolute;
+  /* top: 2250px; */
+  /* bottom: 0; */
+  /* bottom: 400px; */
 }
 
 #footer ul {
@@ -541,12 +546,19 @@ footer {
   gap: 200px;
   list-style-type: none;
   color: rgb(0, 0, 0);
+  /* padding: 0; */
+  /* padding-inline-start: 0px; */
 }
 
 #footer ul a:hover {
   color: rgba(115, 115, 96, 0.883);
 
 }
+
+/* ul {
+  width: 0px;
+  height: 0px;
+} */
 
 .github {
   display: flex;
@@ -656,7 +668,7 @@ Tabs
 
 .btn-dark{
   position: relative;
-  left: 1050px;
+  /* left: 1050px; */
 }
 
 /* .btn-light
@@ -786,30 +798,29 @@ overflow: hidden; */
 
 .category-section {
   margin-top: 100px;
-  border: 5px solid #f1cc24;
+  /* border: 5px solid #f1cc24; */
   padding: 10px;
-  background-color: whitesmoke;
 }
 
 .buttons-group {
   gap: 20px;
 }
 
-.buttons-group button {
-  box-shadow: #3b3312 5px 5px;
+.buttons-group-nav {
+  margin-left: 700px;
 }
 
-button h4 {
+button h5 {
   color: black;
-  text-shadow: #f1cc24 2px 2px;
+  /* text-shadow: #f1cc24 2px 2px; */
 }
 
 #restaurant {
   padding: 0 60px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
-  background-repeat: none;
+  background-repeat: none; */
   border-radius: 30px;
 }
 
@@ -817,8 +828,8 @@ button h4 {
   color: rgb(0, 0, 0);
   padding: 0 60px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1583227061267-8428fb76fbfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1013&q=80");
-  background-size: cover;
+  /* background-image: url("https://images.unsplash.com/photo-1583227061267-8428fb76fbfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1013&q=80");
+  background-size: cover; */
   background-repeat: none;
   border-radius: 30px;
 }
@@ -827,8 +838,8 @@ button h4 {
   color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1621607505145-a022ec52de64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-  background-size: cover;
+  /* background-image: url("https://images.unsplash.com/photo-1621607505145-a022ec52de64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover; */
   border-radius: 30px;
 }
 
@@ -836,7 +847,7 @@ button h4 {
   color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
   border-radius: 30px;
 }
 
@@ -844,8 +855,8 @@ button h4 {
   color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80");
-  background-size: cover;
+  /* background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80");
+  background-size: cover; */
   border-radius: 30px;
 }
 
@@ -853,8 +864,8 @@ button h4 {
   color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2087&q=80");
-  background-size: cover;
+  /* background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2087&q=80");
+  background-size: cover; */
   border-radius: 30px;
 }
 
@@ -862,7 +873,7 @@ button h4 {
   color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
-  background-image: url("https://images.unsplash.com/photo-1483137140003-ae073b395549?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1483137140003-ae073b395549?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
   border-radius: 30px;
 }
 
@@ -872,6 +883,6 @@ button > p {
   border-radius: 20px;
   padding: 4px;
   position: absolute;
-  top: 0px;
+  top: -2.5px;
   right: 10px;
 }

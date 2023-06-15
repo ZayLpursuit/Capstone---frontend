@@ -1,10 +1,5 @@
 import React from "react";
 import CulturalFacts from "../components/CulturalFacts";
-import rj from "../assets/robert_johnson.jpeg"
-import jw from "../assets/john_ward.jpeg"
-import fc from "../assets/Fumbi_Chima.jpeg"
-import bbo from "../assets/BeFunky-collage.png";
-
 
 const LandingPage = () => {
   return (

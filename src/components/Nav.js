@@ -9,12 +9,12 @@ import Button from "react-bootstrap/Button";
 // import Navbar from "react-bootstrap/Navbar";
 import { Navbar } from "react-bootstrap";
 // import hero from "../assets/Melanated-Diamonds.png"
-import hero from "../assets/image.png";
+// import hero from "../assets/image.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import banner from "../assets/Diamonds-Banner(2).png";
+// import banner from "../assets/Diamonds-Banner(2).png";
 // import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import hero from "../assets/Melanated-Diamonds.png";
 
 const Nav = ({ currentUser }) => {
   // console.log(currentUser, "hi");
@@ -52,22 +52,25 @@ const Nav = ({ currentUser }) => {
             </Link>
           </Button>
         ) : (
-          <>
+          <div  className="buttons-group-nav">
             <Button variant="light" className="nav-link-biz">
               <Link to="/businesses" className="nav-link-acct">
                 Browse Businesses
               </Link>
-            </Button>
+              </Button>
+           {" "}
             <Button variant="light" className="nav-link-res">
               <Link to="/resources"className="nav-link-acct" >
                 Browse Resources
               </Link>
-            </Button>
+              </Button>
+              {" "}
             <Button variant="light" className="nav-link-pro">
               <Link to="/profile" className="nav-link-acct">
                 User Profile
               </Link>
-            </Button>
+              </Button>
+              {" "}
             <Button
               variant="dark"
               onClick={async () => {
@@ -77,7 +80,7 @@ const Nav = ({ currentUser }) => {
             >
               Sign Out
               </Button>
-          </>
+          </div>
         )}
         <AccountCircleIcon className="acct-icon"/>
       </Navbar>
