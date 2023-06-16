@@ -16,6 +16,8 @@ const styles={
     height:"60px"
 }
 
+
+const API =process.env.REACT_APP_API_URL
 export default function Profile({currentUser}){
 const [user,setUser]=useState([])
 const [form,setForm]=useState({})
@@ -32,7 +34,7 @@ const [favs,setFavs]=useState([])
   
         if(currentUser){
 
-        axios.get(`http://localhost:7777/users/firebase/${currentUser?.uid}`)
+        axios.get(`${API}/users/firebase/${currentUser?.uid}`)
         .then((res) => {
           
             setUser(res.data[0])
@@ -46,7 +48,7 @@ const [favs,setFavs]=useState([])
     useEffect(()=>{
 
         if(currentUser){
-            axios.get(`http://localhost:7777/users/user/${currentUser?.uid}/favorites`).then((res)=>setFavs(res.data))
+            axios.get(`${API}/users/user/${currentUser?.uid}/favorites`).then((res)=>setFavs(res.data))
 
         }
 
@@ -92,13 +94,13 @@ const [favs,setFavs]=useState([])
 
                     <h1>Your favorites</h1>
                  <div className="user-favs-section">
-                    {favs? (
+                    {favs[0]? (
                         favs.map((business,idx)=>{
                             console.log(business)
                             return <div className="user-prof-card"><Card business={business} key={idx}/></div>
                         })
-                    ):
-                    <p>You haven't added any businesses to your favorites yet</p>}
+                    ):(
+                    <p>You haven't added any businesses to your favorites yet</p>)}
 
                  </div>
 

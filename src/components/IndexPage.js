@@ -4,8 +4,9 @@ import Card from "./Card";
 import MapContainer from "./MapContainer";
 import { Button, ButtonGroup } from "@mui/material";
 
-// const API = process.env.REACT_APP_API_URL;
 
+
+const API=process.env.REACT_APP_API_URL
 export default function IndexPage() {
   const [category, setCategory] = useState(null);
   const [display, setDisplay] = useState([]);
@@ -15,7 +16,7 @@ export default function IndexPage() {
     console.log("target", target)
 
     setCategory(e.target.id);
-    // axios.get(`http://localhost:7777/businesses/categories/${category}`).then((res)=>console.log(res))
+    axios.get(`${API}/businesses/categories/${category}`).then((res)=>setDisplay(res.data))
   }
   useEffect(() => {
     const url = category
