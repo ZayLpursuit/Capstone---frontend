@@ -1,13 +1,11 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import auth from "../base"
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import auth from "../base";
 
 import { useNavigate } from "react-router-dom";
-import AddHomeIcon from '@mui/icons-material/AddHome';
+import AddHomeIcon from "@mui/icons-material/AddHome";
 import Card from "./Card";
-// import { getAuth } from "firebase/auth";
-// import { AutofpsSelectRounded } from "@mui/icons-material";
+
 
 
 
@@ -35,14 +33,14 @@ const [favs,setFavs]=useState([])
         if(currentUser){
 
         axios.get(`${API}/users/firebase/${currentUser?.uid}`)
-        .then((res) => {
-          
-            setUser(res.data[0])
-            setForm(res.data[0])
 
-        })
+        .then((res) => {
+          setUser(res.data[0]);
+          setForm(res.data[0]);
+        });
     }
-    },[currentUser])
+  }, [currentUser]);
+
 
 
     useEffect(()=>{
@@ -111,10 +109,10 @@ const [favs,setFavs]=useState([])
         
                    
                    
-                    
+                  </div>  
                 </div>
            
 
-        </div>
-    )
+
+);
 }

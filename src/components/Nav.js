@@ -6,15 +6,14 @@ import { signOut } from "firebase/auth";
 import auth from "../base";
 
 import Button from "react-bootstrap/Button";
-// import Navbar from "react-bootstrap/Navbar";
 import { Navbar } from "react-bootstrap";
-// import hero from "../assets/Melanated-Diamonds.png"
+
+import hero from "../assets/hero.png";
+
 // import hero from "../assets/image.png";
+
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import banner from "../assets/Diamonds-Banner(2).png";
-// import diamonds from "../assets/edgar-soto-gb0BZGae1Nk-unsplash.jpg";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import hero from "../assets/Melanated-Diamonds.png";
+
 
 const Nav = ({ currentUser }) => {
   // console.log(currentUser, "hi");
@@ -25,25 +24,17 @@ const Nav = ({ currentUser }) => {
   const navigate = useNavigate();
   return (
     <nav>
-      {/* <div>
-        <header>
-          <img
-          src={banner}
-            // src="https://www.woodbridgejewelry.com/wp-content/uploads/2019/05/Diamonds-Banner.jpg"
-            alt="n/a"/>
-        </header>
-      </div> */}
-
+    
       <Navbar className="navbar">
         <Navbar.Brand>
           <Link to="/">
             <img className="hero" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
-        {/* <div className="slogan">
-          <h5>Embrace the Power of Melanin</h5>
-          <h5 className="slogan-2"> Shop, Connect, Thrive!</h5>
-        </div> */}
+        <div className="sloganNav">
+          <h5>By Onyx</h5>
+          <h5 className="slogan-2Nav"> For Obsidian</h5>
+        </div>
 
         {!auth.currentUser ? (
           <Button variant="light" className="account">

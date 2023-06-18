@@ -6,7 +6,7 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import ShowMap from "./ShowMap";
+// import ShowMap from "./ShowMap";
 
 // import Comments from "./Comments";
 // import Comment from "./Comment";
@@ -15,7 +15,7 @@ import StarRating from "./StarRating";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Show = ({setFavs,favs,currentUser}) => {
+const Show = ({ setFavs, favs, currentUser }) => {
   const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
   const { name, address, contact_num, year_opened, img, website, description } =
@@ -32,7 +32,6 @@ const Show = ({setFavs,favs,currentUser}) => {
   // console.log("comment", <Comments/>)
 
   useEffect(() => {
-    // console.log(API)
     axios
       .get(`${API}/businesses/${id}`)
       .then((res) => {
@@ -43,7 +42,6 @@ const Show = ({setFavs,favs,currentUser}) => {
   }, [id]);
 
   useEffect(() => {
-
     axios.get(`${API}/businesses/${id}/comments`).then((response) => {
       // console.log(response.data)
       setComments(response.data);
@@ -51,11 +49,61 @@ const Show = ({setFavs,favs,currentUser}) => {
     });
   }, [id]);
 
+
+  // const handleAdd = (newComment) => {
+  //   axios
+  //     .post(`${API}/businesses/${id}/comments`, newComment)
+  //     .then(
+  //       (response) => {
+  //         setComments([response.data, ...comments]);
+  //       },
+  //       (error) => console.error(error)
+  //     )
+  //     .catch((c) => console.warn("catch", c));
+  // };
+
+  
+
+  // const handleDelete = (id) => {
+  //   axios
+  //     .delete(`${API}/businesses/${id}/comments/${id}`)
+  //     .then(
+  //       (response) => {
+  //         const copyCommentArray = [...comments];
+  //         const indexDeletedComment = copyCommentArray.findIndex((comment) => {
+  //           return comment.id === id;
+  //         });
+  //         copyCommentArray.splice(indexDeletedComment, 1);
+  //         setComments(copyCommentArray);
+  //       },
+  //       (error) => console.error(error)
+  //     )
+  //     .catch((c) => console.warn("catch", c));
+  // };
+
+  // const handleEdit = (updatedComment) => {
+  //   axios
+  //     .put(
+  //       `${API}/businesses/${id}/comments/${updatedComment.id}`,
+  //       updatedComment
+  //     )
+  //     .then((response) => {
+  //       const copyCommentArray = [...comments];
+  //       const indexUpdatedComment = copyCommentArray.findIndex((comment) => {
+  //         return comment.id === updatedComment.id;
+  //       });
+  //       copyCommentArray[indexUpdatedComment] = response.data;
+  //       setComments(copyCommentArray);
+  //     })
+  //     .catch((c) => console.warn("catch", c));
+  // };
+
+
   function addToFavorites(){
     console.log(currentUser.uid)
     axios.post(`${API}/users/user/${currentUser.uid}/favorites`,business)
   }
-  
+
   return (
     <div className="show-page">
       <div className="center-text">
@@ -69,12 +117,15 @@ const Show = ({setFavs,favs,currentUser}) => {
       </div>
 
       <div className="top-section">
-        
-
         <h1 className="show-header">
           {name}{" "}
-          <StarRating/>
-          <Button variant="warning" onClick={() =>{ setFavorite(!favorite); addToFavorites()}}>
+          <Button
+            variant="warning"
+            onClick={() => {
+              setFavorite(!favorite);
+              addToFavorites();
+            }}
+          >
             {!favorite ? (
               <i className="fa-regular fa-star" id="unfavorite"></i>
             ) : (
@@ -82,6 +133,9 @@ const Show = ({setFavs,favs,currentUser}) => {
             )}
           </Button>
         </h1>
+        <div>
+          <StarRating />
+        </div>
         <Table bordered hover>
           <tbody>
             <tr>
@@ -126,7 +180,7 @@ const Show = ({setFavs,favs,currentUser}) => {
             </tr>
             <tr>
               <td>
-                <h4 >Phone Number: </h4>
+                <h4>Phone Number: </h4>
               </td>
               <td>
                 <h5>{contact_num ? contact_num : "N/A"}</h5>
@@ -136,8 +190,8 @@ const Show = ({setFavs,favs,currentUser}) => {
         </Table>
 
         <div className="show-page-map">
-    <ShowMap business={business}/>
-      </div>
+          {/* <ShowMap business={business}/> */}
+        </div>
       </div>
       <div className="bottom-section">
         <Tabs
