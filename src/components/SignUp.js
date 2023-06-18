@@ -7,9 +7,10 @@ import {
 import auth from "../base";
 import { useNavigate } from "react-router-dom";
 
-export default function SignUp({ currentUser }) {
+const API=process.env.REACT_APP_API_URL
+export default function SignUp({currentUser}) {
   const navigate = useNavigate();
-
+ 
   const [signIn, setSignIn] = useState(true);
   const [form, setForm] = useState({
     username: "",
@@ -42,11 +43,10 @@ export default function SignUp({ currentUser }) {
         form.email,
         form.password
       );
-      console.log(newUser);
-      axios.post(`http://localhost:7777/users`, {
-        ...form,
-        uid: newUser?.user?.uid,
-      });
+
+        console.log(newUser)
+      axios.post(`${API}/users`, {...form,uid:newUser?.user?.uid});
+
 
       navigate("/profile");
       console.log(newUser);
@@ -183,3 +183,4 @@ export default function SignUp({ currentUser }) {
     </div>
   );
 }
+

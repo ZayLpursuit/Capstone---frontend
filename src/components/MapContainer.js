@@ -23,7 +23,7 @@ const MapContainer = ({businesses}) => {
     setMarkers([])
     
     
-    businesses.forEach(({address})=>{
+    businesses?.forEach(({address})=>{
       geocoder.geocode({"address":address},(results,status)=>{
         if(status==='OK'){
           const {lat,lng}=results[0].geometry.location 

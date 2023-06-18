@@ -38,12 +38,18 @@ export default function AddBusiness() {
   }
 
   return (
-    <div className="add-biz-Page" style={{backgroundColor: "black", padding: "100px 100px"}}>
-         <h1 className="center-text margbottom addSlogan" style={{color: "#f1cc24"}}>Show Your Support and Add a Black Owned Business Today!</h1>
+    <div
+      className="add-biz-Page"
+      style={{ backgroundColor: "black", padding: "100px 100px" }}
+    >
+      <h1
+        className="center-text margbottom addSlogan"
+        style={{ color: "#f1cc24" }}
+      >
+        Show Your Support and Add a Black Owned Business Today!
+      </h1>
       <div className="add-biz-sect">
-        <div className="add-biz-info">
-         
-        </div>
+        <div className="add-biz-info"></div>
         <div className="biz-form">
           <form
             className="d-grid pad w-80 centered"

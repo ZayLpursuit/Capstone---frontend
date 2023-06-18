@@ -8,9 +8,9 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 // import ShowMap from "./ShowMap";
 
-import Comments from "./Comments";
-import Comment from "./Comment";
-import CommentForm from "./CommentForm";
+// import Comments from "./Comments";
+// import Comment from "./Comment";
+// import CommentForm from "./CommentForm";
 import StarRating from "./StarRating";
 
 const API = process.env.REACT_APP_API_URL;
@@ -24,15 +24,14 @@ const Show = ({ setFavs, favs, currentUser }) => {
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
   let { id } = useParams();
-
-  const [comments, setComments] = useState([]);
-  const [showForm, setShowForm] = useState(false);
+  const [, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
+  // const [showForm, setShowForm] = useState(false);
   // const [showComments, setShowComments] = useState(false);
 
   // console.log("comment", <Comments/>)
 
   useEffect(() => {
-    console.log(API);
     axios
       .get(`${API}/businesses/${id}`)
       .then((res) => {
@@ -50,6 +49,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
     });
   }, [id]);
 
+
   const handleAdd = (newComment) => {
     axios
       .post(`${API}/businesses/${id}/comments`, newComment)
@@ -62,13 +62,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
       .catch((c) => console.warn("catch", c));
   };
 
-  function addToFavorites() {
-    console.log(currentUser.uid);
-    axios.post(
-      `http://localhost:7777/users/user/${currentUser.uid}/favorites`,
-      business
-    );
-  }
+  
 
   const handleDelete = (id) => {
     axios
@@ -103,6 +97,12 @@ const Show = ({ setFavs, favs, currentUser }) => {
       })
       .catch((c) => console.warn("catch", c));
   };
+
+
+  function addToFavorites(){
+    console.log(currentUser.uid)
+    axios.post(`${API}/users/user/${currentUser.uid}/favorites`,business)
+  }
 
   return (
     <div className="show-page">

@@ -1,6 +1,5 @@
 import React from "react";
 import CulturalFacts from "../components/CulturalFacts";
-// import Carousel from "../components/Carousel";
 
 const LandingPage = () => {
   return (
@@ -16,7 +15,6 @@ const LandingPage = () => {
             ultimately building a better and more inclusive economy for all.
           </h3>
         </section>
-        {/* <Carousel /> */}
       </div>
       <br />
       <CulturalFacts />
@@ -41,11 +39,10 @@ const LandingPage = () => {
           </div>
           <div>
             <h4 style={{ marginLeft: "20px" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Chelle's Hair Closet, an online boutique for luxury hair!
             </h4>
             <img
-            className="featureImg"
-              src="https://gitlab.com/uploads/-/system/project/avatar/3880238/Temp.png"
+              src="https://cdn.shopify.com/s/files/1/0582/8129/6044/products/IMG_6927.jpg?v=1680658083/project/avatar/3880238/Temp.png"
               width="400px"
               height="400px"
               alt="n/a"
