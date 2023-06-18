@@ -1,8 +1,6 @@
 import React from "react";
 import CulturalFacts from "../components/CulturalFacts";
 
-
-
 const LandingPage = () => {
   return (
     <div className="landing">

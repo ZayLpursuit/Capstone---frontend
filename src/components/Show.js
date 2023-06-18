@@ -24,15 +24,15 @@ const Show = ({setFavs,favs,currentUser}) => {
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
   let { id } = useParams();
-
-//   const [comments, setComments] = useState([]);
-//   const [showForm, setShowForm] = useState(false);
+  const [, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
+  // const [showForm, setShowForm] = useState(false);
   // const [showComments, setShowComments] = useState(false);
 
   // console.log("comment", <Comments/>)
 
   useEffect(() => {
-    console.log(API)
+    // console.log(API)
     axios
       .get(`${API}/businesses/${id}`)
       .then((res) => {
@@ -42,67 +42,20 @@ const Show = ({setFavs,favs,currentUser}) => {
       .catch((c) => console.error("catch", c));
   }, [id]);
 
-//   useEffect(() => {
+  useEffect(() => {
 
-//     axios.get(`${API}/businesses/${id}/comments`).then((response) => {
-    
-//       setComments(response.data);
- 
-//     });
-//   }, [id]);
-
-//   const handleAdd = (newComment) => {
-//     axios
-//       .post(`${API}/businesses/${id}/comments`, newComment)
-//       .then(
-//         (response) => {
-//           setComments([response.data, ...comments]);
-//         },
-//         (error) => console.error(error)
-//       )
-//       .catch((c) => console.warn("catch", c));
-//   };
+    axios.get(`${API}/businesses/${id}/comments`).then((response) => {
+      // console.log(response.data)
+      setComments(response.data);
+      // console.log(comments)
+    });
+  }, [id]);
 
   function addToFavorites(){
     console.log(currentUser.uid)
     axios.post(`${API}/users/user/${currentUser.uid}/favorites`,business)
   }
-
-//   const handleDelete = (id) => {
-//     axios
-//       .delete(`${API}/businesses/${id}/comments/${id}`)
-//       .then(
-//         (response) => {
-//           const copyCommentArray = [...comments];
-//           const indexDeletedComment = copyCommentArray.findIndex((comment) => {
-//             return comment.id === id;
-//           });
-//           copyCommentArray.splice(indexDeletedComment, 1);
-//           setComments(copyCommentArray);
-//         },
-//         (error) => console.error(error)
-//       )
-//       .catch((c) => console.warn("catch", c));
-//   };
-
-//   const handleEdit = (updatedComment) => {
-//     axios
-//       .put(
-//         `${API}/businesses/${id}/comments/${updatedComment.id}`,
-//         updatedComment
-//       )
-//       .then((response) => {
-//         const copyCommentArray = [...comments];
-//         const indexUpdatedComment = copyCommentArray.findIndex((comment) => {
-//           return comment.id === updatedComment.id;
-//         });
-//         copyCommentArray[indexUpdatedComment] = response.data;
-//         setComments(copyCommentArray);
-//       })
-//       .catch((c) => console.warn("catch", c));
-//   };
-
-
+  
   return (
     <div className="show-page">
       <div className="center-text">

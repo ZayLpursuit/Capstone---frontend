@@ -32,7 +32,7 @@ export default function AddBusiness(){
 
         <div className="add-biz-sect">
             <div className="add-biz-info">
-                <h1>Show Your Support and Add a Blackowned Business Today!</h1>
+                <h1>Show Your Support and Add a Black Owned Business Today!</h1>
             </div>
            <div className=" ">
                 <form className="d-grid pad w-80 centered" onSubmit={(e)=>handleSubmit(e)}>
