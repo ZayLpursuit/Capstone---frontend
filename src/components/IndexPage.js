@@ -2,9 +2,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import MapContainer from "./MapContainer";
+// import MapContainer from "./MapContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import resIcon from "../assets/knife_fork.png"
+import resIcon from "../assets/knife_fork.png";
+import { Pagination } from "react-bootstrap";
 
 export default function IndexPage() {
   const [category, setCategory] = useState("boutique");
@@ -34,9 +35,6 @@ export default function IndexPage() {
 
             <ul className="category-options">
               <li id="restaurant" onClick={(e) => handleChange(e)}>
-                {/* <FontAwesomeIcon icon="fa-solid fa-fork-knife" /> */}
-                <img src={resIcon}
-                />
                 Restaraunts
               </li>
               <li id="social" onClick={(e) => handleChange(e)}>
@@ -59,27 +57,18 @@ export default function IndexPage() {
               </li>
             </ul>
           </aside>
-          <div className="grid m-left">
-            <label htmlFor="online">
-              Online Only
-              <input type="checkbox" id="online" className="margin-top" />
-            </label>
-
-            <label htmlFor="in-store">
-              Has Store
-              <input type="checkbox" id="in-store" className="margin-top" />
-            </label>
-          </div>
+        </div>
+      </div>
+      <div className="overflow-y">
+        <div className="index-container test-b2">
+          {display.map((business, idx) => {
+            return <Card business={business} key={idx} />;
+          })}
         </div>
       </div>
 
-      <div className="index-container test-b2">
-        {display.map((business, idx) => {
-          return <Card business={business} key={idx} />;
-        })}
-      </div>
       <div className="col-3 index-map">
-        <MapContainer businesses={display} />
+        {/* <MapContainer businesses={display} /> */}
       </div>
     </div>
   );

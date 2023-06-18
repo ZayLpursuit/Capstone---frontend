@@ -7,10 +7,9 @@ import {
 import auth from "../base";
 import { useNavigate } from "react-router-dom";
 
-
-export default function SignUp({currentUser}) {
+export default function SignUp({ currentUser }) {
   const navigate = useNavigate();
-  // const [logIn,setLogIn]=useState(false)
+
   const [signIn, setSignIn] = useState(true);
   const [form, setForm] = useState({
     username: "",
@@ -21,7 +20,7 @@ export default function SignUp({currentUser}) {
     first_name: "",
     last_name: "",
     login_email: "",
-    favorites:null
+    favorites: null,
   });
   function handleToggle(e) {
     if (e.target.id === "Log-In") {
@@ -43,8 +42,11 @@ export default function SignUp({currentUser}) {
         form.email,
         form.password
       );
-        console.log(newUser)
-      axios.post(`http://localhost:7777/users`, {...form,uid:newUser?.user?.uid});
+      console.log(newUser);
+      axios.post(`http://localhost:7777/users`, {
+        ...form,
+        uid: newUser?.user?.uid,
+      });
 
       navigate("/profile");
       console.log(newUser);
@@ -66,20 +68,39 @@ export default function SignUp({currentUser}) {
     } catch (error) {
       console.log(error);
     }
-}
-    return (
-        <div className="default-grid">
-            <div className="col2 width-70  centered ">
-            <div className="btn-toggle">
-            <button  className="centered btn-size" id="Log-In" onClick={(e)=>handleToggle(e)}>Log In </button>
-            <button  className="centered btn-size" id="Sign-up" onClick={(e)=>handleToggle(e)}>Sign Up</button>
-              </div>
-            {signIn?(
-                <div className="  centered">
-                <form className="d-grid pad" onSubmit={(e)=>register(e)}>
-                <h1 className="center-text">Create a New Account</h1>
-                <label htmlFor="first" className="acct-label">First</label>
-                <input type="text" id="first_name" value={form.first_name} onChange={(e)=>handleChange(e)}/>
+  };
+  return (
+    <div className="default-grid">
+      <div className="col2 width-70  centered ">
+        <div className="btn-toggle">
+          <button
+            className="centered btn-size"
+            id="Log-In"
+            onClick={(e) => handleToggle(e)}
+          >
+            Log In{" "}
+          </button>
+          <button
+            className="centered btn-size"
+            id="Sign-up"
+            onClick={(e) => handleToggle(e)}
+          >
+            Sign Up
+          </button>
+        </div>
+        {signIn ? (
+          <div className="login-signup centered">
+            <form className="d-grid pad" onSubmit={(e) => register(e)}>
+              <h1 className="center-text">Create a New Account</h1>
+              <label htmlFor="first" className="acct-label">
+                First
+              </label>
+              <input
+                type="text"
+                id="first_name"
+                value={form.first_name}
+                onChange={(e) => handleChange(e)}
+              />
 
               <label htmlFor="last" className="acct-label">
                 Last
@@ -128,7 +149,7 @@ export default function SignUp({currentUser}) {
             </form>
           </div>
         ) : (
-          <div className="  ">
+          <div className="login-sinup">
             <form className="d-grid pad " onSubmit={(e) => login(e)}>
               <h1 className="center-text">Log Into Your Account</h1>
               <label htmlFor="login-email" className="acct-label">
@@ -162,5 +183,3 @@ export default function SignUp({currentUser}) {
     </div>
   );
 }
-
-

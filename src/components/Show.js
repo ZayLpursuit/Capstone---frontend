@@ -6,7 +6,7 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import ShowMap from "./ShowMap";
+// import ShowMap from "./ShowMap";
 
 import Comments from "./Comments";
 import Comment from "./Comment";
@@ -15,7 +15,7 @@ import StarRating from "./StarRating";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Show = ({setFavs,favs,currentUser}) => {
+const Show = ({ setFavs, favs, currentUser }) => {
   const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
   const { name, address, contact_num, year_opened, img, website, description } =
@@ -32,7 +32,7 @@ const Show = ({setFavs,favs,currentUser}) => {
   // console.log("comment", <Comments/>)
 
   useEffect(() => {
-    console.log(API)
+    console.log(API);
     axios
       .get(`${API}/businesses/${id}`)
       .then((res) => {
@@ -43,7 +43,6 @@ const Show = ({setFavs,favs,currentUser}) => {
   }, [id]);
 
   useEffect(() => {
-
     axios.get(`${API}/businesses/${id}/comments`).then((response) => {
       // console.log(response.data)
       setComments(response.data);
@@ -63,9 +62,12 @@ const Show = ({setFavs,favs,currentUser}) => {
       .catch((c) => console.warn("catch", c));
   };
 
-  function addToFavorites(){
-    console.log(currentUser.uid)
-    axios.post(`http://localhost:7777/users/user/${currentUser.uid}/favorites`,business)
+  function addToFavorites() {
+    console.log(currentUser.uid);
+    axios.post(
+      `http://localhost:7777/users/user/${currentUser.uid}/favorites`,
+      business
+    );
   }
 
   const handleDelete = (id) => {
@@ -102,7 +104,6 @@ const Show = ({setFavs,favs,currentUser}) => {
       .catch((c) => console.warn("catch", c));
   };
 
-
   return (
     <div className="show-page">
       <div className="center-text">
@@ -116,12 +117,15 @@ const Show = ({setFavs,favs,currentUser}) => {
       </div>
 
       <div className="top-section">
-        
-
         <h1 className="show-header">
           {name}{" "}
-          <StarRating/>
-          <Button variant="warning" onClick={() =>{ setFavorite(!favorite); addToFavorites()}}>
+          <Button
+            variant="warning"
+            onClick={() => {
+              setFavorite(!favorite);
+              addToFavorites();
+            }}
+          >
             {!favorite ? (
               <i className="fa-regular fa-star" id="unfavorite"></i>
             ) : (
@@ -129,6 +133,9 @@ const Show = ({setFavs,favs,currentUser}) => {
             )}
           </Button>
         </h1>
+        <div>
+          <StarRating />
+        </div>
         <Table bordered hover>
           <tbody>
             <tr>
@@ -173,7 +180,7 @@ const Show = ({setFavs,favs,currentUser}) => {
             </tr>
             <tr>
               <td>
-                <h4 >Phone Number: </h4>
+                <h4>Phone Number: </h4>
               </td>
               <td>
                 <h5>{contact_num ? contact_num : "N/A"}</h5>
@@ -183,8 +190,8 @@ const Show = ({setFavs,favs,currentUser}) => {
         </Table>
 
         <div className="show-page-map">
-    <ShowMap business={business}/>
-      </div>
+          {/* <ShowMap business={business}/> */}
+        </div>
       </div>
       <div className="bottom-section">
         <Tabs

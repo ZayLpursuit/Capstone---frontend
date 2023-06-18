@@ -1,8 +1,5 @@
 import React from "react";
-import LandingPage from "../components/LandingPage";
-
-import CulturalFacts from "../components/CulturalFacts";
-import { Link } from "react-router-dom";
+import LandingPage from "./LandingPage";
 
 const Home = () => {
   return (
