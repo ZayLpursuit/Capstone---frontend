@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import MapContainer from "./MapContainer";
-import { Button, ButtonGroup } from "@mui/material";
+// import MapContainer from "./MapContainer";
+
 
 const API=process.env.REACT_APP_API_URL
 export default function IndexPage() {
@@ -18,8 +18,8 @@ export default function IndexPage() {
   }
   useEffect(() => {
     const url = category
-      ? `http://localhost:7777/businesses/categories/${category}`
-      : `http://localhost:7777/businesses`;
+      ? `${API}/businesses/categories/${category}`
+      : `${API}/businesses`;
     axios.get(url).then((res) => setDisplay(res.data));
   }, [category]);
 

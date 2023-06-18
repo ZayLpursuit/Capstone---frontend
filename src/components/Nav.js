@@ -13,7 +13,7 @@ import hero from "../assets/hero.png";
 // import hero from "../assets/image.png";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import hero from "../assets/Melanated-Diamonds.png";
+
 
 const Nav = ({ currentUser }) => {
   // console.log(currentUser, "hi");
