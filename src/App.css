@@ -750,7 +750,6 @@ button h5 {
 }
 
 #social {
-  color: rgb(0, 0, 0);
   padding: 0 60px;
   border: 4px solid black;
   /* background-image: url("https://images.unsplash.com/photo-1583227061267-8428fb76fbfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1013&q=80");
@@ -760,7 +759,6 @@ button h5 {
 }
 
 #barbershop {
-  color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
   /* background-image: url("https://images.unsplash.com/photo-1621607505145-a022ec52de64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
@@ -769,7 +767,6 @@ button h5 {
 }
 
 #bank {
-  color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
   /* background-image: url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
@@ -777,7 +774,6 @@ button h5 {
 }
 
 #fashion {
-  color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
   /* background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80");
@@ -786,7 +782,6 @@ button h5 {
 }
 
 #beauty {
-  color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
   /* background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2087&q=80");
@@ -795,7 +790,6 @@ button h5 {
 }
 
 #health-and-wellness {
-  color: rgb(0, 0, 0);
   padding: 0 50px;
   border: 4px solid black;
   /* background-image: url("https://images.unsplash.com/photo-1483137140003-ae073b395549?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
@@ -810,4 +804,8 @@ button > p {
   position: absolute;
   top: -2.5px;
   right: 10px;
+}
+
+.yellow{
+  color: #f1cc24;
 }

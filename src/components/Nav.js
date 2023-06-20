@@ -31,10 +31,10 @@ const Nav = ({ currentUser }) => {
             <img className="hero" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
-        <div className="sloganNav">
+        {/* <div className="sloganNav">
           <h5>By Onyx</h5>
           <h5 className="slogan-2Nav"> For Obsidian</h5>
-        </div>
+        </div> */}
 
         {!auth.currentUser ? (
           <Button variant="light" className="account">
