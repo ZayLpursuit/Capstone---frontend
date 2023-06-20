@@ -50,7 +50,7 @@ const LandingPage = () => {
           </div>
           <div>
             <h4 style={{ marginLeft: "20px" }}>
-              Bobby's Restaurant, Located In Jamaica, Queens Has Been Open For
+              Bobby's, located In Queens Has Been Open For
               More Than 30 Years!
             </h4>
             <img

@@ -17,10 +17,10 @@ export default function IndexPage() {
     axios.get(`${API}/businesses/categories/${category}`).then((res)=>setDisplay(res.data))
   }
   useEffect(() => {
-    const url = category
-      ? `${API}/businesses/categories/${category}`
-      : `${API}/businesses`;
-    axios.get(url).then((res) => setDisplay(res.data));
+    // const url = category
+      // ? `${API}/businesses/categories/${category}`
+      // : `${API}/businesses`;
+    axios.get(`${API}/businesses`).then((res) => setDisplay(res.data));
   }, [category]);
 
   return (
@@ -32,25 +32,25 @@ export default function IndexPage() {
             <h1 className="select-cat">Select a Category</h1>
 
             <ul className="category-options">
-              <li id="restaurant" onClick={(e) => handleChange(e)}>
+              <li id="restaurant"  className="yellow" onClick={(e) => handleChange(e)}>
                 Restaraunts
               </li>
-              <li id="social" onClick={(e) => handleChange(e)}>
+              <li id="social" className="yellow" onClick={(e) => handleChange(e)}>
                 Social
               </li>
-              <li id="barber shop" onClick={(e) => handleChange(e)}>
+              <li id="barber shop" className="yellow" onClick={(e) => handleChange(e)}>
                 Barber Shops
               </li>
-              <li id="bank" onClick={(e) => handleChange(e)}>
+              <li id="bank" className="yellow" onClick={(e) => handleChange(e)}>
                 Banks
               </li>
-              <li id="fashion" onClick={(e) => handleChange(e)}>
+              <li id="fashion"  className="yellow" onClick={(e) => handleChange(e)}>
                 Fashion
               </li>
-              <li id="beauty" onClick={(e) => handleChange(e)}>
+              <li id="beauty" className="yellow" onClick={(e) => handleChange(e)}>
                 Beauty
               </li>
-              <li id="health and wellness" onClick={(e) => handleChange(e)}>
+              <li id="health and wellness" className="yellow" onClick={(e) => handleChange(e)}>
                 Health and Wellness
               </li>
             </ul>
