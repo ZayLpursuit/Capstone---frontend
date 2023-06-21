@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+const API=process.env.REACT_APP_API_URL
 export default function AddBusiness() {
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ export default function AddBusiness() {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post(`http://localhost:7777/businesses`, form)
+      .post(`${API}/businesses`, form)
       .then(navigate("/businesses"));
   }
 

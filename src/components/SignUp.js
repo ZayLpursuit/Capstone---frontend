@@ -70,7 +70,7 @@ export default function SignUp({currentUser}) {
     }
   };
   return (
-    <div className="default-grid">
+    <div className="default-grid height-90">
       <div className="col2 width-70  centered ">
         <div className="btn-toggle">
           <button

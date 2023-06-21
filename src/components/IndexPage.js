@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "./Card";
-// import MapContainer from "./MapContainer";
+import MapContainer from "./MapContainer";
 
 
 const API=process.env.REACT_APP_API_URL
@@ -21,7 +21,7 @@ export default function IndexPage() {
       // ? `${API}/businesses/categories/${category}`
       // : `${API}/businesses`;
     axios.get(`${API}/businesses`).then((res) => setDisplay(res.data));
-  }, [category]);
+  }, []);
 
   return (
     <div className="index-grid">
@@ -65,7 +65,7 @@ export default function IndexPage() {
         </div>
       </div> 
       <div className="col-3 index-map">
-        {/* <MapContainer businesses={display} /> */}
+        <MapContainer businesses={display} />
       </div>
     </div>
   );
