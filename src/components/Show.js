@@ -6,7 +6,7 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-// import ShowMap from "./ShowMap";
+import ShowMap from "./ShowMap";
 
 // import Comments from "./Comments";
 // import Comment from "./Comment";
@@ -190,7 +190,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
         </Table>
 
         <div className="show-page-map">
-          {/* <ShowMap business={business}/> */}
+          <ShowMap business={business}/>
         </div>
       </div>
       <div className="bottom-section">
