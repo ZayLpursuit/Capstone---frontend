@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import SignUp from "./components/SignUp";
 import IndexPage from "./components/IndexPage";
-import Nav from "./components/Nav";
+import Nav from "./components/nav/Nav";
 import Profile from "./components/Profile";
 import auth from "./base";
 // import { onAuthStateChanged } from "firebase/auth";

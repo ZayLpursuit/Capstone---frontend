@@ -1,0 +1,29 @@
+.nav {
+  height: 100px;
+  background-color: #f1cc24;
+
+  &__logo {
+    height: 125px;
+    width: 135px;
+  }
+
+  &__buttons {
+    margin-left: 700px;
+  }
+
+  &__accountIcon {
+    position: absolute;
+    left: 1350px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  button:hover {
+    background-color: #8f6001;
+    opacity: 80%;
+    text-decoration: none;
+  }
+}

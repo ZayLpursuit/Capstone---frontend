@@ -1,4 +1,5 @@
-import React from "react";
+import "./Nav.scss"
+
 import { Link, useNavigate } from "react-router-dom";
 // import Logo from "../assets/Melanated-Diamonds.png";
 // import Login from "../assets/login.png";
@@ -8,33 +9,21 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
 
-import hero from "../assets/hero.png";
-
-// import hero from "../assets/image.png";
+import hero from "../../assets/hero.png";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-
-const Nav = ({ currentUser }) => {
-  // console.log(currentUser, "hi");
-
-  // console.log(currentUser)
-  // console.log(auth)
+const Nav = () => {
 
   const navigate = useNavigate();
   return (
-    <nav>
-    
-      <Navbar className="navbar">
+  <Navbar className="nav">
         <Navbar.Brand>
           <Link to="/">
-            <img className="hero" src={hero} alt="hero" />
+            <img className="nav__logo" src={hero} alt="hero" />
           </Link>
         </Navbar.Brand>
-        {/* <div className="sloganNav">
-          <h5>By Onyx</h5>
-          <h5 className="slogan-2Nav"> For Obsidian</h5>
-        </div> */}
+       
 
         {/* {!auth.currentUser ? ( */}
           {/* <Button variant="light" className="account">
@@ -43,21 +32,21 @@ const Nav = ({ currentUser }) => {
             </Link>
           </Button>
         ) : ( */}
-          <div  className="buttons-group-nav">
-            <Button variant="light" className="nav-link-biz">
-              <Link to="/businesses" className="nav-link-acct">
+          <div  className="nav__buttons">
+            <Button variant="light">
+              <Link to="/businesses">
                 Browse Businesses
               </Link>
               </Button>
            {" "}
-            <Button variant="light" className="nav-link-res">
-              <Link to="/resources"className="nav-link-acct" >
+            <Button variant="light">
+              <Link to="/resources">
                 Browse Resources
               </Link>
               </Button>
               {" "}
-            <Button variant="light" className="nav-link-pro">
-              <Link to="/profile" className="nav-link-acct">
+            <Button variant="light">
+              <Link to="/profile">
                 User Profile
               </Link>
               </Button>
@@ -73,9 +62,8 @@ const Nav = ({ currentUser }) => {
               </Button> */}
           </div>
         {/* )} */}
-        <AccountCircleIcon className="acct-icon"/>
+        <AccountCircleIcon className="nav__accountIcon"/>
       </Navbar>
-    </nav>
   );
 };
 
