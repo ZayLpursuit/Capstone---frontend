@@ -30,7 +30,7 @@ const ShowMap = ({ business }) => {
         console.error(`Geocoding error:${status}`);
       }
     });
-  });
+  }, []);
 
   return (
     <div className="map-container">
@@ -47,5 +47,5 @@ const ShowMap = ({ business }) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyDRaYXfJoUnKseZY0JfTroxjhUWCDf64Lc",
+  apiKey: "",
 })(ShowMap);

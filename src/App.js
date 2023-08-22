@@ -1,4 +1,5 @@
 import "./App.css";
+import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import SignUp from "./components/SignUp";
@@ -16,9 +17,12 @@ import Footer from "./components/Footer";
 import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
 
 
+const API = process.env.REACT_APP_API_URL;
+
 function App() {
   const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
-
+  const [business, setBusiness] = useState([]);
+  
   useEffect(()=>{
 
     auth.onAuthStateChanged((user) => {
@@ -27,7 +31,17 @@ function App() {
 
     setPersistence(getAuth(),browserLocalPersistence)
 
-  },[])
+  }, [])
+  
+  useEffect(() => {
+    axios
+      .get(`${API}/businesses/`)
+      .then((res) => {
+        // console.log(res.data);
+        setBusiness(res.data);
+      })
+      .catch((c) => console.error("catch", c));
+  }, []);
 
   // console.log("current user app.js", currentUser.email)
 
@@ -42,7 +56,7 @@ function App() {
         <Route path="/businesses/:id" element={<Show  currentUser={currentUser}/>} />
         <Route
           path="/profile"
-          element={<Profile currentUser={currentUser} />}
+          element={<Profile currentUser={currentUser} business={business} />}
         />
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />

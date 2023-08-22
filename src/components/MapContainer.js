@@ -69,5 +69,5 @@ const MapContainer = ({businesses}) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDRaYXfJoUnKseZY0JfTroxjhUWCDf64Lc',
+  apiKey: '',
 })(MapContainer);

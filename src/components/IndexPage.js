@@ -29,11 +29,11 @@ export default function IndexPage() {
         <div className="m-left">
 
           <aside className=" ">
-            <h1 className="select-cat">Select a Category</h1>
+            <h1 className="select-cat">Categories</h1>
 
             <ul className="category-options">
               <li id="restaurant"  className="yellow" onClick={(e) => handleChange(e)}>
-                Restaraunts
+                Restaurants
               </li>
               <li id="social" className="yellow" onClick={(e) => handleChange(e)}>
                 Social
