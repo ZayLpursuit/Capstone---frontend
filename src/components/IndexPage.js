@@ -65,7 +65,7 @@ export default function IndexPage() {
         </div>
       </div> 
       <div className="col-3 index-map">
-        <MapContainer businesses={display} />
+        {/* <MapContainer businesses={display} /> */}
       </div>
     </div>
   );

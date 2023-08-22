@@ -190,7 +190,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
         </Table>
 
         <div className="show-page-map">
-          <ShowMap business={business}/>
+          {/* <ShowMap business={business}/> */}
         </div>
       </div>
       <div className="bottom-section">

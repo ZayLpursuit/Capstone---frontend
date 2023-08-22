@@ -2,8 +2,8 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import Logo from "../assets/Melanated-Diamonds.png";
 // import Login from "../assets/login.png";
-import { signOut } from "firebase/auth";
-import auth from "../base";
+// import { signOut } from "firebase/auth";
+// import auth from "../base";
 
 import Button from "react-bootstrap/Button";
 import { Navbar } from "react-bootstrap";
@@ -36,13 +36,13 @@ const Nav = ({ currentUser }) => {
           <h5 className="slogan-2Nav"> For Obsidian</h5>
         </div> */}
 
-        {!auth.currentUser ? (
-          <Button variant="light" className="account">
+        {/* {!auth.currentUser ? ( */}
+          {/* <Button variant="light" className="account">
             <Link to="/get-started" className="nav-link-acct">
               Create An Account / Login
             </Link>
           </Button>
-        ) : (
+        ) : ( */}
           <div  className="buttons-group-nav">
             <Button variant="light" className="nav-link-biz">
               <Link to="/businesses" className="nav-link-acct">
@@ -62,7 +62,7 @@ const Nav = ({ currentUser }) => {
               </Link>
               </Button>
               {" "}
-            <Button
+            {/* <Button
               variant="dark"
               onClick={async () => {
                 navigate("/");
@@ -70,9 +70,9 @@ const Nav = ({ currentUser }) => {
               }}
             >
               Sign Out
-              </Button>
+              </Button> */}
           </div>
-        )}
+        {/* )} */}
         <AccountCircleIcon className="acct-icon"/>
       </Navbar>
     </nav>

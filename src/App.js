@@ -14,24 +14,24 @@ import Show from "./components/Show";
 import Resources from "./components/Resources";
 import AddBusiness from "./components/AddBusiness";
 import Footer from "./components/Footer";
-import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
+// import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
 
 
 const API = process.env.REACT_APP_API_URL;
 
 function App() {
-  const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
+  // const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
   const [business, setBusiness] = useState([]);
   
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    auth.onAuthStateChanged((user) => {
-      setcurrentUser(user);
-    });
+  //   auth.onAuthStateChanged((user) => {
+  //     setcurrentUser(user);
+  //   });
 
-    setPersistence(getAuth(),browserLocalPersistence)
+  //   setPersistence(getAuth(),browserLocalPersistence)
 
-  }, [])
+  // }, [])
   
   useEffect(() => {
     axios
@@ -47,17 +47,17 @@ function App() {
 
   return (
     <Router>
-      <Nav currentUser={currentUser} />
+      <Nav/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/get-started" element={<SignUp  currentUser={currentUser}/>} />
+        {/* <Route path="/get-started" element={<SignUp  currentUser={currentUser}/>} /> */}
         <Route path="/businesses" element={<IndexPage />} />
 
-        <Route path="/businesses/:id" element={<Show  currentUser={currentUser}/>} />
-        <Route
+        {/* <Route path="/businesses/:id" element={<Show  currentUser={currentUser}/>} /> */}
+        {/* <Route
           path="/profile"
           element={<Profile currentUser={currentUser} business={business} />}
-        />
+        /> */}
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />
         <Route path="/add-business" element={<AddBusiness />} />
