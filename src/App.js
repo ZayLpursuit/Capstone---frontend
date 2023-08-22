@@ -53,7 +53,7 @@ function App() {
         {/* <Route path="/get-started" element={<SignUp  currentUser={currentUser}/>} /> */}
         <Route path="/businesses" element={<IndexPage />} />
 
-        {/* <Route path="/businesses/:id" element={<Show  currentUser={currentUser}/>} /> */}
+        <Route path="/businesses/:id" element={<Show/>} />
         {/* <Route
           path="/profile"
           element={<Profile currentUser={currentUser} business={business} />}

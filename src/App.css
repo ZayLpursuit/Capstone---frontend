@@ -55,7 +55,6 @@ input[type="search"] {
 }
 .btn-toggle {
   margin-top: 60px;
-  /* border: 3px solid red; */
 }
 .btn-size {
   font-size: 20px;
@@ -66,32 +65,26 @@ input[type="search"] {
   border-radius: 5px;
 }
 
-.overflow-y {
-  overflow-y: scroll;
-}
 .index-grid {
   display: grid;
-  grid-template-columns: 15% 60% 25%;
+  grid-template-columns: 1fr 3fr 1fr;
   height: 100%;
-  overflow-y: scroll;
 }
+
 .index-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  /* column-gap: 20px; */
   overflow-y: scroll;
   margin: 0 auto;
-
   padding: 15px 15px;
   column-gap: 10px;
   row-gap: 30px;
   background-color: rgb(253, 253, 238);
-  /* background: url("https://uploads.concordia.net/2020/08/28151123/black-businesses-black-consumers-featured-web-1024x534-1.jpg"); */
-  /* background-size: cover; */
   height: 700px;
 }
 .test-b1 {
+  text-align: center;
   border: 1px solid black;
   background-color: #000;
   color: #f1cc24;
@@ -107,20 +100,12 @@ input[type="search"] {
 .w-40 {
   width: 40%;
 }
-.m-left {
-  margin-left: 25px;
-}
 
 .profile-container {
   display: grid;
   align-items: center;
   justify-content: center;
-  /* grid-template-columns: 25% 50% 25%; */
   background-color: #000;
-
-  /* background-image: url("https://i.pinimg.com/originals/e3/a6/ea/e3a6ea97f338150c3a0ec599c5b371b8.jpg"); */
-  /* background-size:  cover; */
-  /* background: repeat(none) ; */
   color: white;
   padding: 25px 25px;
 }
@@ -149,8 +134,6 @@ input[type="search"] {
 .cultural-facts {
   border: #282c34 solid;
   padding: 20px;
-  /* border-radius: 8px; */
-  /* background-color: rgba(103, 103, 12, 0.725); */
   background-color: #000000;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -181,32 +164,17 @@ li {
   text-align: center;
   margin-left: 70px;
   margin-top: -70px;
-  /* border: #282c34 solid; */
   border-radius: 10px;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
   width: 50%;
   margin: 0 auto;
 }
 
 .navbar {
-  /* display: flex;
-  align-items: center;
-  gap: 20px;
-  height: 100px; */
-  /* background-color: rgba(103, 103, 12, 0.725); */
   height: 100px;
   background-color: #f1cc24;
-
-  /* background-color: #E2BF23; */
-  /* background-color: #F4ff60; */
-  /* padding-right: 70px; */
 }
 
 .hero {
-  /* padding-left: 50px; */
-  /* position: relative; */
-  /* bottom: 200px; */
-  /* right: 100px; */
   height: 125px;
   width: 135px;
 }
@@ -214,7 +182,6 @@ li {
 .acct-icon {
   position: absolute;
   left: 1400px;
-  /* bottom: 890px; */
 }
 
 .account {
@@ -234,7 +201,6 @@ li {
 
 .nav-link-pro {
   position: relative;
-  /* left: 1000px; */
 }
 
 .nav-link-pro:hover {
@@ -245,7 +211,6 @@ li {
 
 .nav-link-res {
   position: relative;
-  /* left: 970px; */
 }
 
 .nav-link-res:hover {
@@ -256,7 +221,6 @@ li {
 
 .nav-link-biz {
   position: relative;
-  /* left: 940px; */
 }
 
 .nav-link-biz:hover {
@@ -278,7 +242,6 @@ header img {
 
 .slogan {
   position: relative;
-  /* right: 0px; */
   bottom: 750px;
   text-align: center;
   background-color: #000;
@@ -344,8 +307,6 @@ li > a {
 .resource-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* background-color: #0000006f;
-  padding-bottom: 120px; */
 }
 
 .resource-img {
@@ -357,26 +318,9 @@ li > a {
   justify-content: center;
 }
 
-.card-img {
-  width: 100%;
-  height: 200px;
-  background-color: #000;
-  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
-  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
-}
-
-.index-card {
-  text-align: center;
-  width: 90%;
-  background-color: #f1cc24;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
-    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
-    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-}
 .category-options li:hover {
-  /* border-bottom: 3px solid  black; */
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .profile-form input {
@@ -386,20 +330,6 @@ li > a {
 .flexxed {
   display: flex;
 }
-/* .fa-magnifying-glass-location {
-  font-size: 1.05rem;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  background-color: transparent;
-  right: 35px;
-  top: 17px;
-} */
-
-/* .j-ward {
-  font-size: xx-small;
-  margin-right: 55px;
-} */
 
 .account {
   margin-left: 460px;
@@ -413,7 +343,6 @@ table {
 
 tr {
   background-color: #f1cc24;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgb(51, 51, 51) 0px 0px 0px 5px; */
   box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px, rgb(0, 0, 0) 0px 0px 0px 6px,
     rgb(0, 0, 0) 0px 0px 0px 9px, #000000 0px 0px 0px 12px,
     rgb(0, 0, 0) 0px 0px 0px 15px;
@@ -437,7 +366,6 @@ tr {
 .show-header {
   font-family: "Bebas Neue", sans-serif;
   text-decoration: #f1cc24 double underline;
-  /* color: #a57109; */
   color: white;
 }
 
@@ -454,8 +382,6 @@ tr {
 .bottom-section {
   margin-left: 30px;
   margin-top: 40px;
-  /* grid-column: 2/3;
-  grid-row: 2/3; */
 }
 
 .newBusiness {
@@ -481,7 +407,6 @@ tr {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-animation: fade 20s infinite;
   animation: fade 20s infinite;
 }
 #pic1 {
@@ -519,13 +444,9 @@ tr {
 
 #footer {
   background-color: #f1cc24;
-  /* border: 1px solid black; */
   height: 170px;
   width: 100%;
   position: absolute;
-  /* top: 2250px; */
-  /* bottom: 0; */
-  /* bottom: 400px; */
 }
 
 #footer ul {
@@ -533,18 +454,11 @@ tr {
   gap: 200px;
   list-style-type: none;
   color: rgb(0, 0, 0);
-  /* padding: 0; */
-  /* padding-inline-start: 0px; */
 }
 
 #footer ul a:hover {
   color: rgba(115, 115, 96, 0.883);
 }
-
-/* ul {
-  width: 0px;
-  height: 0px;
-} */
 
 .github {
   display: flex;
@@ -585,8 +499,6 @@ tr {
 .add-biz-sect {
   display: grid;
   grid-template-columns: 60% 40%;
-  /* margin:100px 100px; */
-  /* border-radius: 20px; */
   border: 1px solid rgb(253, 253, 238);
   box-shadow: rgba(254, 254, 254, 0.56) 0px 22px 70px 4px;
 }
@@ -596,7 +508,6 @@ tr {
   background-size: cover;
   image-rendering: -moz-crisp-edges;
   background-position: 50% 50%;
-  /* border-radius: 10px; */
 }
 .w-80 {
   width: 80%;
@@ -656,7 +567,6 @@ Tabs {
 
 .btn-dark {
   position: relative;
-  /* left: 1050px; */
 }
 
 #Log-In:hover {
@@ -691,16 +601,6 @@ Tabs {
   row-gap: 50px;
 }
 
-.category-options {
-  position: relative;
-  right: 70px;
-}
-
-.category-section {
-  margin-top: 100px;
-  /* border: 5px solid #f1cc24; */
-  padding: 10px;
-}
 
 .buttons-group {
   gap: 20px;
@@ -712,23 +612,17 @@ Tabs {
 
 button h5 {
   color: black;
-  /* text-shadow: #f1cc24 2px 2px; */
 }
 
 #restaurant {
   padding: 0 60px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-  background-size: cover;
-  background-repeat: none; */
   border-radius: 30px;
 }
 
 #social {
   padding: 0 60px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1583227061267-8428fb76fbfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1013&q=80");
-  background-size: cover; */
   background-repeat: none;
   border-radius: 30px;
 }
@@ -736,38 +630,30 @@ button h5 {
 #barbershop {
   padding: 0 50px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1621607505145-a022ec52de64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-  background-size: cover; */
   border-radius: 30px;
 }
 
 #bank {
   padding: 0 50px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
   border-radius: 30px;
 }
 
 #fashion {
   padding: 0 50px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80");
-  background-size: cover; */
   border-radius: 30px;
 }
 
 #beauty {
   padding: 0 50px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2087&q=80");
-  background-size: cover; */
   border-radius: 30px;
 }
 
 #health-and-wellness {
   padding: 0 50px;
   border: 4px solid black;
-  /* background-image: url("https://images.unsplash.com/photo-1483137140003-ae073b395549?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
   border-radius: 30px;
 }
 
