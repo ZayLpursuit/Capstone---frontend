@@ -2,8 +2,7 @@
   border: 3px solid rgb(0, 0, 0);
 }
 
-.d-grid,
-.sidebar {
+.d-grid {
   display: grid;
 }
 
@@ -38,8 +37,7 @@
 .center-text {
   text-align: center;
 }
-.align-center,
-.sidebar {
+.align-center{
   align-items: center;
 }
 form input {
@@ -152,7 +150,7 @@ li {
 .margbottom {
   margin-bottom: 20px;
 }
-.resources,
+
 .show-page {
   background-color: rgb(253, 253, 238);
   padding-bottom: 120px;
@@ -215,36 +213,6 @@ section img {
 
 .featured img {
   border-radius: 10px;
-}
-
-.scholarships {
-  background-color: #000000;
-  padding: 60px;
-  border-radius: 7px;
-  box-shadow: rgb(255, 255, 255) 30px 40px 16px,
-    rgba(17, 17, 26, 0.05) 30px 8px 32px;
-}
-
-li > a {
-  color: white;
-}
-
-.scholars {
-  margin: 0 300px;
-}
-
-.resource-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.resource-img {
-  height: 200px;
-  width: 200px;
-}
-
-.sidebar {
-  justify-content: center;
 }
 
 .category-options li:hover {

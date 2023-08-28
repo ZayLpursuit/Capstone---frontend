@@ -11,7 +11,7 @@ import auth from "./base";
 import { useEffect, useState } from "react";
 // import EditProfile from "./components/EditProfile";
 import Show from "./components/Show";
-import Resources from "./components/Resources";
+import Resources from "./components/resources/Resources";
 import AddBusiness from "./components/AddBusiness";
 import Footer from "./components/Footer";
 // import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
