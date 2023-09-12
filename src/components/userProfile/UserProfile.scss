@@ -1,0 +1,31 @@
+.UserProfile {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: white;
+  padding: 25px 25px;
+
+  form {
+    display: grid;
+
+    input {
+      width: 80%;
+      opacity: 60%;
+    }
+
+    button {
+      border-radius: 5px;
+    }
+  }
+
+  svg {
+    width: 100px;
+    height: 60px;
+  }
+
+  &__Favorites {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

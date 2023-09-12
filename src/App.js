@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import SignUp from "./components/SignUp";
 import IndexPage from "./components/indexPage/IndexPage";
 import Nav from "./components/nav/Nav";
-import Profile from "./components/Profile";
+import Profile from "./components/userProfile/UserProfile";
 import auth from "./base";
 // import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -53,10 +53,7 @@ function App() {
         <Route path="/businesses" element={<IndexPage />} />
 
         <Route path="/businesses/:id" element={<Show />} />
-        {/* <Route
-          path="/profile"
-          element={<Profile currentUser={currentUser} business={business} />}
-        /> */}
+        <Route path="/profile" element={<Profile business={business} />} />
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />
         <Route path="/add-business" element={<AddBusiness />} />

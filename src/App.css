@@ -73,10 +73,6 @@ input[type="search"] {
   font-size: 20px;
   border: 2px solid #000;
 }
-.form-btns {
-  font-size: 16px;
-  border-radius: 5px;
-}
 
 .grid {
   display: grid;
@@ -88,14 +84,6 @@ input[type="search"] {
   width: 40%;
 }
 
-.profile-container {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  color: white;
-  padding: 25px 25px;
-}
 .profile-options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -113,9 +101,6 @@ input[type="search"] {
   height: 250px;
   align-content: center;
   justify-content: center;
-}
-.white {
-  color: rgb(255, 255, 255);
 }
 
 .cultural-facts {
@@ -179,10 +164,6 @@ li {
   cursor: pointer;
 }
 
-.profile-form input {
-  width: 80%;
-  opacity: 60%;
-}
 .flexxed {
   display: flex;
 }
@@ -305,10 +286,6 @@ tr {
   height: 250px;
 }
 
-.user-favs-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
 .biz-form {
   padding: 80px;
   background-color: rgb(253, 253, 238);
@@ -405,65 +382,6 @@ Tabs {
 
 .home {
   background-color: rgb(253, 253, 238);
-}
-
-.category-options > li {
-  border: 3px solid black;
-  border-radius: 20px;
-  text-align: center;
-  display: grid;
-  row-gap: 50px;
-}
-
-.buttons-group {
-  gap: 20px;
-}
-
-button h5 {
-  color: black;
-}
-
-#restaurant {
-  padding: 0 60px;
-  border: 4px solid black;
-  border-radius: 30px;
-}
-
-#social {
-  padding: 0 60px;
-  border: 4px solid black;
-  background-repeat: none;
-  border-radius: 30px;
-}
-
-#barbershop {
-  padding: 0 50px;
-  border: 4px solid black;
-  border-radius: 30px;
-}
-
-#bank {
-  padding: 0 50px;
-  border: 4px solid black;
-  border-radius: 30px;
-}
-
-#fashion {
-  padding: 0 50px;
-  border: 4px solid black;
-  border-radius: 30px;
-}
-
-#beauty {
-  padding: 0 50px;
-  border: 4px solid black;
-  border-radius: 30px;
-}
-
-#health-and-wellness {
-  padding: 0 50px;
-  border: 4px solid black;
-  border-radius: 30px;
 }
 
 button > p {
