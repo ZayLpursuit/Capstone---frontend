@@ -13,26 +13,6 @@ body::after {
   height: 120px;
 }
 
-.border {
-  border: 3px solid rgb(0, 0, 0);
-}
-
-.d-grid {
-  display: grid;
-}
-
-.acct-label {
-  font-weight: bolder;
-  text-decoration: underline solid #8f6001;
-}
-
-.d-grid.pad {
-  border: 3px solid black;
-  margin-bottom: 50px;
-  background-color: #fcfcfa;
-  padding: 30px;
-}
-
 .default-grid {
   background-image: url("https://icm.aexp-static.com/content/dam/contenthub/us/en/images/us/small-business/openforum/wp-content/uploads/2018/02/black-business-woman-davis-header.jpg?imwidth=968");
   background-size: cover;
@@ -40,15 +20,10 @@ body::after {
   grid-template-columns: 25% 50% 25%;
 }
 
-.pad {
-  padding: 20px;
-}
 .width-70 {
   width: 70%;
 }
-.centered {
-  margin: 0 auto;
-}
+
 .center-text {
   text-align: center;
 }
@@ -210,37 +185,6 @@ li {
   width: 100%;
   grid-column: 3;
   position: relative;
-}
-
-
-.biz-form {
-  padding: 80px;
-  background-color: rgb(253, 253, 238);
-}
-
-.add-biz-sect {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  border: 1px solid rgb(253, 253, 238);
-  box-shadow: rgba(254, 254, 254, 0.56) 0px 22px 70px 4px;
-}
-.add-biz-info {
-  background-image: url("https://images.unsplash.com/photo-1573164713712-03790a178651?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBidXNpbmVzcyUyMHdvbWFufGVufDB8fDB8fHww&w=1000&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
-  image-rendering: -moz-crisp-edges;
-  background-position: 50% 50%;
-}
-.w-80 {
-  width: 80%;
-}
-.biz-btn {
-  margin-top: 10px;
-  border-radius: 7px;
-}
-
-.addSlogan {
-  margin-top: -20px;
 }
 
 .test-d {

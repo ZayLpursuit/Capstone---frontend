@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 // import EditProfile from "./components/EditProfile";
 import Show from "./components/businessPage/BusinessPage";
 import Resources from "./components/resources/Resources";
-import AddBusiness from "./components/AddBusiness";
+import NewBusiness from "./components/newBusiness/NewBusiness";
 import Footer from "./components/footer/Footer";
 // import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
 
@@ -56,7 +56,7 @@ function App() {
         <Route path="/profile" element={<Profile business={business} />} />
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />
-        <Route path="/add-business" element={<AddBusiness />} />
+        <Route path="/new" element={<NewBusiness />} />
       </Routes>
       <Footer />
     </Router>
