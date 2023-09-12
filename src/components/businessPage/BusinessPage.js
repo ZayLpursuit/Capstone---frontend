@@ -1,4 +1,4 @@
-import React from "react";
+import "./BusinessPage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -6,12 +6,12 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import ShowMap from "./ShowMap";
+import ShowMap from "../ShowMap";
 
 // import Comments from "./Comments";
 // import Comment from "./Comment";
 // import CommentForm from "./CommentForm";
-import StarRating from "./StarRating";
+import StarRating from "../StarRating";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -49,7 +49,6 @@ const Show = ({ setFavs, favs, currentUser }) => {
     });
   }, [id]);
 
-
   // const handleAdd = (newComment) => {
   //   axios
   //     .post(`${API}/businesses/${id}/comments`, newComment)
@@ -61,8 +60,6 @@ const Show = ({ setFavs, favs, currentUser }) => {
   //     )
   //     .catch((c) => console.warn("catch", c));
   // };
-
-  
 
   // const handleDelete = (id) => {
   //   axios
@@ -98,27 +95,17 @@ const Show = ({ setFavs, favs, currentUser }) => {
   //     .catch((c) => console.warn("catch", c));
   // };
 
-
-  function addToFavorites(){
-    console.log(currentUser.uid)
-    axios.post(`${API}/users/user/${currentUser.uid}/favorites`,business)
+  function addToFavorites() {
+    console.log(currentUser.uid);
+    axios.post(`${API}/users/user/${currentUser.uid}/favorites`, business);
   }
 
   return (
-    <div className="show-page">
-      <div className="center-text">
-        <img
-          src={img}
-          alt={name}
-          height="400px"
-          width="400px"
-          className="show-img"
-        />
-      </div>
-
-      <div className="top-section">
-        <h1 className="show-header">
-          {name}{" "}
+    <div className="BusinessPage">
+      <img src={img} alt={name} />
+      <div className="BusinessPage__Details">
+        <h1>
+          {name}
           <Button
             variant="warning"
             onClick={() => {
@@ -133,9 +120,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
             )}
           </Button>
         </h1>
-        <div>
-          <StarRating />
-        </div>
+        <StarRating />
         <Table bordered hover>
           <tbody>
             <tr>
@@ -155,7 +140,6 @@ const Show = ({ setFavs, favs, currentUser }) => {
                   <a
                     href={address ? `http://maps.google.com/?q=${name}` : "N/A"}
                     target="*"
-                    className="tb-link"
                   >
                     {address || "N/A"}
                   </a>
@@ -168,11 +152,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
               </td>
               <td>
                 <h5>
-                  <a
-                    href={website ? website : "N/A"}
-                    target="*"
-                    className="tb-link"
-                  >
+                  <a href={website ? website : "N/A"} target="*">
                     {website}
                   </a>
                 </h5>
@@ -189,18 +169,13 @@ const Show = ({ setFavs, favs, currentUser }) => {
           </tbody>
         </Table>
 
-        <div className="show-page-map">
+        <div className="BusinessPage__Map">
           {/* <ShowMap business={business}/> */}
         </div>
       </div>
-      <div className="bottom-section">
-        <Tabs
-          id="controlled-tab-example"
-          activeKey={key}
-          onSelect={(k) => setKey(k)}
-          className="mb-3"
-        >
-          <Tab eventKey="description" title="Description" id="tab">
+      <div className="BusinessPage__Description">
+        <Tabs activeKey={key} onSelect={(k) => setKey(k)}>
+          <Tab eventKey="description" title="Description">
             {description}
           </Tab>
           {/* <Tab eventKey="comments" title={<Comments />}>

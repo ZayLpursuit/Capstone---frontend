@@ -55,17 +55,10 @@ body::after {
 .align-center {
   align-items: center;
 }
-form input {
-  margin-bottom: 7px;
-  margin-top: 5px;
-  border-radius: 7px;
-  font-size: 18px;
-  margin-right: 20px;
-  padding: 2px;
-}
-input[type="search"] {
+
+/* input[type="search"] {
   width: 200px;
-}
+} */
 .btn-toggle {
   margin-top: 60px;
 }
@@ -117,12 +110,6 @@ li {
   list-style-type: none;
 }
 
-.show-page {
-  background-color: rgb(253, 253, 238);
-  padding-bottom: 120px;
-  padding-top: 40px;
-}
-
 .statement {
   align-self: center;
   text-align: center;
@@ -170,55 +157,6 @@ li {
 
 .account {
   margin-left: 460px;
-}
-
-table {
-  width: 500px;
-  height: 200px;
-  margin-top: 60px;
-}
-
-tr {
-  background-color: #f1cc24;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px, rgb(0, 0, 0) 0px 0px 0px 6px,
-    rgb(0, 0, 0) 0px 0px 0px 9px, #000000 0px 0px 0px 12px,
-    rgb(0, 0, 0) 0px 0px 0px 15px;
-}
-
-.tb-link {
-  text-decoration: none;
-  color: #000;
-}
-
-.show-page {
-  display: grid;
-  background-color: #000;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 3fr 1fr;
-  gap: 20px;
-  padding-top: 80px;
-  overflow-x: hidden;
-}
-
-.show-header {
-  font-family: "Bebas Neue", sans-serif;
-  text-decoration: #f1cc24 double underline;
-  color: white;
-}
-
-.show-img {
-  box-shadow: rgb(73, 80, 90) 0px 15px 30px 10px;
-}
-
-.top-section {
-  margin-right: 60px;
-  overflow-x: scroll;
-  display: grid;
-}
-
-.bottom-section {
-  margin-left: 30px;
-  margin-top: 40px;
 }
 
 .newBusiness {
@@ -274,17 +212,6 @@ tr {
   position: relative;
 }
 
-.show-page-map {
-  max-width: 100%;
-  width: 20%;
-}
-
-.show-page-map {
-  margin-top: 20px;
-  position: relative;
-  width: 100%;
-  height: 250px;
-}
 
 .biz-form {
   padding: 80px;
@@ -350,14 +277,6 @@ tr {
 
 section > li > button {
   margin-left: 160px;
-}
-
-Tabs {
-  color: white;
-}
-
-.tab-content {
-  color: white;
 }
 
 .btn-dark {

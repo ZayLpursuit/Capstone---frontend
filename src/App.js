@@ -10,7 +10,7 @@ import auth from "./base";
 // import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 // import EditProfile from "./components/EditProfile";
-import Show from "./components/Show";
+import Show from "./components/businessPage/BusinessPage";
 import Resources from "./components/resources/Resources";
 import AddBusiness from "./components/AddBusiness";
 import Footer from "./components/footer/Footer";
