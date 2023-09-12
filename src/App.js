@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import Show from "./components/Show";
 import Resources from "./components/resources/Resources";
 import AddBusiness from "./components/AddBusiness";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 // import { browserLocalPersistence, getAuth, setPersistence } from "firebase/auth";
 
 

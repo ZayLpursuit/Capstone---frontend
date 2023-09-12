@@ -1,9 +1,9 @@
-import React from "react";
-import hero from "../assets/Melanated-Diamonds.png";
+import "./Footer.scss";
+import hero from "../../assets/Melanated-Diamonds.png";
 
 const Footer = () => {
   return (
-    <footer id="footer">
+    <footer className="footer">
       <ul>
         <h5>
           <img
