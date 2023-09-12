@@ -1,0 +1,34 @@
+.IndexPage {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+
+  &__Categories {
+    text-align: center;
+    border: 1px solid black;
+    background-color: #000;
+    color: #f1cc24;
+    height: 700px;
+  }
+
+  &__Cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    overflow-y: scroll;
+    padding: 15px 15px;
+    column-gap: 10px;
+    row-gap: 30px;
+    background-color: rgb(253, 253, 238);
+    height: 700px;
+  }
+
+  &__Map {
+    width: 100%;
+    padding: 0px 10px;
+    background-color: #000;
+  }
+
+  li {
+
+  }
+}
