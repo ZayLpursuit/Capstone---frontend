@@ -1,7 +1,7 @@
 import "./UserProfile.scss";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import auth from "../../base";
+import { useState } from "react";
+// import auth from "../../base";
 
 import { useNavigate } from "react-router-dom";
 import AddHomeIcon from "@mui/icons-material/AddHome";
@@ -9,9 +9,9 @@ import Card from "../businessCard/BusinessCard";
 
 const API = process.env.REACT_APP_API_URL;
 export default function Profile({ currentUser, business }) {
-  const [user, setUser] = useState([]);
+  // const [user, setUser] = useState([]);
   const [form, setForm] = useState({});
-  const [favs, setFavs] = useState([]);
+  const [favs] = useState([]);
   const navigate = useNavigate();
 
   //   useEffect(() => {

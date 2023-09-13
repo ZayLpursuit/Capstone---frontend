@@ -2,16 +2,16 @@ import "./IndexPage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BusinessCard from "../businessCard/BusinessCard";
-import MapContainer from "../MapContainer";
+// import MapContainer from "../MapContainer";
 
 const API = process.env.REACT_APP_API_URL;
 export default function IndexPage() {
   const [category, setCategory] = useState(null);
   const [display, setDisplay] = useState([]);
   function handleChange(e) {
-    let target = e.target.id.includes("-")
-      ? e.target.id.split("-").join("")
-      : e.target.id;
+    // let target = e.target.id.includes("-")
+    //   ? e.target.id.split("-").join("")
+    //   : e.target.id;
     setCategory(e.target.id);
     axios
       .get(`${API}/businesses/categories/${category}`)
