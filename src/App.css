@@ -13,70 +13,8 @@ body::after {
   height: 120px;
 }
 
-.align-center {
-  align-items: center;
-}
-
 .grid {
   display: grid;
-}
-.margin-top {
-  margin-top: 10px;
-}
-.w-40 {
-  width: 40%;
-}
-
-
-
-.cultural-facts {
-  border: #282c34 solid;
-  padding: 20px;
-  background-color: #000000;
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(254, 254, 243, 0.547) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-li {
-  list-style-type: none;
-}
-
-.statement {
-  align-self: center;
-  text-align: center;
-  margin-left: 70px;
-  margin-top: -70px;
-  border-radius: 10px;
-  width: 50%;
-  margin: 0 auto;
-}
-
-.account {
-  position: relative;
-  left: 560px;
-}
-
-.slogan {
-  position: relative;
-  bottom: 750px;
-  text-align: center;
-  background-color: #000;
-  color: #f1cc24;
-  opacity: 80%;
-  width: 25%;
-  margin: auto;
-}
-
-.slogan-2 {
-  text-decoration: overline;
-}
-
-.home-form {
-  position: relative;
-  right: 200px;
-  display: flex;
 }
 
 .category-options li:hover {
@@ -84,90 +22,11 @@ li {
   cursor: pointer;
 }
 
-.flexxed {
-  display: flex;
-}
-
-.account {
-  margin-left: 460px;
-}
-
-.newBusiness {
-  background-color: #000;
-  color: #fcfcfa;
-}
-
-#cf {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  height: 280px;
-  margin: 0 auto;
-}
-
-.pic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: fade 20s infinite;
-}
-#pic1 {
-  background-size: contain;
-  animation-delay: 0s;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV1W-c9hjmU806hnPukB77dS1_TBt7wpMkbw&usqp=CAU");
-}
-#pic2 {
-  background-size: contain;
-  background-image: url("https://www.gannett-cdn.com/presto/2022/02/22/USAT/b3428ae6-f300-48af-bad3-9f91c6282094-Brewer_008.jpg");
-  animation-delay: 5s;
-}
-#pic3 {
-  background-size: contain;
-  background-image: url("https://leadingladiesafrica.org/wp-content/uploads/2019/12/BE9975F1-80FB-43F8-BE12-303915D26528.jpeg");
-  animation-delay: 10s;
-}
-#pic4 {
-  background-size: cover;
-  background-image: url("https://static01.nyt.com/images/2019/03/02/business/02west-01/merlin_148158210_809d173a-e520-4d33-9a4c-0ca36a8e42ff-superJumbo.jpg");
-  animation-delay: 15s;
-}
-
 .map-container {
   height: 500px;
   width: 100%;
   grid-column: 3;
   position: relative;
-}
-
-.test-d {
-  border-style: solid;
-  border-color: transparent transparent red transparent;
-  border-width: 0 25px 25px 25px;
-  height: 0;
-  width: 100%;
-  box-sizing: content-box;
-  position: relative;
-  margin: 20px 0 50px 0;
-}
-.test-d:after {
-  content: "";
-  position: absolute;
-  top: 25px;
-  left: -25px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: red transparent transparent transparent;
-  border-width: 70px 50px 0 50px;
-
-  max-width: 100%;
-  width: 20%;
 }
 
 .comment-section {
@@ -179,21 +38,6 @@ li {
 
 section > li > button {
   margin-left: 160px;
-}
-
-.btn-dark {
-  position: relative;
-}
-
-.homepic {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: fit-content;
-}
-
-.home {
-  background-color: rgb(253, 253, 238);
 }
 
 button > p {

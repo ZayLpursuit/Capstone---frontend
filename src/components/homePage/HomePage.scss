@@ -1,0 +1,21 @@
+.HomePage {
+  img {
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+  &__Motto {
+    position: relative;
+    bottom: 750px;
+    text-align: center;
+    background-color: #000;
+    color: #f1cc24;
+    opacity: 80%;
+    width: 25%;
+    margin: auto;
+
+    &__2 {
+      text-decoration: overline;
+    }
+  }
+}

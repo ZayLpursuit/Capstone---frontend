@@ -1,6 +1,6 @@
 import "./LandingPage.scss";
 import { Link } from "react-router-dom";
-import CulturalFacts from "../../components/CulturalFacts";
+import CulturalFacts from "../culturalFacts/CulturalFacts";
 
 const LandingPage = () => {
   return (
@@ -24,32 +24,32 @@ const LandingPage = () => {
           <div>
             <h4>Sylvia's, Located In Harlem Has Been Open For 61 Years!</h4>
             <Link to="/businesses/9">
-            <img
-              src="https://www.nycgo.com/images/videos/84544/sylvias-restaurant-thumbnail__large.jpg"
-              alt="sylvia's restuarant"
-            />
-          </Link>
-            </div>
+              <img
+                src="https://www.nycgo.com/images/videos/84544/sylvias-restaurant-thumbnail__large.jpg"
+                alt="sylvia's restuarant"
+              />
+            </Link>
+          </div>
           <div>
             <h4>Chelle's Hair Closet, an online boutique for luxury hair!</h4>
-          <Link to="/">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0582/8129/6044/products/IMG_6927.jpg?v=1680658083/project/avatar/3880238/Temp.png"
-              alt="chelle's"
-            />
-          </Link>
-            </div>
+            <Link to="/">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0582/8129/6044/products/IMG_6927.jpg?v=1680658083/project/avatar/3880238/Temp.png"
+                alt="chelle's"
+              />
+            </Link>
+          </div>
           <div>
             <h4>
               Bobby's, located In Queens Has Been Open For More Than 30 Years!
             </h4>
-          <Link to="/">
-            <img
-              src="https://lh3.googleusercontent.com/p/AF1QipPxOuirfJ6-ThGsBmPt6x9x7GStuiyTKS0ZnrE=s1360-w1360-h1020"
-              alt="bobby's restaurant"
-            />
+            <Link to="/">
+              <img
+                src="https://lh3.googleusercontent.com/p/AF1QipPxOuirfJ6-ThGsBmPt6x9x7GStuiyTKS0ZnrE=s1360-w1360-h1020"
+                alt="bobby's restaurant"
+              />
             </Link>
-            </div>
+          </div>
         </section>
       </div>
     </div>
