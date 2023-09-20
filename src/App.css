@@ -22,13 +22,6 @@ body::after {
   cursor: pointer;
 }
 
-.map-container {
-  height: 500px;
-  width: 100%;
-  grid-column: 3;
-  position: relative;
-}
-
 .comment-section {
   border: 2px solid;
   padding: 20px;
