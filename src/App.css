@@ -13,33 +13,8 @@ body::after {
   height: 120px;
 }
 
-.default-grid {
-  background-image: url("https://icm.aexp-static.com/content/dam/contenthub/us/en/images/us/small-business/openforum/wp-content/uploads/2018/02/black-business-woman-davis-header.jpg?imwidth=968");
-  background-size: cover;
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-}
-
-.width-70 {
-  width: 70%;
-}
-
-.center-text {
-  text-align: center;
-}
 .align-center {
   align-items: center;
-}
-
-/* input[type="search"] {
-  width: 200px;
-} */
-.btn-toggle {
-  margin-top: 60px;
-}
-.btn-size {
-  font-size: 20px;
-  border: 2px solid #000;
 }
 
 .grid {
@@ -52,24 +27,7 @@ body::after {
   width: 40%;
 }
 
-.profile-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
-  align-content: center;
-  justify-items: center;
-  margin-bottom: 40px;
-}
-.profile-cards {
-  border: 3px solid black;
-  background-color: white;
-  text-align: center;
-  width: 250px;
-  height: 250px;
-  align-content: center;
-  justify-content: center;
-}
+
 
 .cultural-facts {
   border: #282c34 solid;
@@ -227,15 +185,6 @@ section > li > button {
   position: relative;
 }
 
-#Log-In:hover {
-  background-color: #f1cc24;
-  color: #8f6001;
-}
-
-.login-signup {
-  background-color: rgb(253, 253, 238);
-}
-
 .homepic {
   background-repeat: no-repeat;
   background-size: cover;
@@ -255,8 +204,4 @@ button > p {
   position: absolute;
   top: -2.5px;
   right: 10px;
-}
-
-.height-90 {
-  height: 90vh;
 }

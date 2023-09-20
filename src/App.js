@@ -2,7 +2,7 @@ import "./App.css";
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-// import SignUp from "./components/SignUp";
+import Sign_In from "./components/sign_in/Sign_In";
 import IndexPage from "./components/indexPage/IndexPage";
 import Nav from "./components/nav/Nav";
 import Profile from "./components/userProfile/UserProfile";
@@ -49,7 +49,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/get-started" element={<SignUp  currentUser={currentUser}/>} /> */}
+        <Route path="/sign-in" element={<Sign_In />} />
         <Route path="/businesses" element={<IndexPage />} />
 
         <Route path="/businesses/:id" element={<Show />} />
