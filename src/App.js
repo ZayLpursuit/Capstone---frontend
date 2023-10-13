@@ -52,7 +52,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/businesses" element={<IndexPage />} />
 
-        <Route path="/businesses/:id" element={<Show />} />
+        <Route path="/businesses/:id" element={<Show business={business} />} />
         <Route path="/profile" element={<Profile business={business} />} />
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />

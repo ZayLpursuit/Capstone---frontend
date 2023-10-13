@@ -3,24 +3,24 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Badge, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-// import  Comment  from "./Comment";
-// import  CommentForm  from "./CommentForm";
+import  Comment  from "./Comment";
+import  CommentForm  from "./CommentForm";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Comments = () => {
-  const [comments, setComments] = useState([]);
+const Comments = ({comments}) => {
+  // const [comments, setComments] = useState([]);
   // const [showForm, setShowForm] = useState(false);
   const [showComments, setShowComments] = useState(false);
   let { id } = useParams();
 
-  useEffect(() => {
-      axios.get(`${API}/businesses/${id}/comments`).then((response) => {
-        // console.log(response.data)
-          setComments(response.data);
-          // console.log(comments)
-    });
-  }, [id]);
+  // useEffect(() => {
+  //     axios.get(`${API}/businesses/${id}/comments`).then((response) => {
+  //       // console.log(response.data)
+  //         setComments(response.data);
+  //         // console.log(comments)
+  //   });
+  // }, [id]);
 
   // const handleAdd = (newComment) => {
   //   axios

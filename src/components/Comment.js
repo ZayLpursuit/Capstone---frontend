@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-// import CommentForm from "./CommentForm";
+import CommentForm from "./CommentForm";
 
 const Comment = ({ comment, handleDelete }) => {
   const [viewEditForm, toggleEditForm] = useState(false);
@@ -24,7 +24,7 @@ const Comment = ({ comment, handleDelete }) => {
     <section className="comment-section">
       {/* <ul> */}
       <li className="comment-box">
-        {comment.commenter}: {comment.content}{" "}
+        {comment.author_name}: {comment.text}{" "}
         <>
         <Button variant="warning" onClick={toggleView}>
           {!viewEditForm ? "Edit" : "See Comment"}

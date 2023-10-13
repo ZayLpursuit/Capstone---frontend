@@ -8,92 +8,100 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 // import ShowMap from "../ShowMap";
 
-// import Comments from "./Comments";
-// import Comment from "./Comment";
-// import CommentForm from "./CommentForm";
+import Comments from "../Comments";
+import Comment from "../Comment";
+import CommentForm from "../CommentForm";
 import StarRating from "../StarRating";
 
 const API = process.env.REACT_APP_API_URL;
+const API_key = process.env.REACT_APP_GOOGLE_API_KEY;
 
-const Show = ({ setFavs, favs, currentUser }) => {
-  const [business, setBusiness] = useState([]);
+const Show = ({ setFavs, favs, currentUser, business }) => {
+  // const [business, setBusiness] = useState([]);
   // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
-  const { name, address, contact_num, year_opened, img, website, description } =
-    business;
 
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
+  const [apiData, setApiData] = useState([])
   let { id } = useParams();
-  const [, setComments] = useState([]);
-  // const [comments, setComments] = useState([]);
-  // const [showForm, setShowForm] = useState(false);
+  // const [, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [showForm, setShowForm] = useState(false);
   // const [showComments, setShowComments] = useState(false);
 
   // console.log("comment", <Comments/>)
 
+  let currentBusiness = business.find((bus) => bus.id === Number(id))
+
+  const { name, address, contact_num, year_opened, img, website, description } =
+  currentBusiness;
+
+  // console.log(currentBusiness)
+
   useEffect(() => {
-    axios
-      .get(`${API}/businesses/${id}`)
-      .then((res) => {
-        // console.log(res.data);
-        setBusiness(res.data);
-      })
+    axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?&place_id=${currentBusiness["place_id"]}&key=${API_key}`)
+    .then((res) => {
+      // console.log(res.data["result"])
+      setApiData(res.data["result"])
+    })
       .catch((c) => console.error("catch", c));
   }, [id]);
 
-  useEffect(() => {
-    axios.get(`${API}/businesses/${id}/comments`).then((response) => {
-      // console.log(response.data)
-      setComments(response.data);
-      // console.log(comments)
-    });
-  }, [id]);
+  console.log(apiData.reviews)
 
-  // const handleAdd = (newComment) => {
-  //   axios
-  //     .post(`${API}/businesses/${id}/comments`, newComment)
-  //     .then(
-  //       (response) => {
-  //         setComments([response.data, ...comments]);
-  //       },
-  //       (error) => console.error(error)
-  //     )
-  //     .catch((c) => console.warn("catch", c));
-  // };
+  // useEffect(() => {
+  //   axios.get(`${API}/businesses/${id}/comments`).then((response) => {
+  //     // console.log(response.data)
+  //     setComments(response.data);
+  //     // console.log(comments)
+  //   });
+  // }, [id]);
 
-  // const handleDelete = (id) => {
-  //   axios
-  //     .delete(`${API}/businesses/${id}/comments/${id}`)
-  //     .then(
-  //       (response) => {
-  //         const copyCommentArray = [...comments];
-  //         const indexDeletedComment = copyCommentArray.findIndex((comment) => {
-  //           return comment.id === id;
-  //         });
-  //         copyCommentArray.splice(indexDeletedComment, 1);
-  //         setComments(copyCommentArray);
-  //       },
-  //       (error) => console.error(error)
-  //     )
-  //     .catch((c) => console.warn("catch", c));
-  // };
+  const handleAdd = (newComment) => {
+    axios
+      .post(`${API}/businesses/${id}/comments`, newComment)
+      .then(
+        (response) => {
+          setComments([response.data, ...comments]);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn("catch", c));
+  };
 
-  // const handleEdit = (updatedComment) => {
-  //   axios
-  //     .put(
-  //       `${API}/businesses/${id}/comments/${updatedComment.id}`,
-  //       updatedComment
-  //     )
-  //     .then((response) => {
-  //       const copyCommentArray = [...comments];
-  //       const indexUpdatedComment = copyCommentArray.findIndex((comment) => {
-  //         return comment.id === updatedComment.id;
-  //       });
-  //       copyCommentArray[indexUpdatedComment] = response.data;
-  //       setComments(copyCommentArray);
-  //     })
-  //     .catch((c) => console.warn("catch", c));
-  // };
+  const handleDelete = (id) => {
+    axios
+      .delete(`${API}/businesses/${id}/comments/${id}`)
+      .then(
+        (response) => {
+          const copyCommentArray = [...comments];
+          const indexDeletedComment = copyCommentArray.findIndex((comment) => {
+            return comment.id === id;
+          });
+          copyCommentArray.splice(indexDeletedComment, 1);
+          setComments(copyCommentArray);
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn("catch", c));
+  };
+
+  const handleEdit = (updatedComment) => {
+    axios
+      .put(
+        `${API}/businesses/${id}/comments/${updatedComment.id}`,
+        updatedComment
+      )
+      .then((response) => {
+        const copyCommentArray = [...comments];
+        const indexUpdatedComment = copyCommentArray.findIndex((comment) => {
+          return comment.id === updatedComment.id;
+        });
+        copyCommentArray[indexUpdatedComment] = response.data;
+        setComments(copyCommentArray);
+      })
+      .catch((c) => console.warn("catch", c));
+  };
 
   function addToFavorites() {
     console.log(currentUser.uid);
@@ -178,10 +186,10 @@ const Show = ({ setFavs, favs, currentUser }) => {
           <Tab eventKey="description" title="Description">
             {description}
           </Tab>
-          {/* <Tab eventKey="comments" title={<Comments />}>
-            {comments?.map((comment) => (
+          <Tab eventKey="comments" title={<Comments comments={apiData.reviews} />}>
+            {apiData.reviews?.map((comment, index) => (
               <Comment
-                key={comment.id}
+                key={index}
                 comment={comment}
                 handleDelete={handleDelete}
                 handleSubmit={handleEdit}
@@ -198,7 +206,7 @@ const Show = ({ setFavs, favs, currentUser }) => {
                 ></CommentForm>
               )}
             </>
-          </Tab> */}
+          </Tab>
         </Tabs>
       </div>
     </div>
