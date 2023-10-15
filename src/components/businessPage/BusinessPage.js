@@ -16,46 +16,57 @@ import StarRating from "../StarRating";
 const API = process.env.REACT_APP_API_URL;
 const API_key = process.env.REACT_APP_GOOGLE_API_KEY;
 
-const Show = ({ setFavs, favs, currentUser, business }) => {
-  // const [business, setBusiness] = useState([]);
-  // const { name, address, contact_num, year_opened, is_online, is_store, img, category, website, description } = business;
-
+const Show = ({
+  setFavs,
+  favs,
+  currentUser,
+  findBusinessByPlaceId,
+}) => {
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
-  const [apiData, setApiData] = useState([])
   let { id } = useParams();
-  // const [, setComments] = useState([]);
   const [comments, setComments] = useState([]);
   const [showForm, setShowForm] = useState(false);
   // const [showComments, setShowComments] = useState(false);
 
-  // console.log("comment", <Comments/>)
+  const placeId = findBusinessByPlaceId(Number(id) - 1);
 
-  let currentBusiness = business.find((bus) => bus.id === Number(id))
-
-  const { name, address, contact_num, year_opened, img, website, description } =
-  currentBusiness;
-
-  // console.log(currentBusiness)
+  const [business, setBusiness] = useState([]);
+  const [businessDataFromAPI, setBusinessDataFromAPI] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?&place_id=${currentBusiness["place_id"]}&key=${API_key}`)
-    .then((res) => {
-      // console.log(res.data["result"])
-      setApiData(res.data["result"])
-    })
+    const backendData = axios.get(`${API}/businesses/${id}`);
+    const googleData = axios.get(
+      `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?&place_id=${placeId}&key=${API_key}`
+    );
+
+    Promise.all([backendData, googleData])
+      .then((res) => {
+        // console.log(res)
+        // console.log(res.data["result"])
+        setBusiness(res[0].data);
+        placeId && setBusinessDataFromAPI(res[1].data["result"]);
+      })
       .catch((c) => console.error("catch", c));
-  }, [id]);
+  }, [placeId]);
 
-  console.log(apiData.reviews)
+  // console.log(
+  //   "data from api",
+  //   businessDataFromAPI,
+  //   "data from backend",
+  //   business
+  // );
 
-  // useEffect(() => {
-  //   axios.get(`${API}/businesses/${id}/comments`).then((response) => {
-  //     // console.log(response.data)
-  //     setComments(response.data);
-  //     // console.log(comments)
-  //   });
-  // }, [id]);
+  const {
+    name,
+    address,
+    contact_num,
+    year_opened,
+    img,
+    website,
+    description,
+    is_store,
+  } = business;
 
   const handleAdd = (newComment) => {
     axios
@@ -113,7 +124,7 @@ const Show = ({ setFavs, favs, currentUser, business }) => {
       <img src={img} alt={name} />
       <div className="BusinessPage__Details">
         <h1>
-          {name}
+          {name || businessDataFromAPI.name}
           <Button
             variant="warning"
             onClick={() => {
@@ -128,7 +139,7 @@ const Show = ({ setFavs, favs, currentUser, business }) => {
             )}
           </Button>
         </h1>
-        <StarRating />
+        <StarRating rating={businessDataFromAPI.rating } />
         <Table bordered hover>
           <tbody>
             <tr>
@@ -145,12 +156,15 @@ const Show = ({ setFavs, favs, currentUser, business }) => {
               </td>
               <td>
                 <h5>
-                  <a
-                    href={address ? `http://maps.google.com/?q=${name}` : "N/A"}
-                    target="*"
-                  >
-                    {address || "N/A"}
-                  </a>
+                  {!is_store ? (
+                    <a href={website ? website : "N/A"} target="*">
+                      Online Only
+                    </a>
+                  ) : (
+                    <a href={`http://maps.google.com/?q=${name}`} target="*">
+                      {businessDataFromAPI.formatted_address || address}
+                    </a>
+                  )}
                 </h5>
               </td>
             </tr>
@@ -171,23 +185,24 @@ const Show = ({ setFavs, favs, currentUser, business }) => {
                 <h4>Phone Number: </h4>
               </td>
               <td>
-                <h5>{contact_num ? contact_num : "N/A"}</h5>
+                <h5>{businessDataFromAPI.formatted_phone_number || contact_num || "N/A"}</h5>
               </td>
             </tr>
           </tbody>
         </Table>
 
-        <div className="BusinessPage__Map">
-          {/* <ShowMap business={business}/> */}
-        </div>
+        <div className="BusinessPage__Map"></div>
       </div>
       <div className="BusinessPage__Description">
         <Tabs activeKey={key} onSelect={(k) => setKey(k)}>
           <Tab eventKey="description" title="Description">
             {description}
           </Tab>
-          <Tab eventKey="comments" title={<Comments comments={apiData.reviews} />}>
-            {apiData.reviews?.map((comment, index) => (
+          <Tab
+            eventKey="comments"
+            title={<Comments comments={businessDataFromAPI.reviews} />}
+          >
+            {businessDataFromAPI.reviews?.map((comment, index) => (
               <Comment
                 key={index}
                 comment={comment}
@@ -200,11 +215,7 @@ const Show = ({ setFavs, favs, currentUser, business }) => {
                 {!showForm ? "Add A New Comment" : "Hide Form"}
               </Button>
 
-              {showForm && (
-                <CommentForm
-                  handleSubmit={handleAdd}
-                ></CommentForm>
-              )}
+              {showForm && <CommentForm handleSubmit={handleAdd}></CommentForm>}
             </>
           </Tab>
         </Tabs>

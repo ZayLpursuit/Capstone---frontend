@@ -14,6 +14,8 @@ const Comments = ({comments}) => {
   const [showComments, setShowComments] = useState(false);
   let { id } = useParams();
 
+  // console.log("comments", comments.length)
+
   // useEffect(() => {
   //     axios.get(`${API}/businesses/${id}/comments`).then((response) => {
   //       // console.log(response.data)
@@ -69,9 +71,9 @@ const Comments = ({comments}) => {
     // <section className="comments-section">
       <Button variant="light" onClick={() => setShowComments(!showComments)}>
         Comments{" "}
-        <Badge bg={comments.length ? "secondary" : "danger"}>
+        {/* <Badge bg={comments ? "secondary" : "danger"}>
           {comments.length}
-        </Badge>
+        </Badge> */}
       </Button>
     //   <br />
     //   <br />

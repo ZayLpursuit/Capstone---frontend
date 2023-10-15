@@ -1,7 +1,4 @@
-import React from "react";
-
-const StarRating = () => {
-  let rating=4.5
+const StarRating = ({rating}) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {

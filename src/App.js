@@ -20,7 +20,7 @@ const API = process.env.REACT_APP_API_URL;
 
 function App() {
   // const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
-  const [business, setBusiness] = useState([]);
+  const [businesses, setBusinesses] = useState([]);
 
   // useEffect(()=>{
 
@@ -37,10 +37,18 @@ function App() {
       .get(`${API}/businesses/`)
       .then((res) => {
         // console.log(res.data);
-        setBusiness(res.data);
+        setBusinesses(res.data);
       })
       .catch((c) => console.error("catch", c));
   }, []);
+
+  const findBusinessByPlaceId = (id) => {
+    const allIds = businesses.map(({ id }) => id)
+    const match = allIds.find(el => el === parseInt(id));
+    if (match) {
+      return businesses[id].place_id
+    }
+  };
 
   // console.log("current user app.js", currentUser.email)
 
@@ -52,8 +60,8 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/businesses" element={<IndexPage />} />
 
-        <Route path="/businesses/:id" element={<Show business={business} />} />
-        <Route path="/profile" element={<Profile business={business} />} />
+        <Route path="/businesses/:id" element={<Show findBusinessByPlaceId={findBusinessByPlaceId } />} />
+        {/* <Route path="/profile" element={<Profile business={business} />} /> */}
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />
         <Route path="/new" element={<NewBusiness />} />

@@ -22,11 +22,11 @@ const LandingPage = () => {
         <h1>Featured Businesses</h1>
         <section>
           <div>
-            <h4>Sylvia's, Located In Harlem Has Been Open For 61 Years!</h4>
-            <Link to="/businesses/9">
+            <h4>Slutty Vegan, your go to place for plant-based vegan food!</h4>
+            <Link to="/businesses/51">
               <img
-                src="https://www.nycgo.com/images/videos/84544/sylvias-restaurant-thumbnail__large.jpg"
-                alt="sylvia's restuarant"
+                src="https://sluttyveganatl.com/wp-content/uploads/2020/03/SluttyVegan-DarkLogo.png"
+                alt="slutty vegan restaurant"
               />
             </Link>
           </div>
