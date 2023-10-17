@@ -2,56 +2,61 @@ import "./IndexPage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BusinessCard from "../businessCard/BusinessCard";
+import { Link, useSearchParams } from "react-router-dom";
 // import MapContainer from "../MapContainer";
 
 const API = process.env.REACT_APP_API_URL;
-export default function IndexPage() {
-  const [category, setCategory] = useState(null);
-  const [display, setDisplay] = useState([]);
-  function handleChange(e) {
-    // let target = e.target.id.includes("-")
-    //   ? e.target.id.split("-").join("")
-    //   : e.target.id;
-    setCategory(e.target.id);
-    axios
-      .get(`${API}/businesses/categories/${category}`)
-      .then((res) => setDisplay(res.data));
-  }
+
+export default function IndexPage({ businesses }) {
+  const [filteredBusinesses, setFilteredBusinesses] = useState([]);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const category = searchParams.get("category");
+
+  let allCategories = [
+    ...new Map(
+      businesses.map((business) => [business.category, business])
+    ).keys(),
+  ];
+
   useEffect(() => {
-    axios.get(`${API}/businesses`).then((res) => setDisplay(res.data));
-  }, []);
+    async function fetchData() {
+      if (category) {
+        await axios
+          .get(`${API}/businesses?category=${category}`)
+          .then((res) => {
+            setFilteredBusinesses(res.data);
+          })
+          .catch((c) => console.error("catch", c));
+      } else {
+        setFilteredBusinesses(businesses);
+      }
+    }
+    fetchData();
+  }, [category, businesses, setFilteredBusinesses]);
+
+  const filteredCategory = (e) => {
+    setSearchParams({ category: e.target.id });
+  };
 
   return (
     <div className="IndexPage">
       <div className="IndexPage__Categories">
         <h1>Categories</h1>
         <ul>
-          <li id="restaurant" onClick={(e) => handleChange(e)}>
-            Restaurants
-          </li>
-          <li id="social" onClick={(e) => handleChange(e)}>
-            Social
-          </li>
-          <li id="barber shop" onClick={(e) => handleChange(e)}>
-            Barber Shops
-          </li>
-          <li id="bank" onClick={(e) => handleChange(e)}>
-            Banks
-          </li>
-          <li id="fashion" onClick={(e) => handleChange(e)}>
-            Fashion
-          </li>
-          <li id="beauty" onClick={(e) => handleChange(e)}>
-            Beauty
-          </li>
-          <li id="health and wellness" onClick={(e) => handleChange(e)}>
-            Health & Wellness
-          </li>
+          {allCategories.map((category) => (
+            <Link to={`/businesses?category=${category}`} key={category}>
+              <li key={category} id={category} onClick={filteredCategory}>
+                {category}
+              </li>
+            </Link>
+          ))}
         </ul>
       </div>
       <div className="IndexPage__Cards">
-        {display.map((business, index) => {
-          return <BusinessCard business={business} key={index} />;
+        {filteredBusinesses.map((business, id) => {
+          return <BusinessCard business={business} key={id} />;
         })}
       </div>
       <div className="IndexPage__Map">

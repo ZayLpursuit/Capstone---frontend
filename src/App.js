@@ -5,7 +5,7 @@ import HomePage from "./components/homePage/HomePage";
 import SignIn from "./components/sign_in/Sign_In";
 import IndexPage from "./components/indexPage/IndexPage";
 import Nav from "./components/nav/Nav";
-import Profile from "./components/userProfile/UserProfile";
+// import Profile from "./components/userProfile/UserProfile";
 // import auth from "./base";
 // import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -36,21 +36,18 @@ function App() {
     axios
       .get(`${API}/businesses/`)
       .then((res) => {
-        // console.log(res.data);
         setBusinesses(res.data);
       })
       .catch((c) => console.error("catch", c));
   }, []);
 
   const findBusinessByPlaceId = (id) => {
-    const allIds = businesses.map(({ id }) => id)
-    const match = allIds.find(el => el === parseInt(id));
+    const allIds = businesses.map(({ id }) => id);
+    const match = allIds.find((el) => el === parseInt(id));
     if (match) {
-      return businesses[id].place_id
+      return businesses[id].place_id;
     }
   };
-
-  // console.log("current user app.js", currentUser.email)
 
   return (
     <Router>
@@ -58,9 +55,14 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/businesses" element={<IndexPage />} />
-
-        <Route path="/businesses/:id" element={<Show findBusinessByPlaceId={findBusinessByPlaceId } />} />
+        <Route
+          path="/businesses"
+          element={<IndexPage businesses={businesses} />}
+        />
+        <Route
+          path="/businesses/:id"
+          element={<Show findBusinessByPlaceId={findBusinessByPlaceId} />}
+        />
         {/* <Route path="/profile" element={<Profile business={business} />} /> */}
         {/* <Route path="/profile/edit/:user" element={< EditProfile/>} /> */}
         <Route path="/resources" element={<Resources />} />
