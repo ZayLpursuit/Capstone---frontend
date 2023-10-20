@@ -22,6 +22,8 @@ function App() {
   // const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
   const [businesses, setBusinesses] = useState([]);
 
+// console.log("google", google.maps.DirectionsService().route
+// )
   // useEffect(()=>{
 
   //   auth.onAuthStateChanged((user) => {
@@ -57,7 +59,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route
           path="/businesses"
-          element={<IndexPage businesses={businesses} />}
+          element={<IndexPage businesses={businesses} findBusinessByPlaceId={findBusinessByPlaceId} />}
         />
         <Route
           path="/businesses/:id"

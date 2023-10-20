@@ -16,12 +16,7 @@ import StarRating from "../StarRating";
 const API = process.env.REACT_APP_API_URL;
 const API_key = process.env.REACT_APP_GOOGLE_API_KEY;
 
-const Show = ({
-  setFavs,
-  favs,
-  currentUser,
-  findBusinessByPlaceId,
-}) => {
+const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
   const [key, setKey] = useState("description");
   const [favorite, setFavorite] = useState(false);
   let { id } = useParams();
@@ -37,18 +32,17 @@ const Show = ({
   useEffect(() => {
     const backendData = axios.get(`${API}/businesses/${id}`);
     const googleData = axios.get(
-      `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?&place_id=${placeId}&key=${API_key}`
+      `${API}/places/details?&place_id=ChIJzbXRDpFbwokRpcfjIz0OtJg&key=${API_key}`
     );
 
     Promise.all([backendData, googleData])
       .then((res) => {
-        // console.log(res)
-        // console.log(res.data["result"])
+        // console.log(res[1].data["result"]);
         setBusiness(res[0].data);
         placeId && setBusinessDataFromAPI(res[1].data["result"]);
       })
       .catch((c) => console.error("catch", c));
-  }, [placeId]);
+  }, [placeId, id]);
 
   // console.log(
   //   "data from api",
@@ -139,7 +133,7 @@ const Show = ({
             )}
           </Button>
         </h1>
-        <StarRating rating={businessDataFromAPI.rating } />
+        <StarRating rating={businessDataFromAPI.rating} />
         <Table bordered hover>
           <tbody>
             <tr>
@@ -185,7 +179,11 @@ const Show = ({
                 <h4>Phone Number: </h4>
               </td>
               <td>
-                <h5>{businessDataFromAPI.formatted_phone_number || contact_num || "N/A"}</h5>
+                <h5>
+                  {businessDataFromAPI.formatted_phone_number ||
+                    contact_num ||
+                    "N/A"}
+                </h5>
               </td>
             </tr>
           </tbody>

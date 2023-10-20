@@ -7,7 +7,7 @@ import { Link, useSearchParams } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function IndexPage({ businesses }) {
+export default function IndexPage({ businesses, findBusinessByPlaceId }) {
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -56,7 +56,13 @@ export default function IndexPage({ businesses }) {
       </div>
       <div className="IndexPage__Cards">
         {filteredBusinesses.map((business, id) => {
-          return <BusinessCard business={business} key={id} />;
+          return (
+            <BusinessCard
+              business={business}
+              key={id}
+              findBusinessByPlaceId={findBusinessByPlaceId}
+            />
+          );
         })}
       </div>
       <div className="IndexPage__Map">
