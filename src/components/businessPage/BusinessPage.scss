@@ -15,16 +15,20 @@
     box-shadow: rgb(73, 80, 90) 0px 15px 30px 10px;
   }
 
-  table {
-    height: 200px;
-    margin-top: 60px;
-  }
-
-  tr {
+  tr,
+  th {
     background-color: #f1cc24;
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px, rgb(0, 0, 0) 0px 0px 0px 6px,
       rgb(0, 0, 0) 0px 0px 0px 9px, #000000 0px 0px 0px 12px,
       rgb(0, 0, 0) 0px 0px 0px 15px;
+  }
+
+  th {
+    padding-bottom: 20px;
+  }
+
+  td > h5 {
+    color: black;
   }
 
   a {
@@ -36,12 +40,30 @@
     color: white;
   }
 
+  .fa-solid {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 40px;
+    font-size: 10px;
+  }
+
+  .fa-solid:hover {
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }
+
   &__Details {
     margin-right: 60px;
 
     h1 {
       font-family: "Bebas Neue", sans-serif;
       text-decoration: #f1cc24 double underline;
+      color: white;
+    }
+
+    h3,
+    h5,
+    h6 {
       color: white;
     }
   }

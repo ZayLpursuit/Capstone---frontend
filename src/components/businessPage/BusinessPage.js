@@ -12,6 +12,7 @@ import Comments from "../Comments";
 import Comment from "../Comment";
 import CommentForm from "../CommentForm";
 import StarRating from "../StarRating";
+import BusinessHours from "../businessHours/BusinessHours";
 
 const API = process.env.REACT_APP_API_URL;
 const API_key = process.env.REACT_APP_GOOGLE_API_KEY;
@@ -24,22 +25,28 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
   const [showForm, setShowForm] = useState(false);
   // const [showComments, setShowComments] = useState(false);
 
-  const placeId = findBusinessByPlaceId(Number(id) - 1);
+  const placeId = findBusinessByPlaceId(Number(id));
 
   const [business, setBusiness] = useState([]);
   const [businessDataFromAPI, setBusinessDataFromAPI] = useState([]);
+  const [businessHours, setBusinessHours] = useState([]);
+  const [showHours, setShowHours] = useState(false);
 
   useEffect(() => {
     const backendData = axios.get(`${API}/businesses/${id}`);
     const googleData = axios.get(
-      `${API}/places/details?&place_id=ChIJzbXRDpFbwokRpcfjIz0OtJg&key=${API_key}`
+      `${API}/places/details?&place_id=${placeId}&key=${API_key}`
     );
 
     Promise.all([backendData, googleData])
       .then((res) => {
-        // console.log(res[1].data["result"]);
+        // console.log(res[1].data["result"]["opening_hours"]["businessHours"]);
         setBusiness(res[0].data);
         placeId && setBusinessDataFromAPI(res[1].data["result"]);
+        placeId &&
+          setBusinessHours(
+            res[1].data["result"]["opening_hours"]["weekday_text"]
+          );
       })
       .catch((c) => console.error("catch", c));
   }, [placeId, id]);
@@ -50,6 +57,12 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
   //   "data from backend",
   //   business
   // );
+  // let hours = businessDataFromAPI["opening_hours"]["businessHours"]
+  //   // console.log(businessDataFromAPI.opening_hours)
+  //   console.log(hours)
+  // .map((el, i) => el[i].split(" "))[0]
+
+  // console.log(businessHours[0].close.time)
 
   const {
     name,
@@ -133,6 +146,9 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
             )}
           </Button>
         </h1>
+        {businessDataFromAPI.price_level && (
+          <h6>Price Level: {businessDataFromAPI.price_level}</h6>
+        )}
         <StarRating rating={businessDataFromAPI.rating} />
         <Table bordered hover>
           <tbody>
@@ -188,10 +204,20 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
             </tr>
           </tbody>
         </Table>
-
+        <p style={{ color: "white" }} onClick={() => setShowHours(!showHours)}>
+          See all hours <i className="fa-solid fa-info"></i>{" "}
+        </p>
+        {showHours && (
+          <BusinessHours
+            business={business}
+            businessHours={businessHours}
+            showHours={showHours}
+            setShowHours={setShowHours}
+          />
+        )}
         <div className="BusinessPage__Map"></div>
       </div>
-      <div className="BusinessPage__Description">
+      {/* <div className="BusinessPage__Description">
         <Tabs activeKey={key} onSelect={(k) => setKey(k)}>
           <Tab eventKey="description" title="Description">
             {description}
@@ -217,7 +243,7 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
             </>
           </Tab>
         </Tabs>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -22,8 +22,6 @@ function App() {
   // const [currentUser, setcurrentUser] = useState(getAuth().currentUser||null);
   const [businesses, setBusinesses] = useState([]);
 
-// console.log("google", google.maps.DirectionsService().route
-// )
   // useEffect(()=>{
 
   //   auth.onAuthStateChanged((user) => {
@@ -44,10 +42,9 @@ function App() {
   }, []);
 
   const findBusinessByPlaceId = (id) => {
-    const allIds = businesses.map(({ id }) => id);
-    const match = allIds.find((el) => el === parseInt(id));
+    const match = businesses.find((business) => business.id === id);
     if (match) {
-      return businesses[id].place_id;
+      return match.place_id;
     }
   };
 
@@ -59,7 +56,12 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route
           path="/businesses"
-          element={<IndexPage businesses={businesses} findBusinessByPlaceId={findBusinessByPlaceId} />}
+          element={
+            <IndexPage
+              businesses={businesses}
+              findBusinessByPlaceId={findBusinessByPlaceId}
+            />
+          }
         />
         <Route
           path="/businesses/:id"
