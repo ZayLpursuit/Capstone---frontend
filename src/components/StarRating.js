@@ -1,4 +1,4 @@
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating, reviews }) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
@@ -9,7 +9,15 @@ const StarRating = ({ rating }) => {
       stars.push(<i key={i} className="far fa-star text-warning"></i>);
     }
   }
-  return <>{rating && <p className="StarRating__stars">{stars}</p>}</>;
+  return (
+    <>
+      {rating && (
+        <p className="StarRating__stars">
+          {stars} {reviews.length} reviews
+        </p>
+      )}
+    </>
+  );
 };
 
 export default StarRating;

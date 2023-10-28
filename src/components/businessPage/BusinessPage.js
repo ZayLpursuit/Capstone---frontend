@@ -31,6 +31,8 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
   const [businessDataFromAPI, setBusinessDataFromAPI] = useState([]);
   const [businessHours, setBusinessHours] = useState([]);
   const [showHours, setShowHours] = useState(false);
+  const [businessOpen, setBusinessOpen] = useState(null);
+  const [businessReviews, setBusinessReviews] = useState([]);
 
   useEffect(() => {
     const backendData = axios.get(`${API}/businesses/${id}`);
@@ -47,22 +49,27 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
           setBusinessHours(
             res[1].data["result"]["opening_hours"]["weekday_text"]
           );
+        placeId &&
+          setBusinessOpen(res[1].data["result"]["opening_hours"]["open_now"]);
+        placeId && setBusinessReviews(res[1].data["result"]["reviews"]);
       })
       .catch((c) => console.error("catch", c));
   }, [placeId, id]);
 
-  // console.log(
-  //   "data from api",
-  //   businessDataFromAPI,
-  //   "data from backend",
-  //   business
-  // );
+  console.log(
+    "data from api",
+    businessDataFromAPI
+    // "data from backend",
+    // business
+  );
   // let hours = businessDataFromAPI["opening_hours"]["businessHours"]
   //   // console.log(businessDataFromAPI.opening_hours)
   //   console.log(hours)
   // .map((el, i) => el[i].split(" "))[0]
 
   // console.log(businessHours[0].close.time)
+
+  // console.log(businessOpen)
 
   const {
     name,
@@ -128,93 +135,86 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
 
   return (
     <div className="BusinessPage">
-      <img src={img} alt={name} />
       <div className="BusinessPage__Details">
-        <h1>
-          {name || businessDataFromAPI.name}
-          <Button
-            variant="warning"
-            onClick={() => {
-              setFavorite(!favorite);
-              addToFavorites();
-            }}
-          >
-            {!favorite ? (
-              <i className="fa-regular fa-star" id="unfavorite"></i>
-            ) : (
-              <i className="fa-solid fa-star" id="favorite"></i>
-            )}
-          </Button>
-        </h1>
-        {businessDataFromAPI.price_level && (
-          <h6>Price Level: {businessDataFromAPI.price_level}</h6>
-        )}
-        <StarRating rating={businessDataFromAPI.rating} />
-        <Table bordered hover>
-          <tbody>
-            <tr>
-              <td>
-                <h4>Year Opened: </h4>
-              </td>
-              <td>
-                <h5>{year_opened}</h5>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Location:</h4>
-              </td>
-              <td>
-                <h5>
-                  {!is_store ? (
-                    <a href={website ? website : "N/A"} target="*">
-                      Online Only
-                    </a>
-                  ) : (
-                    <a href={`http://maps.google.com/?q=${name}`} target="*">
-                      {businessDataFromAPI.formatted_address || address}
-                    </a>
-                  )}
-                </h5>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Website: </h4>
-              </td>
-              <td>
-                <h5>
-                  <a href={website ? website : "N/A"} target="*">
-                    {website}
-                  </a>
-                </h5>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h4>Phone Number: </h4>
-              </td>
-              <td>
-                <h5>
-                  {businessDataFromAPI.formatted_phone_number ||
-                    contact_num ||
-                    "N/A"}
-                </h5>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
-        <p style={{ color: "white" }} onClick={() => setShowHours(!showHours)}>
-          See all hours <i className="fa-solid fa-info"></i>{" "}
-        </p>
-        {showHours && (
-          <BusinessHours
-            business={business}
-            businessHours={businessHours}
-            showHours={showHours}
-            setShowHours={setShowHours}
-          />
-        )}
+        <div className="BusinessPage__Details__Header">
+          <h1>{name || businessDataFromAPI.name}</h1>
+          <div className="BusinessPage__Details__Header__2">
+            <a href="#">Review</a>
+            <Button
+              variant="warning"
+              onClick={() => {
+                setFavorite(!favorite);
+                addToFavorites();
+              }}
+            >
+              {!favorite ? (
+                <i className="fa-regular fa-star" id="unfavorite"></i>
+              ) : (
+                <i className="fa-solid fa-star" id="favorite"></i>
+              )}
+            </Button>
+          </div>
+        </div>
+        <div className="BusinessPage__Details__Rating">
+          {businessDataFromAPI && (
+            <span>
+              <StarRating
+                rating={businessDataFromAPI.rating}
+                reviews={businessReviews}
+              />
+            </span>
+          )}
+          {businessDataFromAPI.price_level && (
+            <span className="BusinessPage__Details__Rating__Price">
+              <h6>Price Level: {businessDataFromAPI.price_level}</h6>
+            </span>
+          )}
+        </div>
+
+        <div className="BusinessPage__Details__Contact">
+          {!is_store ? (
+            <a href={website ? website : "N/A"} target="*">
+              Online Only
+            </a>
+          ) : (
+            <p>
+              <i class="fa-solid fa-location-dot"></i>{" "}
+              <a href={`http://maps.google.com/?q=${name}`} target="*">
+                {businessDataFromAPI.formatted_address || address}
+              </a>
+            </p>
+          )}
+          <a href="#">
+            <i class="fa-solid fa-phone"></i>{" "}
+            {businessDataFromAPI.formatted_phone_number || contact_num || "N/A"}
+          </a>
+          <p>
+            <i class="fa-solid fa-laptop"></i>{" "}
+            <a href={website ? website : "N/A"} target="*">
+              Website
+            </a>
+          </p>
+
+          <span onClick={() => setShowHours(!showHours)}>
+            <i class="fa-regular fa-clock"></i>{" "}
+            <span className="BusinessPage__Details__Contact__Hours">
+              {!businessOpen ? "Closed now:" : "Open now:"}
+            </span>{" "}
+            See all hours <i className="fa-solid fa-circle-info"></i>{" "}
+          </span>
+
+          {showHours && (
+            <BusinessHours
+              business={business}
+              businessHours={businessHours}
+              showHours={showHours}
+              setShowHours={setShowHours}
+            />
+          )}
+        </div>
+
+        <img src={img} alt={name} />
+
         <div className="BusinessPage__Map"></div>
       </div>
       {/* <div className="BusinessPage__Description">
