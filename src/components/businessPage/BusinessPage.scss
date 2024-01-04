@@ -135,10 +135,41 @@
       }
     }
 
-    img {
-      height: 400px;
-      width: 400px;
-      box-shadow: rgb(73, 80, 90) 0px 15px 30px 10px;
+    &__Img {
+      display: grid;
+      grid-template-columns: 55% 45%;
+
+      img {
+        height: 400px;
+        width: 400px;
+        box-shadow: rgb(73, 80, 90) 0px 15px 30px 10px;
+      }
     }
+
+    &__Expanded {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      height: 300px;
+
+      div {
+        border: 1px solid rgb(56, 56, 56);
+        padding: 30px;
+      }
+
+      &__Rating {
+
+        span {
+          display: flex;
+          gap: 5px;
+          align-items: baseline;
+        }
+        p.Rating {
+          font-size: 22px;
+        }
+      }
+    }
+
   }
 }

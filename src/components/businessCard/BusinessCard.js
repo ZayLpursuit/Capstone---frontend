@@ -2,7 +2,7 @@ import "./BusinessCard.scss";
 
 import { useNavigate } from "react-router-dom";
 
-import StarRating from "../StarRating";
+import {StarRating }from "../StarRating";
 import { useEffect, useState } from "react";
 import axios from "axios";
 

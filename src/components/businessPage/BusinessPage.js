@@ -11,7 +11,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Comments from "../Comments";
 import Comment from "../Comment";
 import CommentForm from "../CommentForm";
-import StarRating from "../StarRating";
+import { StarRatingAndReviews } from "../StarRating";
 import BusinessHours from "../businessHours/BusinessHours";
 
 const API = process.env.REACT_APP_API_URL;
@@ -158,7 +158,7 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
         <div className="BusinessPage__Details__Rating">
           {businessDataFromAPI && (
             <span>
-              <StarRating
+              <StarRatingAndReviews
                 rating={businessDataFromAPI.rating}
                 reviews={businessReviews}
               />
@@ -212,8 +212,58 @@ const Show = ({ setFavs, favs, currentUser, findBusinessByPlaceId }) => {
             />
           )}
         </div>
-
-        <img src={img} alt={name} />
+        <div className="BusinessPage__Details__Img">
+          <div>Temp</div>
+          <img src={img} alt={name} />
+        </div>
+        <div className="BusinessPage__Details__Expanded">
+          <div className="BusinessPage__Details__Expanded__Rating">
+            <h4>Ratings and reviews</h4>
+            {businessDataFromAPI && (
+              <span>
+                <p className="Rating">
+                {businessDataFromAPI.rating}</p>
+              <StarRatingAndReviews
+                rating={businessDataFromAPI.rating}
+                reviews={businessReviews}
+              />
+            </span>
+          )}
+          </div>
+          <div className="BusinessPage__Details__Expanded__Details">
+            <h4>Details</h4>
+            <h5>PRICE RANGE</h5>
+            <p>$-$</p>
+            <h5>ABOUT</h5>
+            <p>{business.description}</p>
+          </div>
+          <div className="BusinessPage__Details__Expanded__Location">
+            <h5>Location and contact</h5>
+            <p>Map</p>
+            {!is_store ? (
+            <a href={website ? website : "N/A"} target="*">
+              Online Only
+            </a>
+          ) : (
+            <p>
+              <i class="fa-solid fa-location-dot"></i>{" "}
+              <a href={`http://maps.google.com/?q=${name}`} target="*">
+                {businessDataFromAPI.formatted_address || address}
+              </a>
+            </p>
+            )}
+                      <p>
+            <i class="fa-solid fa-laptop"></i>{" "}
+            <a href={website ? website : "N/A"} target="*">
+              Website
+            </a>
+            </p>
+            <a href="#">
+            <i class="fa-solid fa-phone"></i>{" "}
+            {businessDataFromAPI.formatted_phone_number || contact_num || "N/A"}
+          </a>
+          </div>
+        </div>
 
         <div className="BusinessPage__Map"></div>
       </div>
