@@ -1,0 +1,29 @@
+.footer {
+  background-color: #f1cc24;
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    gap: 150px;
+    list-style-type: none;
+    color: rgb(0, 0, 0);
+  }
+
+  ul a:hover {
+    color: rgba(115, 115, 96, 0.883);
+  }
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  gap: 10px;
+
+  :hover {
+    transform: rotate(5deg) scale(1.2);
+  }
+}

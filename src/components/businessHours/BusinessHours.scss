@@ -1,0 +1,56 @@
+.BusinessHours {
+  background-color: white;
+  width: 25%;
+  position: absolute;
+  inset: 268px auto auto 640px;
+  border: 1px solid rgb(188, 188, 188);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  h5 {
+    color: black;
+    text-align: center;
+  }
+
+  h6 {
+    color: black;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding-bottom: 8px;
+    font-weight: bold;
+  }
+
+  &__Container {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 95% 5%;
+
+    &__Content {
+      &__DayDetails {
+        display: flex;
+
+        &__Day {
+          flex-basis: 0%;
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+
+        &__Hour {
+          flex-basis: 0%;
+          flex-grow: 2;
+          flex-shrink: 1;
+        }
+      }
+    }
+
+    &__CloseButton {
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: small;
+        font-weight: bold;
+        color: brown;
+      }
+    }
+  }
+}
